@@ -8,11 +8,9 @@ RM		= rm
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo yayyy
 	$(COMP) $(OBJ) -o $(NAME)
 
 $(OBJ): $(SRC)
-	@echo yay
 	$(COMP) $(FLAGS) $(SRC) -c -o $(OBJ)
 
 clean:
