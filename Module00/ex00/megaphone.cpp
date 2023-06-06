@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 20:10:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/05 21:35:36 by felicia          ###   ########.fr       */
+/*   Updated: 2023/06/06 11:05:37 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,25 @@
 // $>
 
 #include <iostream>
-#include <string>
 #include <stdlib.h>
-
-using namespace std;
 
 int	main(int argc, char **argv)
 {
 	int	word;
 	int	letter;
 
-	for (word = 0; word < argc; word++)
+	if (argc == 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	for (word = 1; word < argc; word++)
 	{
 		for (letter = 0; argv[word][letter] != '\0'; letter++)
 		{
 			if (argv[word][letter] >= 'a' && argv[word][letter] <= 'z') 
-			{
-				cout << argv[word][letter] - 'a';
-			}
+				std::cout << (char)toupper(argv[word][letter]);
 			else
-			{
-				cout << argv[word][letter];
-			}
+				std::cout << argv[word][letter];
 		}
 	}
-	cout << "\n";
-	return (1);
+	std::cout << std::endl;
+	return (EXIT_SUCCESS);
 }
