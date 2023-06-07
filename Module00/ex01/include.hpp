@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:05:53 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/06 18:56:36 by felicia          ###   ########.fr       */
+/*   Updated: 2023/06/07 22:13:15 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ class Contact
 class PhoneBook
 {
 	public:
-		Contact	array[8];
+		Contact	contacts[8];
 };
