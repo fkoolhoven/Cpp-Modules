@@ -4,14 +4,16 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 INCLUDES	= include.hpp
 OBJ			= $(SRC:.cpp=.o)
-SRC			= main.cpp
+SRC			= main.cpp \
+				getters.cpp \
+				setters.cpp \
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
 	$(COMP) -I $(INCLUDES) $(OBJ) -o $(NAME)
 
-$(OBJ): $(SRC)
+%.o: %.c
 	$(COMP) $(FLAGS) $(SRC) -c -o $(OBJ)
 
 clean:
