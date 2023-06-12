@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:05:04 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/12 19:47:48 by felicia          ###   ########.fr       */
+/*   Updated: 2023/06/12 21:44:57 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,26 @@ void	search_for_specific_contact(PhoneBook phonebook)
 	}
 	std::cout << std::endl;
 	
-	std::string	id;
-	int			id_as_int;
-	std::cout << "Choose a contact ID.\n";
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	std::getline(std::cin, id, '\n');
-	id_as_int = stoi(id);
+	int contact_id;
+
+	contact_id = -1;
+	std::cout << "Choose a valid contact ID. This should be a number ranging from 0 to 7: ";
+	while (!(std::cin >> contact_id) || contact_id < 0 || contact_id > 7 || phonebook.contacts[contact_id].get_Index() == -1) // rewrite
+	{
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Choose a valid contact ID. This should be a number ranging from 0 to 7: ";
+    }
+
 	// what if invalid input
 	
 	std::cout << std::endl;
-	std::cout << "INDEX: " << phonebook.contacts[id_as_int].get_Index() << std::endl;
-	std::cout << "FIRST NAME: " << phonebook.contacts[id_as_int].get_FirstName() << std::endl;
-	std::cout << "LAST NAME: " << phonebook.contacts[id_as_int].get_LastName() << std::endl;
-	std::cout << "NICKNAME: " << phonebook.contacts[id_as_int].get_Nickname() << std::endl;
-	std::cout << "PHONE NUMBER: " << phonebook.contacts[id_as_int].get_PhoneNumber() << std::endl;
-	std::cout << "DARKEST SECRET: " << phonebook.contacts[id_as_int].get_DarkestSecret() << std::endl;
+	std::cout << "INDEX: " << phonebook.contacts[contact_id].get_Index() << std::endl;
+	std::cout << "FIRST NAME: " << phonebook.contacts[contact_id].get_FirstName() << std::endl;
+	std::cout << "LAST NAME: " << phonebook.contacts[contact_id].get_LastName() << std::endl;
+	std::cout << "NICKNAME: " << phonebook.contacts[contact_id].get_Nickname() << std::endl;
+	std::cout << "PHONE NUMBER: " << phonebook.contacts[contact_id].get_PhoneNumber() << std::endl;
+	std::cout << "DARKEST SECRET: " << phonebook.contacts[contact_id].get_DarkestSecret() << std::endl;
 	std::cout << std::endl;
 }
 
@@ -111,7 +116,10 @@ int	main(void)
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
-			search_for_specific_contact(phonebook);
+			if (phonebook.contacts[0].get_Index() == -1)
+				std::cout << "Add a contact before searching.\n";
+			else
+				search_for_specific_contact(phonebook);
 		}
 		else if (command.compare("EXIT") == 0)
 		{
@@ -121,6 +129,5 @@ int	main(void)
 		else
 			std::cout << "That command doesn't exist, please choose ADD, SEARCH or EXIT.\n";
 	}
-	
-	return (3);
+	return (EXIT_SUCCESS);
 }
