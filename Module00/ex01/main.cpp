@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:05:04 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/12 18:11:12 by felicia          ###   ########.fr       */
+/*   Updated: 2023/06/12 18:34:54 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	search_for_specific_contact(PhoneBook phonebook)
 
 	std::cout << "\nID        |FIRST NAME| LAST NAME|  NICKNAME|\n";
 	std::cout << std::string(44, '-') << std::endl;
-	for (i = 0; phonebook.contacts[i].index >= 0; i++)
+	for (i = 0; i < 8 && phonebook.contacts[i].index >= 0; i++)
 	{
 		std::cout << phonebook.contacts[i].index << std::string(9, ' ') << '|';
 		strlen = phonebook.contacts[i].first_name.length();
@@ -62,7 +62,7 @@ Contact	add_new_contact(Contact contact, int i)
 {
 	// Contact		contact;
 
-
+	
 	std::cout << "You chose ADD.\n";
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	contact.index = i;
@@ -101,26 +101,27 @@ int	main(void)
 	Contact		contact;
 	std::string	command;
 	PhoneBook	phonebook;
-	int			i = 0;
+	int			index;
 	
 	int init = 0;
-	while (init < 9)
+	while (init < 8)
 	{
 		phonebook.contacts[init].index = -1;
 		init++;
 	}
+	index = 0;
 	while (true)
 	{
 		std::cout << "Please choose a command: ADD, SEARCH or EXIT.\n";
 		std::cin >> command;
 		if (command.compare("ADD") == 0)
 		{
-			if (i % 9 == 0)
-				i = 0;
-			contact = phonebook.contacts[i];
-			phonebook.contacts[i] = add_new_contact(contact, i);
+			if (index % 8 == 0)
+				index = 0;
+			contact = phonebook.contacts[index];
+			phonebook.contacts[index] = add_new_contact(contact, index);
 			//print_all_contacts(phonebook);
-			i++;
+			index++;
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
