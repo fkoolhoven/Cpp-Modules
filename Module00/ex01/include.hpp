@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:05:53 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/12 19:45:52 by felicia          ###   ########.fr       */
+/*   Updated: 2023/06/13 15:23:08 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,25 @@ class Contact
 		std::string	phone_number;
 		std::string	darkest_secret;
 	public:
+		void		set_Index(int new_Index);
 		int			get_Index(void);
+		void		set_FirstName(std::string new_FirstName);
 		std::string	get_FirstName(void);
+		void		set_LastName(std::string new_LastName);
 		std::string	get_LastName(void);
+		void		set_Nickname(std::string new_Nickname);
 		std::string	get_Nickname(void);
+		void		set_PhoneNumber(std::string new_PhoneNumber);
 		std::string	get_PhoneNumber(void);
+		void		set_DarkestSecret(std::string new_DarkestSecret);
 		std::string	get_DarkestSecret(void);
-		void		set_Index(int);
-		void		set_FirstName(std::string);
-		void		set_LastName(std::string);
-		void		set_Nickname(std::string);
-		void		set_PhoneNumber(std::string);
-		void		set_DarkestSecret(std::string);
 };
 
 class PhoneBook
 {
-	public:
+	private:
 		Contact	contacts[8];
+	public:
+		void	set_Contacts(Contact new_Contact, int i);
+		Contact	get_Contacts(int i);
 };

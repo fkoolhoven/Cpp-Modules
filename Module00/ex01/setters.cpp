@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   setters.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 19:35:04 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/12 19:54:35 by felicia          ###   ########.fr       */
+/*   Updated: 2023/06/13 16:27:08 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.hpp"
+
+void	PhoneBook::set_Contacts(Contact new_Contact, int i)
+{
+	contacts[i] = new_Contact;
+}
 
 void	Contact::set_Index(int newIndex)
 {

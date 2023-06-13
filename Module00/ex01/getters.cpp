@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   getters.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 19:13:28 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/12 19:53:08 by felicia          ###   ########.fr       */
+/*   Updated: 2023/06/13 15:23:52 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.hpp"
+
+Contact	PhoneBook::get_Contacts(int i)
+{
+	return (contacts[i]);
+}
 
 int	Contact::get_Index(void)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:05:04 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/12 21:44:57 by felicia          ###   ########.fr       */
+/*   Updated: 2023/06/13 16:43:06 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,54 +20,59 @@ void	print_contact_info(std::string contact_info, int strlen)
 		std::cout << std::string(10 - strlen, ' ') << contact_info << '|';
 }
 
-void	search_for_specific_contact(PhoneBook phonebook)
+void	display_specific_contact(PhoneBook phonebook, int contact_id)
+{
+	std::cout << std::endl;
+	std::cout << "INDEX: " << phonebook.get_Contacts(contact_id).get_Index() << std::endl;
+	std::cout << "FIRST NAME: " << phonebook.get_Contacts(contact_id).get_FirstName() << std::endl;
+	std::cout << "LAST NAME: " << phonebook.get_Contacts(contact_id).get_LastName() << std::endl;
+	std::cout << "NICKNAME: " << phonebook.get_Contacts(contact_id).get_Nickname() << std::endl;
+	std::cout << "PHONE NUMBER: " << phonebook.get_Contacts(contact_id).get_PhoneNumber() << std::endl;
+	std::cout << "DARKEST SECRET: " << phonebook.get_Contacts(contact_id).get_DarkestSecret() << std::endl;
+	std::cout << std::endl;
+}
+
+void	display_all_contacts(PhoneBook phonebook)
 {
 	int i;
 	int	strlen;
 
 	std::cout << "\nID        |FIRST NAME| LAST NAME|  NICKNAME|\n";
 	std::cout << std::string(44, '-') << std::endl;
-	for (i = 0; i < 8 && phonebook.contacts[i].get_Index() >= 0; i++)
+	for (i = 0; i < 8 && phonebook.get_Contacts(i).get_Index() >= 0; i++)
 	{
-		std::cout << phonebook.contacts[i].get_Index() << std::string(9, ' ') << '|';
-		strlen = phonebook.contacts[i].get_FirstName().length();
-		print_contact_info(phonebook.contacts[i].get_FirstName(), strlen);
-		strlen = phonebook.contacts[i].get_LastName().length();
-		print_contact_info(phonebook.contacts[i].get_LastName(), strlen);
-		strlen = phonebook.contacts[i].get_Nickname().length();
-		print_contact_info(phonebook.contacts[i].get_Nickname(), strlen);
+		std::cout << phonebook.get_Contacts(i).get_Index() << std::string(9, ' ') << '|';
+		strlen = phonebook.get_Contacts(i).get_FirstName().length();
+		print_contact_info(phonebook.get_Contacts(i).get_FirstName(), strlen);
+		strlen = phonebook.get_Contacts(i).get_LastName().length();
+		print_contact_info(phonebook.get_Contacts(i).get_LastName(), strlen);
+		strlen = phonebook.get_Contacts(i).get_Nickname().length();
+		print_contact_info(phonebook.get_Contacts(i).get_Nickname(), strlen);
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
-	
-	int contact_id;
+}
 
+void	search_for_specific_contact(PhoneBook phonebook)
+{
+	int contact_id;
+	
+	display_all_contacts(phonebook);
 	contact_id = -1;
 	std::cout << "Choose a valid contact ID. This should be a number ranging from 0 to 7: ";
-	while (!(std::cin >> contact_id) || contact_id < 0 || contact_id > 7 || phonebook.contacts[contact_id].get_Index() == -1) // rewrite
+	while (!(std::cin >> contact_id) || contact_id < 0 || contact_id > 7 || phonebook.get_Contacts(contact_id).get_Index() == -1) // rewrite
 	{
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Choose a valid contact ID. This should be a number ranging from 0 to 7: ";
     }
-
-	// what if invalid input
-	
-	std::cout << std::endl;
-	std::cout << "INDEX: " << phonebook.contacts[contact_id].get_Index() << std::endl;
-	std::cout << "FIRST NAME: " << phonebook.contacts[contact_id].get_FirstName() << std::endl;
-	std::cout << "LAST NAME: " << phonebook.contacts[contact_id].get_LastName() << std::endl;
-	std::cout << "NICKNAME: " << phonebook.contacts[contact_id].get_Nickname() << std::endl;
-	std::cout << "PHONE NUMBER: " << phonebook.contacts[contact_id].get_PhoneNumber() << std::endl;
-	std::cout << "DARKEST SECRET: " << phonebook.contacts[contact_id].get_DarkestSecret() << std::endl;
-	std::cout << std::endl;
+	display_specific_contact(phonebook, contact_id);
 }
 
 Contact	add_new_contact(Contact contact, int i)
 {
 	std::string	input;
 
-	std::cout << "You chose ADD.\n";
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	contact.set_Index(i);
 	std::cout << "Enter first name:\n";
@@ -98,7 +103,8 @@ int	main(void)
 	int init = 0;
 	while (init < 8)
 	{
-		phonebook.contacts[init].set_Index(-1);
+		phonebook.set_Contacts(contact, init);
+		contact.set_Index(-1);
 		init++;
 	}
 	index = 0;
@@ -110,13 +116,13 @@ int	main(void)
 		{
 			if (index % 8 == 0)
 				index = 0;
-			contact = phonebook.contacts[index];
-			phonebook.contacts[index] = add_new_contact(contact, index);
+			contact = phonebook.get_Contacts(index);
+			phonebook.set_Contacts(add_new_contact(contact, index), index);
 			index++;
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
-			if (phonebook.contacts[0].get_Index() == -1)
+			if (phonebook.get_Contacts(0).get_Index() == -1)
 				std::cout << "Add a contact before searching.\n";
 			else
 				search_for_specific_contact(phonebook);
