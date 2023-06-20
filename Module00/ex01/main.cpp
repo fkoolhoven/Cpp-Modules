@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:05:04 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/13 16:43:06 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:28:34 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	print_contact_info(std::string contact_info, int strlen)
 {
-	if (strlen > 10)
-		std::cout << contact_info.substr(0, 9) << ".|";
-	else
-		std::cout << std::string(10 - strlen, ' ') << contact_info << '|';
+	// if (strlen > 10)
+	// 	std::cout << contact_info.substr(0, 9) << ".|";
+	// else
+	// 	std::cout << std::string(10 - strlen, ' ') << contact_info << '|';
+	std::cout << std::setw(10) << std::right << contact_info.substr(0, 9) << '|';
+	// std::cout << contact_info;
+	
 }
 
 void	display_specific_contact(PhoneBook phonebook, int contact_id)
@@ -39,6 +42,7 @@ void	display_all_contacts(PhoneBook phonebook)
 
 	std::cout << "\nID        |FIRST NAME| LAST NAME|  NICKNAME|\n";
 	std::cout << std::string(44, '-') << std::endl;
+	std::setfill(' ');
 	for (i = 0; i < 8 && phonebook.get_Contacts(i).get_Index() >= 0; i++)
 	{
 		std::cout << phonebook.get_Contacts(i).get_Index() << std::string(9, ' ') << '|';
@@ -93,6 +97,19 @@ Contact	add_new_contact(Contact contact, int i)
 	return (contact);
 }
 
+PhoneBook	initialize_phonebook(Contact contact, PhoneBook phonebook)
+{
+	int i = 0;
+
+	while (i < 8)
+	{
+		phonebook.set_Contacts(contact, i);
+		contact.set_Index(-1);
+		i++;
+	}
+	return (phonebook);
+}
+
 int	main(void)
 {
 	Contact		contact;
@@ -100,13 +117,7 @@ int	main(void)
 	PhoneBook	phonebook;
 	int			index;
 	
-	int init = 0;
-	while (init < 8)
-	{
-		phonebook.set_Contacts(contact, init);
-		contact.set_Index(-1);
-		init++;
-	}
+	phonebook = initialize_phonebook(contact, phonebook);
 	index = 0;
 	while (true)
 	{
@@ -128,12 +139,10 @@ int	main(void)
 				search_for_specific_contact(phonebook);
 		}
 		else if (command.compare("EXIT") == 0)
-		{
-			std::cout << "Exiting phonebook.\n";
 			break ;
-		}
 		else
 			std::cout << "That command doesn't exist, please choose ADD, SEARCH or EXIT.\n";
 	}
+	std::cout << "Exiting phonebook. Goodbye!\n";
 	return (EXIT_SUCCESS);
 }
