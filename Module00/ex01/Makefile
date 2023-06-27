@@ -2,11 +2,11 @@ NAME		= phonebook
 COMP		= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
-INCLUDES	= include.hpp
+INCLUDES	= PhoneBook.hpp
 OBJ			= $(SRC:.cpp=.o)
 SRC			= main.cpp \
-				getters.cpp \
-				setters.cpp \
+				PhoneBook.cpp \
+				Contact.cpp
 
 all: $(NAME)
 

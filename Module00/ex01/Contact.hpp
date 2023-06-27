@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   include.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 13:05:53 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/20 16:23:57 by fkoolhov         ###   ########.fr       */
+/*   Created: 2023/06/27 17:47:19 by fkoolhov          #+#    #+#             */
+/*   Updated: 2023/06/27 17:53:49 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <string>
 #include <stdlib.h>
 #include <iostream>
-
 
 class Contact
 {
@@ -40,11 +39,4 @@ class Contact
 		std::string	get_DarkestSecret(void);
 };
 
-class PhoneBook
-{
-	private:
-		Contact	contacts[8];
-	public:
-		void	set_Contacts(Contact new_Contact, int i);
-		Contact	get_Contacts(int i);
-};
+Contact	add_new_contact(Contact contact, int index);
