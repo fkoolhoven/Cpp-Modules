@@ -6,21 +6,21 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:50 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/07/05 13:36:11 by felicia          ###   ########.fr       */
+/*   Updated: 2023/07/05 16:57:40 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Contact.hpp"
+#include "../inc/PhoneBook.hpp"
 
 Contact::Contact(void)
 {
-	std::cout << "\nConstructed contact!\n";
 	index = -1;
+	std::cout << GREEN"Constructed contact!\n" << OFF;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "\nDestructed contact!\n";
+	std::cout << RED"Destructed contact!\n" << OFF;
 }
 
 void	Contact::set_Index(int newIndex)
@@ -83,25 +83,25 @@ std::string	Contact::get_DarkestSecret(void)
 	return (darkest_secret);
 }
 
-void	Contact::add_new_contact(int i)
+void	Contact::set_contact_info(int index)
 {
 	std::string	user_input;
 
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	set_Index(i);
-	std::cout << "Enter first name:\n";
+	set_Index(index);
+	std::cout << YELLOW"Enter first name: " << OFF;
 	std::getline(std::cin, user_input, '\n');
 	set_FirstName(user_input);
-	std::cout << "Enter last name:\n";
+	std::cout << YELLOW"Enter last name: " << OFF;
 	std::getline(std::cin, user_input, '\n');
 	set_LastName(user_input);
-	std::cout << "Enter nickname:\n";
+	std::cout << YELLOW"Enter nickname: " << OFF;
 	std::getline(std::cin, user_input, '\n');
 	set_Nickname(user_input);
-	std::cout << "Enter phone number:\n";
+	std::cout << YELLOW"Enter phone number: " << OFF;
 	std::getline(std::cin, user_input, '\n');
 	set_PhoneNumber(user_input);
-	std::cout << "Enter darkest secret:\n";
+	std::cout << YELLOW"Enter darkest secret: " << OFF;
 	std::getline(std::cin, user_input, '\n');
 	set_DarkestSecret(user_input);
 }

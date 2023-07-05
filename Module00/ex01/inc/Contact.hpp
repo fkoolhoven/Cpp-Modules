@@ -6,17 +6,17 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:47:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/07/05 13:39:09 by felicia          ###   ########.fr       */
+/*   Updated: 2023/07/05 16:36:45 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-#define CONTACT_HPP
+# define CONTACT_HPP
 
-#include <iomanip>
-#include <string>
-#include <stdlib.h>
-#include <iostream>
+# include <iomanip>
+# include <string>
+# include <stdlib.h>
+# include <iostream>
 
 class Contact
 {
@@ -42,7 +42,7 @@ class Contact
 		std::string	get_PhoneNumber(void);
 		void		set_DarkestSecret(std::string new_DarkestSecret);
 		std::string	get_DarkestSecret(void);
-		void		add_new_contact(int index);
+		void		set_contact_info(int index);
 };
 
 #endif

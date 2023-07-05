@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:33 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/07/05 13:48:35 by felicia          ###   ########.fr       */
+/*   Updated: 2023/07/05 16:57:13 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,13 @@
 
 PhoneBook::PhoneBook(void)
 {
-	std::cout << "\nConstructed phonebook!\n";
+	std::cout << BOLD GREEN"Constructed phonebook!\n" << OFF;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "\nDestructed phonebook!\n";
+	std::cout << BOLD RED"Destructed phonebook!\n" << OFF;
 }
-
-void	PhoneBook::set_Contacts(Contact new_Contact, int i)
-{
-	contacts[i] = new_Contact;
-}
-
-// void	PhoneBook::get_Contact(int index)
-// {
-// 	return (contacts[i]);
-// }
 
 void	print_contact_info(std::string contact_info)
 {
@@ -72,31 +62,28 @@ void	PhoneBook::display_all_contacts(void)
 	std::cout << std::endl;
 }
 
-void	PhoneBook::search_for_specific_contact(void)
+void	PhoneBook::search_contact(void)
 {
 	int contact_id;
 	
+	if (contacts[0].get_Index() == -1)
+	{
+		std::cout << YELLOW"Add a contact before searching.\n" << OFF;
+		return ;
+	}
 	display_all_contacts();
 	contact_id = -1;
-	std::cout << "Choose a valid contact ID. This should be a number ranging from 0 to 7: ";
+	std::cout << YELLOW"Choose a valid contact ID from the ID column: " << OFF;
 	while (!(std::cin >> contact_id) || contact_id < 0 || contact_id > 7 || contacts[contact_id].get_Index() == -1)
 	{
         std::cin.clear();
        	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Choose a valid contact ID. This should be a number ranging from 0 to 7: ";
+        std::cout << YELLOW"Choose a valid contact ID from the ID column: " << OFF;
     }
 	display_specific_contact(contact_id);
 }
 
-// PhoneBook	initialize_phonebook(Contact contact, PhoneBook phonebook)
-// {
-// 	int i = 0;
-
-// 	while (i < 8)
-// 	{
-// 		phonebook.set_Contacts(contact, i);
-// 		contact.set_Index(-1);
-// 		i++;
-// 	}
-// 	return (phonebook);
-// }
+void	PhoneBook::add_contact_to_phonebook(int index)
+{
+	contacts[index].set_contact_info(index);
+}
