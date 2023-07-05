@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:05:04 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/27 17:55:26 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/07/05 13:49:55 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "../inc/PhoneBook.hpp"
 
 int	main(void)
 {
+	PhoneBook	phonebook;
 	Contact		contact;
 	std::string	command;
-	PhoneBook	phonebook;
 	int			index;
 	
-	phonebook = initialize_phonebook(contact, phonebook);
 	index = 0;
 	while (true)
 	{
@@ -29,16 +28,22 @@ int	main(void)
 		{
 			if (index % 8 == 0)
 				index = 0;
-			contact = phonebook.get_Contacts(index);
-			phonebook.set_Contacts(add_new_contact(contact, index), index);
+			contact = Contact();
+			std::cout << "\n\nCONSTRUCTED CONTACT\n\n";
+			contact.add_new_contact(index);	
+			std::cout << "\n\nADDED CONTACT\n\n";
+			phonebook.set_Contacts(contact, index);
+			std::cout << "\n\nSET CONTACT\n\n";
+			phonebook.display_all_contacts();
+			std::cout << "\n\nDISPLAYED CONTACTS\n\n";
 			index++;
 		}
 		else if (command.compare("SEARCH") == 0)
 		{
-			if (phonebook.get_Contacts(0).get_Index() == -1)
-				std::cout << "Add a contact before searching.\n";
-			else
-				search_for_specific_contact(phonebook);
+			// if (phonebook.contacts[0].get_Index() == -1)
+			// 	std::cout << "Add a contact before searching.\n";
+			// else
+				phonebook.search_for_specific_contact();
 		}
 		else if (command.compare("EXIT") == 0)
 			break ;

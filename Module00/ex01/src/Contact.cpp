@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:50 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/06/27 17:51:57 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/07/05 13:36:11 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "../inc/Contact.hpp"
+
+Contact::Contact(void)
+{
+	std::cout << "\nConstructed contact!\n";
+	index = -1;
+}
+
+Contact::~Contact(void)
+{
+	std::cout << "\nDestructed contact!\n";
+}
 
 void	Contact::set_Index(int newIndex)
 {
@@ -72,26 +83,25 @@ std::string	Contact::get_DarkestSecret(void)
 	return (darkest_secret);
 }
 
-Contact	add_new_contact(Contact contact, int i)
+void	Contact::add_new_contact(int i)
 {
-	std::string	input;
+	std::string	user_input;
 
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	contact.set_Index(i);
+	set_Index(i);
 	std::cout << "Enter first name:\n";
-	std::getline(std::cin, input, '\n');
-	contact.set_FirstName(input);
+	std::getline(std::cin, user_input, '\n');
+	set_FirstName(user_input);
 	std::cout << "Enter last name:\n";
-	std::getline(std::cin, input, '\n');
-	contact.set_LastName(input);
+	std::getline(std::cin, user_input, '\n');
+	set_LastName(user_input);
 	std::cout << "Enter nickname:\n";
-	std::getline(std::cin, input, '\n');
-	contact.set_Nickname(input);
+	std::getline(std::cin, user_input, '\n');
+	set_Nickname(user_input);
 	std::cout << "Enter phone number:\n";
-	std::getline(std::cin, input, '\n');
-	contact.set_PhoneNumber(input);
+	std::getline(std::cin, user_input, '\n');
+	set_PhoneNumber(user_input);
 	std::cout << "Enter darkest secret:\n";
-	std::getline(std::cin, input, '\n');
-	contact.set_DarkestSecret(input);
-	return (contact);
+	std::getline(std::cin, user_input, '\n');
+	set_DarkestSecret(user_input);
 }

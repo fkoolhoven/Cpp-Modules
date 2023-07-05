@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:47:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/06/27 17:53:49 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/07/05 13:39:09 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <iomanip>
 #include <string>
@@ -25,6 +28,8 @@ class Contact
 		std::string	phone_number;
 		std::string	darkest_secret;
 	public:
+		Contact(void);
+		~Contact(void);
 		void		set_Index(int new_Index);
 		int			get_Index(void);
 		void		set_FirstName(std::string new_FirstName);
@@ -37,6 +42,7 @@ class Contact
 		std::string	get_PhoneNumber(void);
 		void		set_DarkestSecret(std::string new_DarkestSecret);
 		std::string	get_DarkestSecret(void);
+		void		add_new_contact(int index);
 };
 
-Contact	add_new_contact(Contact contact, int index);
+#endif
