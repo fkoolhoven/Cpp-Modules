@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 15:11:27 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/07/11 18:07:48 by felicia          ###   ########.fr       */
+/*   Created: 2023/07/11 17:17:10 by felicia           #+#    #+#             */
+/*   Updated: 2023/07/11 18:06:43 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void)
+Zombie::Zombie(std::string new_name)
 {
-	Zombie	*heap_zombie;
+	name = new_name;
+	std::cout << GREEN"CONSTRUCTED ZOMBIE " << name << OFF << std::endl;
+}
 
-	heap_zombie = newZombie("Jurriaan Heap");
-	heap_zombie->announce();
-	delete heap_zombie;
-	heap_zombie = newZombie("Sam Heap");
-	heap_zombie->announce();
-	delete heap_zombie;
-	heap_zombie = newZombie("Jesse Heap");
-	heap_zombie->announce();
-	delete heap_zombie;
-	randomChump("Erik Stack");
-	randomChump("Zoey Stack");
-	randomChump("Aileen Stack");
-	return (EXIT_SUCCESS);
+Zombie::~Zombie(void)
+{
+	std::cout << RED"DESTRUCTED ZOMBIE " << name << OFF << std::endl;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << BOLD YELLOW << name << OFF": BraiiiiiiinnnzzzZ...\n";
 }
