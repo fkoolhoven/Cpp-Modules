@@ -1,0 +1,7 @@
+To do
+- check which libraries are necessary
+- double check subject
+- check memory leaks
+- personalize Makefile?
+- order src and obj into folders
+- check for alloc fails

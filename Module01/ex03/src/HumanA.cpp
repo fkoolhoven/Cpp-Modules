@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 19:16:29 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/12 16:14:03 by felicia          ###   ########.fr       */
+/*   Created: 2023/07/12 16:28:04 by felicia           #+#    #+#             */
+/*   Updated: 2023/07/12 18:09:47 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
-int	main(void)
+#include "../inc/HumanA.hpp"
+	
+HumanA::HumanA(std::string newName, Weapon &newWeapon)
+	: weapon(newWeapon)
 {
-	std::string	string = "HI THIS IS BRAIN";
-	std::string	*stringPTR = &string;
-	std::string	&stringREF = string;
-
-	std::cout << &string << std::endl;
-	std::cout << stringPTR << std::endl;
-	std::cout << &stringREF << std::endl;
-
-	std::cout << string << std::endl;
-	std::cout << *stringPTR << std::endl;
-	std::cout << stringREF << std::endl;
+	name = newName;
+	std::cout << GREEN"CONSTRUCTED " << name << OFF << std::endl;
 }
+
+HumanA::~HumanA(void)
+{
+	std::cout << RED"DESTRUCTED " << name << OFF << std::endl;
+}
+
+void	HumanA::attack(void)
+{
+	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+} 
