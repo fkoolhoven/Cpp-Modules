@@ -5,3 +5,5 @@ To do
 - personalize Makefile?
 - order src and obj into folders
 - check for alloc fails
+- remove headers?
+- write tests
