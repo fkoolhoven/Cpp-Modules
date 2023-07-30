@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/29 15:24:35 by felicia          ###   ########.fr       */
+/*   Updated: 2023/07/30 15:54:50 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,5 @@ class Fixed
 std::ostream & operator<<(std::ostream &o, Fixed const &instance);
 
 
-// Add the following public constructors and public member functions to your class:
-// • A constructor that takes a constant integer as a parameter.
-// It converts it to the corresponding fixed-point value. The fractional bits value is
-// initialized to 8 like in exercise 00.
-// • A constructor that takes a constant floating-point number as a parameter.
-// It converts it to the corresponding fixed-point value. The fractional bits value is
-// initialized to 8 like in exercise 00.
-// • A member function float toFloat( void ) const;
-// that converts the fixed-point value to a floating-point value.
-// • A member function int toInt( void ) const;
-// that converts the fixed-point value to an integer value.
 
 

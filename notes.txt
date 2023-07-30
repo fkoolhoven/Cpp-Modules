@@ -7,3 +7,5 @@ To do
 - check for alloc fails
 - remove headers?
 - write tests
+- improve var names
+- compare outputs to subject
