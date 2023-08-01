@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:57:06 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/31 21:41:00 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/01 12:56:29 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Fixed& Fixed::operator=(const Fixed& original)
 	std::cout << "Copy assignment operator called\n";
 	if (this == &original)
 		 return *this;
-	fixed_point_number = original.getRawBits();
+	this->fixed_point_number = original.getRawBits();
 	return (*this);
 }
 
@@ -59,7 +59,7 @@ Fixed::~Fixed()
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called\n";
-	return (fixed_point_number);
+	return (this->fixed_point_number);
 }
 
 void	Fixed::setRawBits(int const raw)
@@ -81,32 +81,72 @@ int	Fixed::toInt(void) const
 	return (fixed_point_number >> fractional_bits);
 }
 
-// ARITHMETIC OPERATOR OVERFLOWERS
+
+// • A static member function min that takes as parameters two references on fixed-point
+// numbers, and returns a reference to the smallest one.
+Fixed&	Fixed::min(Fixed &number1, Fixed &number2)
+{
+	if (number1 < number2)
+		return (number1);
+	else
+		return (number2);
+}
+
+// • A static member function min that takes as parameters two references to constant
+// fixed-point numbers, and returns a reference to the smallest one.
+const Fixed&	Fixed::min(Fixed const &number1, Fixed const &number2)
+{
+	if (number1.toFloat() < number2.toFloat())
+		return (number1);
+	else
+		return (number2);
+}
+
+// • A static member function max that takes as parameters two references on fixed-point
+// numbers, and returns a reference to the greatest one.
+Fixed&	Fixed::max(Fixed &number1, Fixed &number2)
+{
+	if (number1 > number2)
+		return (number1);
+	else
+		return (number2);
+}
+
+// • A static member function max that takes as parameters two references to constant
+// fixed-point numbers, and returns a reference to the greatest one.
+const Fixed&	Fixed::max(Fixed const &number1, Fixed const &number2)
+{
+	if (number1.toFloat() > number2.toFloat())
+		return (number1);
+	else
+		return (number2);
+}
+
+// ARITHMETIC OPERATOR OVERLOADING
 int	Fixed::operator+(Fixed const &instance)
 {
-	return (toInt() + instance.toInt());
+	return (this->toFloat() + instance.toFloat());
 }
 
 int	Fixed::operator-(Fixed const &instance)
 {
-	return (toInt() - instance.toInt());
+	return (this->toFloat() - instance.toFloat());
 }
 
 int	Fixed::operator*(Fixed const &instance)
 {
-	return (toInt() * instance.toInt());
+	return (this->toFloat() * instance.toFloat());
 }
 
 int	Fixed::operator/(Fixed const &instance)
 {
-	return (toInt() / instance.toInt());
+	return (this->toFloat() / instance.toFloat());
 }
 
-// COMPARISON OPERATOR OVERFLOWERS
-
+// COMPARISON OPERATOR OVERLOADING
 int	Fixed::operator>(Fixed const &instance)
 {
-	if (toInt() > instance.toInt())
+	if (this->toFloat() > instance.toFloat())
 		return (1);
 	else
 		return (0);
@@ -114,7 +154,7 @@ int	Fixed::operator>(Fixed const &instance)
 
 int	Fixed::operator<(Fixed const &instance)
 {
-	if (toInt() < instance.toInt())
+	if (this->toFloat() < instance.toFloat())
 		return (1);
 	else
 		return (0);	
@@ -122,7 +162,7 @@ int	Fixed::operator<(Fixed const &instance)
 
 int	Fixed::operator>=(Fixed const &instance)
 {
-	if (toInt() >= instance.toInt())
+	if (this->toFloat() >= instance.toFloat())
 		return (1);
 	else
 		return (0);	
@@ -130,7 +170,7 @@ int	Fixed::operator>=(Fixed const &instance)
 
 int	Fixed::operator<=(Fixed const &instance)
 {
-	if (toInt() <= instance.toInt())
+	if (this->toFloat() <= instance.toFloat())
 		return (1);
 	else
 		return (0);	
@@ -138,7 +178,7 @@ int	Fixed::operator<=(Fixed const &instance)
 
 int	Fixed::operator==(Fixed const &instance)
 {
-	if (toInt() == instance.toInt())
+	if (this->toFloat() == instance.toFloat())
 		return (1);
 	else
 		return (0);	
@@ -146,10 +186,40 @@ int	Fixed::operator==(Fixed const &instance)
 
 int	Fixed::operator!=(Fixed const &instance)
 {
-	if (toInt() != instance.toInt())
+	if (this->toFloat() != instance.toFloat())
 		return (1);
 	else
 		return (0);	
+}
+
+// INCREMENT/DECREMENT OPERATOR OVERLOADING (PRE)
+Fixed&	Fixed::operator++(void)
+{
+	this->fixed_point_number++;
+	return (*this);
+}
+
+Fixed&	Fixed::operator--(void)
+{
+	this->fixed_point_number--;
+	return (*this);
+}
+
+// INCREMENT/DECREMENT OPERATOR OVERLOADING (POST)
+Fixed	Fixed::operator++(int)
+{
+	Fixed	old(*this);
+
+	this->fixed_point_number++;
+    return (old);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	old(*this);
+
+	this->fixed_point_number--;
+    return (old);
 }
 
 std::ostream& operator<<(std::ostream &output_stream, Fixed const &to_print)

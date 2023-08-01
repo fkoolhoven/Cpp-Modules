@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:51:46 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/31 21:39:32 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/01 12:59:18 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,47 @@
 
 int main(void)
 {
-	Fixed	a(10);
-	Fixed	b(5);
-	Fixed	c(10);
-	Fixed	d(30);
-	// Fixed const b(Fixed(5.05f) * Fixed(2));
+	Fixed		g(10.5123f);
+	Fixed		c(10);
+	Fixed		d(30);
+	Fixed		e(0);
+	Fixed		f(5);
+	Fixed		a;
+	Fixed const b(Fixed(5.05f) * Fixed(2));
 
-	std::cout << a << std::endl;
-	std::cout << (a + a) << " should be 20" << std::endl;
-	std::cout << (a * a) << " should be 100" << std::endl;
-	std::cout << (a - a) << " should be 0" << std::endl;
-	std::cout << (a / a) << " should be 1" << std::endl;
-	
-	if (a > b)
+	std::cout << std::endl << g << std::endl;
+	std::cout << (g + g) << " should be 21 or 22" << std::endl;
+	std::cout << (g * g) << " should be 110" << std::endl;
+	std::cout << (g - g) << " should be 0" << std::endl;
+	std::cout << (g / g) << " should be 1" << std::endl;
+
+	std::cout << std::endl;
+	g = 10;
+	if (g > f)
 		std::cout << "10 is bigger than 5\n";
-	if (a < b || a == b)
+	if (g < f || g == f)
 		std::cout << "INCORRECT\n";
-	if (c >= a && c == a)
+	if (c >= g && c == g)
 		std::cout << "10 and 10 are as big\n";
-	if (c < a || c > a)
+	if (c < g || c > g)
 		std::cout << "INCORRECT\n";
-	if (d > a && d >= b)
+	if (d > g && d >= f)
 		std::cout << "30 is bigger than 5 and 10\n";
-	if (b < d && c < d)
-		std::cout << b << " and " << c << " are smaller than " << d << std::endl;
-	if (b > d || c > d)
+	if (f < d && c < d)
+		std::cout << f << " and " << c << " are smaller than " << d << std::endl;
+	if (f > d || c > d)
 		std::cout << "INCORRECT\n";
-	if (b != a)
-		std::cout << b << " is not equal to " << a << std::endl;
+	if (f != g)
+		std::cout << f << " is not equal to " << a << "\n\n";
 	
-	// std::cout << ++a << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << a++ << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << e << " should be 0" << std::endl;
+	std::cout << ++e << " should be 0.00390625" << std::endl;
+	std::cout << e << " should be 0.00390625" << std::endl;
+	std::cout << e++ << " should be 0.00390625" << std::endl;
+	std::cout << e << " should be 0.0078125" << "\n\n";
+
+	std::cout << b << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl; // outputting wrong
+
 	return (EXIT_SUCCESS);
 }
