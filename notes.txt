@@ -9,3 +9,5 @@ To do
 - write tests
 - improve var names
 - compare outputs to subject
+- update previous Fixed exercises
+- check if c++11 is allowed
