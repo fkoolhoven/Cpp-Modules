@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/08/01 12:56:19 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/01 14:02:00 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,17 @@ class Fixed
 		static Fixed&		max(Fixed &number1, Fixed &number2);
 		static const Fixed&	max(Fixed const &number1, Fixed const &number2);
 		
-
-
-		int	operator+(Fixed const &instance);
-		int	operator-(Fixed const &instance);
-		int	operator*(Fixed const &instance);
-		int	operator/(Fixed const &instance);
+		float	operator+(Fixed const &instance);
+		float	operator-(Fixed const &instance);
+		float	operator*(Fixed const &instance);
+		float	operator/(Fixed const &instance);
 	
-		int	operator>(Fixed const &instance);
-		int	operator<(Fixed const &instance);
-		int	operator>=(Fixed const &instance);
-		int	operator<=(Fixed const &instance);
-		int	operator==(Fixed const &instance);
-		int	operator!=(Fixed const &instance);
+		int		operator>(Fixed const &instance);
+		int		operator<(Fixed const &instance);
+		int		operator>=(Fixed const &instance);
+		int		operator<=(Fixed const &instance);
+		int		operator==(Fixed const &instance);
+		int		operator!=(Fixed const &instance);
 
 		Fixed	&operator++();
 		Fixed	&operator--();
