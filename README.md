@@ -4,7 +4,7 @@
 </div>
 
 # About the project
-CURRENTLY WORKING ON THIS. There will be 10 modules in total (00 until 09). This project is in accordance with the CPP-Modules project, which is part of the Codam Core Curriculum. Each module introduces new concepts and contains a couple of exercises that gradually increase in difficulty. I was already familair with C when I begin this project so that makes some things a bit easier to get. The aim is to get some experience with object oriented programming C++.<br>
+CURRENTLY WORKING ON THIS. There will be 10 modules in total (00 until 09). This project is in accordance with the CPP-Modules project, which is part of the Codam Core Curriculum. Each module introduces new concepts and contains a couple of exercises that gradually increase in difficulty. I was already familair with C when I begin this project so that makes some things a bit easier to get. The aim is to get some experience with object oriented programming and C++.<br>
 
 # Learnings per module <br>
 **Module00**: namespaces, classes, member functions, constructors, destructors, stdio streams, initialization lists. <br>
