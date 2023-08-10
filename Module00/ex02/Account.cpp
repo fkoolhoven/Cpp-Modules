@@ -6,14 +6,13 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:56:01 by felicia           #+#    #+#             */
-/*   Updated: 2023/06/27 16:25:00 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/08/10 19:34:45 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
+
 #include <iomanip>
-#include <string>
-#include <stdlib.h>
 #include <iostream>
 #include <ctime>
 
@@ -131,4 +130,3 @@ bool	Account::makeWithdrawal(int withdrawal)
 		return (true);
 	}
 }
-

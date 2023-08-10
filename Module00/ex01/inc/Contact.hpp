@@ -3,20 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:47:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/07/05 16:36:45 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/10 19:07:24 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-# include <iomanip>
-# include <string>
-# include <stdlib.h>
 # include <iostream>
+
+// =====MACROS==================================================================
+
+# define BOLD	"\033[1m"
+# define RED	"\033[31m"
+# define GREEN 	"\033[32m"
+# define YELLOW	"\033[33m"	
+# define OFF	"\033[0m"
+
+// =====CLASSES=================================================================
 
 class Contact
 {
@@ -30,6 +37,7 @@ class Contact
 	public:
 		Contact(void);
 		~Contact(void);
+	
 		void		set_Index(int new_Index);
 		int			get_Index(void);
 		void		set_FirstName(std::string new_FirstName);

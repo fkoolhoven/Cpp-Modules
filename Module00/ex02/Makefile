@@ -1,16 +1,16 @@
 NAME		= account
 COMP		= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+FLAGS		= -Wall -Wextra -Werror -std=c++11
 RM			= rm -f
-INCLUDES	= Account.hpp
+INC			= Account.hpp
 OBJ			= $(SRC:.cpp=.o)
 SRC			= tests.cpp \
 				Account.cpp
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDES)
-	$(COMP) -I $(INCLUDES) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(INC)
+	$(COMP) -I $(INC) $(OBJ) -o $(NAME)
 
 %.o: %.c
 	$(COMP) $(FLAGS) $(SRC) -c -o $(OBJ)

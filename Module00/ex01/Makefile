@@ -1,9 +1,8 @@
 NAME		= phonebook
 COMP		= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+FLAGS		= -Wall -Wextra -Werror -std=c++11
 RM			= rm -f
-INC_DIR		= inc
-INCLUDES	= inc/Phonebook.hpp
+INC			= inc/Phonebook.hpp
 SRC_DIR		= src
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
@@ -13,8 +12,8 @@ SRC			= main.cpp \
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDES)
-	$(COMP) -I $(INCLUDES) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) $(INC)
+	$(COMP) -I $(INC) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(OBJ_DIR)

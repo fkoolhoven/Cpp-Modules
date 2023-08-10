@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:50 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/07/05 16:57:40 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/10 19:04:17 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/PhoneBook.hpp"
+#include "../inc/Contact.hpp"
 
 Contact::Contact(void)
 {

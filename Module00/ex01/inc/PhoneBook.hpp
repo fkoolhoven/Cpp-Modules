@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:47:38 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/07/05 16:52:14 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/10 19:37:35 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+# include "Contact.hpp"
+
 # include <iomanip>
 # include <string>
-# include <stdlib.h>
-# include <iostream>
-
-# include "Contact.hpp"
 
 // =====MACROS==================================================================
 

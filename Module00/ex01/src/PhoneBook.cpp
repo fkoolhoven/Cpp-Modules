@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:33 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/07/05 16:57:13 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/10 18:59:28 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,21 @@ PhoneBook::~PhoneBook(void)
 
 void	print_contact_info(std::string contact_info)
 {
-	int	strlen;
-
-	strlen = contact_info.length();
-	if (strlen > 10)
-		std::cout << std::setw(9) << std::right << contact_info.substr(0, 9) << ".|";
+	if (contact_info.length() > 10)
+		std::cout << contact_info.substr(0, 9) << ".|";
 	else
 		std::cout << std::setw(10) << std::right << contact_info << '|';
 }
 
-void	PhoneBook::display_specific_contact(int contact_id)
+void	PhoneBook::display_specific_contact(int index)
 {
 	std::cout << std::endl;
-	std::cout << "INDEX: " << contacts[contact_id].get_Index() << std::endl;
-	std::cout << "FIRST NAME: " << contacts[contact_id].get_FirstName() << std::endl;
-	std::cout << "LAST NAME: " << contacts[contact_id].get_LastName() << std::endl;
-	std::cout << "NICKNAME: " << contacts[contact_id].get_Nickname() << std::endl;
-	std::cout << "PHONE NUMBER: " << contacts[contact_id].get_PhoneNumber() << std::endl;
-	std::cout << "DARKEST SECRET: " << contacts[contact_id].get_DarkestSecret() << std::endl;
+	std::cout << "INDEX: " << contacts[index].get_Index() << std::endl;
+	std::cout << "FIRST NAME: " << contacts[index].get_FirstName() << std::endl;
+	std::cout << "LAST NAME: " << contacts[index].get_LastName() << std::endl;
+	std::cout << "NICKNAME: " << contacts[index].get_Nickname() << std::endl;
+	std::cout << "PHONE NUMBER: " << contacts[index].get_PhoneNumber() << std::endl;
+	std::cout << "DARKEST SECRET: " << contacts[index].get_DarkestSecret() << std::endl;
 	std::cout << std::endl; 
 }
 
@@ -64,7 +61,7 @@ void	PhoneBook::display_all_contacts(void)
 
 void	PhoneBook::search_contact(void)
 {
-	int contact_id;
+	int index;
 	
 	if (contacts[0].get_Index() == -1)
 	{
@@ -72,15 +69,15 @@ void	PhoneBook::search_contact(void)
 		return ;
 	}
 	display_all_contacts();
-	contact_id = -1;
+	index = -1;
 	std::cout << YELLOW"Choose a valid contact ID from the ID column: " << OFF;
-	while (!(std::cin >> contact_id) || contact_id < 0 || contact_id > 7 || contacts[contact_id].get_Index() == -1)
+	while (!(std::cin >> index) || index < 0 || index > 7 || contacts[index].get_Index() == -1)
 	{
-        std::cin.clear();
-       	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << YELLOW"Choose a valid contact ID from the ID column: " << OFF;
-    }
-	display_specific_contact(contact_id);
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << YELLOW"Choose a valid contact ID from the ID column: " << OFF;
+	}
+	display_specific_contact(index);
 }
 
 void	PhoneBook::add_contact_to_phonebook(int index)
