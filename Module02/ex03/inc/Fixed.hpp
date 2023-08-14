@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/08/01 14:54:49 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/14 15:07:12 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Fixed
 		static const int	fractional_bits = 8;
 	public:
 		Fixed(); // default constructor
-		Fixed(const int int_number);
-		Fixed(const float float_number);
+		Fixed(const int int_number); // int constructor
+		Fixed(const float float_number); // float constructor
 		Fixed(const Fixed &original); // copy constructor
 		Fixed& 	operator=(const Fixed &original); // copy assignment operator
-		~Fixed(); // destructor
+		~Fixed(); // default destructor
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);

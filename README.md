@@ -10,6 +10,7 @@ CURRENTLY WORKING ON THIS. There will be 10 modules in total (00 - 09). This pro
 **Module00**: namespaces, classes, member functions, constructors, destructors, stdio streams, initialization lists. <br>
 **Module01**: memory allocation, new keyword, pointers vs. references, file handling/manipulation, pointers to member functions, switch statements. <br>
 **Module02**: ad-hoc polymorphism, operator overloading and orthodox canonical class form. <br>
+**Module03**: inheritance <br>
 
 # Contact
 See my profile page for ways to contact me!

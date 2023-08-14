@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/30 15:54:50 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/14 15:08:11 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,4 @@ class Fixed
 		
 };
 
-
-// • An overload of the insertion («) operator that inserts a floating-point representation
-// of the fixed-point number into the output stream object passed as parameter.
 std::ostream & operator<<(std::ostream &o, Fixed const &instance);
-
-
-
-

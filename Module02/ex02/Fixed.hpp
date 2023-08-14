@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/08/01 14:02:00 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/14 15:07:44 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,4 @@ class Fixed
 		Fixed	operator--(int);
 };
 
-// • An overload of the insertion («) operator that inserts a floating-point representation
-// of the fixed-point number into the output stream object passed as parameter.
 std::ostream&	operator<<(std::ostream &o, Fixed const &instance);
-
-
-// • A static member function min that takes as parameters two references on fixed-point
-// numbers, and returns a reference to the smallest one.
-// • A static member function min that takes as parameters two references to constant
-// fixed-point numbers, and returns a reference to the smallest one.
-// • A static member function max that takes as parameters two references on fixed-point
-// numbers, and returns a reference to the greatest one.
-// • A static member function max that takes as parameters two references to constant
-// fixed-point numbers, and returns a reference to the greatest one.
