@@ -6,15 +6,36 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:19 by felicia           #+#    #+#             */
-/*   Updated: 2023/08/15 19:22:35 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/16 17:54:38 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ScavTrap.hpp"
 
+ScavTrap::ScavTrap() : ClapTrap::ClapTrap()
+{
+	HitPoints = 100;
+	EnergyPoints = 50;
+	AttackDamage = 20;
+	std::cout << GREEN"Default ScavTrap constructor was called\n" << OFF;
+}
+
 ScavTrap::ScavTrap(std::string init_name) : ClapTrap::ClapTrap(init_name)
 {
 	std::cout << GREEN"ScavTrap " << Name << " was constructed\n" << OFF;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &original) : ClapTrap::ClapTrap(original)
+{
+	std::cout << GREEN"ScavTrap copy constructor called for " << original.Name << OFF << std::endl;
+	*this = original;
+}
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap &original)
+{
+	std::cout << GREEN"ScavTrap copy assignment operator called for " << this->Name << OFF << std::endl;
+	ClapTrap::operator=(original);
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()
@@ -37,7 +58,7 @@ void	ScavTrap::attack(const std::string& target)
 		return ;
 	}
 	EnergyPoints--;
-	std::cout << "Claptrap " << Name << " attacks " << target << "!\n";
+	std::cout << "Claptrap " << Name << " attacks " << target << "! GO SCAV!\n";
 	p = get_point_or_points(EnergyPoints);
 	std::cout << "Claptrap " << Name << " now has " << EnergyPoints << " energy " << p << " left\n";
 }

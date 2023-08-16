@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:12:57 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/15 19:22:25 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/16 17:49:56 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,25 @@ int	main(void)
 		Beatrice.attack("Margot");
 	}
 
-	std::cout << YELLOW"\nTEST ScavTrap basic test\n" << OFF;
+	std::cout << YELLOW"\nTEST ScavTrap default constructor\n" << OFF;
+	{
+		ScavTrap	scav;
+	}
+	
+	std::cout << YELLOW"\nTEST ScavTrap name constructor + gate function\n" << OFF;
 	{
 		ScavTrap	Princess("Princess");
 
 		Princess.guardGate();
+	}
+
+		std::cout << YELLOW"\nTEST ScavTrap copy constructor and copy assignment operator\n" << OFF;
+	{
+		
+		ScavTrap	Lenny1("Lenny");
+		ScavTrap	Lenny2 = Lenny1;
+		// ScavTrap	Lenny2(Lenny1);
+		// ScavTrap	Lenny3 = Lenny2;
 	}
 
 	std::cout << YELLOW"\nTEST fight between ScavTrap and ClapTrap\n" << OFF;

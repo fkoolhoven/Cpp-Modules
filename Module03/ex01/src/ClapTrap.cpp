@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:13:00 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/15 19:22:32 by felicia          ###   ########.fr       */
+/*   Updated: 2023/08/16 17:48:06 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << GREEN"Default constructor was called\n";
+	HitPoints = 10;
+	EnergyPoints = 10;
+	AttackDamage = 0;
+	std::cout << GREEN"Default ClapTrap constructor was called\n";
 }
 
 ClapTrap::ClapTrap(std::string init_name)
 {
 	Name = init_name;
-	HitPoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
+	HitPoints = 10;
+	EnergyPoints = 10;
+	AttackDamage = 0;
 	std::cout << GREEN"ClapTrap " << Name << " was constructed\n" << OFF;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &original)
 {
-	std::cout << GREEN"Copy of " << original.Name << " was constructed\n" << OFF;
+	std::cout << GREEN"ClapTrap copy of " << original.Name << " was constructed\n" << OFF;
 	*this = original;
 }
 
@@ -38,7 +41,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap &original)
 	this->HitPoints = original.HitPoints;
 	this->EnergyPoints = original.EnergyPoints;
 	this->AttackDamage = original.AttackDamage;
-	std::cout << GREEN"Copy assignment operator was called for " << this->Name << OFF << std::endl;
+	std::cout << GREEN"ClapTrap copy assignment operator was called for " << this->Name << OFF << std::endl;
 	return (*this);
 }
 
