@@ -11,6 +11,12 @@ CURRENTLY WORKING ON THIS. There will be 10 modules in total (00 - 09). This pro
 **Module01**: memory allocation, new keyword, pointers vs. references, file handling/manipulation, pointers to member functions, switch statements. <br>
 **Module02**: ad-hoc polymorphism, operator overloading and orthodox canonical class form. <br>
 **Module03**: inheritance <br>
+**Module04**:
+**Module05**:
+**Module06**:
+**Module07**:
+**Module08**:
+**Module09**:
 
 # Contact
 See my profile page for ways to contact me!
