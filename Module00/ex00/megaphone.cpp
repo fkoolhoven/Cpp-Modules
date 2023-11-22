@@ -6,25 +6,24 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 20:10:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/08/10 18:32:58 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/22 18:39:46 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 
 int	main(int argc, char **argv)
 {
-	int	word;
-	int	letter;
-
 	if (argc < 2)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 	{
-		for (word = 1; word < argc; word++)
+		for (int i = 1; i < argc; i++)
 		{
-			for (letter = 0; argv[word][letter] != '\0'; letter++)
-					std::cout << (char)toupper(argv[word][letter]);
+			std::string word = argv[i];
+			for (int letter : word)
+				std::cout << static_cast<char>(toupper(letter));
 		}		
 	}
 	std::cout << std::endl;

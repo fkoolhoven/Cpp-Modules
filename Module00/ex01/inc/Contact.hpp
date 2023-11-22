@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:47:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/10 19:07:24 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:13:18 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 # include <iostream>
+# include <limits>
 
 // =====MACROS==================================================================
 
@@ -38,19 +39,19 @@ class Contact
 		Contact(void);
 		~Contact(void);
 	
-		void		set_Index(int new_Index);
-		int			get_Index(void);
-		void		set_FirstName(std::string new_FirstName);
-		std::string	get_FirstName(void);
-		void		set_LastName(std::string new_LastName);
-		std::string	get_LastName(void);
-		void		set_Nickname(std::string new_Nickname);
-		std::string	get_Nickname(void);
-		void		set_PhoneNumber(std::string new_PhoneNumber);
-		std::string	get_PhoneNumber(void);
-		void		set_DarkestSecret(std::string new_DarkestSecret);
-		std::string	get_DarkestSecret(void);
-		void		set_contact_info(int index);
+		void		setIndex(int new_Index);
+		int			getIndex(void);
+		void		setFirstName(std::string new_FirstName);
+		std::string	getFirstName(void);
+		void		setLastName(std::string new_LastName);
+		std::string	getLastName(void);
+		void		setNickname(std::string new_Nickname);
+		std::string	getNickname(void);
+		void		setPhoneNumber(std::string new_PhoneNumber);
+		std::string	getPhoneNumber(void);
+		void		setDarkestSecret(std::string new_DarkestSecret);
+		std::string	getDarkestSecret(void);
+		void		InputContactInfo(int index);
 };
 
 #endif

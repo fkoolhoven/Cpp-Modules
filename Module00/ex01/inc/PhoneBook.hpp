@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:47:38 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/10 19:37:35 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:04:41 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 # include <iomanip>
 # include <string>
+# include <limits>
 
 // =====MACROS==================================================================
 
@@ -35,11 +36,11 @@ class PhoneBook
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	set_Contacts(Contact new_Contact, int i);
-		void	display_all_contacts(void);
-		void	display_specific_contact(int contact_id);
-		void	search_contact(void);
-		void	add_contact_to_phonebook(int index);
+		void	SetContacts(Contact new_Contact, int i);
+		void	DisplayAllContacts(void);
+		void	DisplaySpecificContact(int contact_id);
+		void	SearchContact(void);
+		void	AddContactToPhonebook(int index);
 };
 
 #endif

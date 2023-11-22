@@ -6,102 +6,102 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:50 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/10 19:04:17 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:26:45 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(void)
 {
 	index = -1;
-	std::cout << GREEN"Constructed contact!\n" << OFF;
+	std::cout << GREEN "Constructed contact!\n" OFF;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << RED"Destructed contact!\n" << OFF;
+	std::cout << RED "Destructed contact!\n" OFF;
 }
 
-void	Contact::set_Index(int newIndex)
+void	Contact::setIndex(int new_index)
 {
-	index = newIndex;
+	index = new_index;
 }
 
-void	Contact::set_FirstName(std::string new_FirstName)
+void	Contact::setFirstName(std::string new_first_name)
 {
-	first_name = new_FirstName;
+	first_name = new_first_name;
 }
 
-void	Contact::set_LastName(std::string new_LastName)
+void	Contact::setLastName(std::string new_last_name)
 {
-	last_name = new_LastName;
+	last_name = new_last_name;
 }
 
-void	Contact::set_Nickname(std::string new_Nickname)
+void	Contact::setNickname(std::string new_nickname)
 {
-	nickname = new_Nickname;
+	nickname = new_nickname;
 }
 
-void	Contact::set_PhoneNumber(std::string new_PhoneNumber)
+void	Contact::setPhoneNumber(std::string new_phone_number)
 {
-	phone_number = new_PhoneNumber;
+	phone_number = new_phone_number;
 }
 
-void	Contact::set_DarkestSecret(std::string new_DarkestSecret)
+void	Contact::setDarkestSecret(std::string new_darkest_secret)
 {
-	darkest_secret = new_DarkestSecret;
+	darkest_secret = new_darkest_secret;
 }
 
-int	Contact::get_Index(void)
+int	Contact::getIndex(void)
 {
 	return (index);
 }
 
-std::string	Contact::get_FirstName(void)
+std::string	Contact::getFirstName(void)
 {
 	return (first_name);
 }
 
-std::string	Contact::get_LastName(void)
+std::string	Contact::getLastName(void)
 {
 	return (last_name);
 }
 
-std::string	Contact::get_Nickname(void)
+std::string	Contact::getNickname(void)
 {
 	return (nickname);
 }
 
-std::string	Contact::get_PhoneNumber(void)
+std::string	Contact::getPhoneNumber(void)
 {
 	return (phone_number);
 }
 
-std::string	Contact::get_DarkestSecret(void)
+std::string	Contact::getDarkestSecret(void)
 {
 	return (darkest_secret);
 }
 
-void	Contact::set_contact_info(int index)
+void	Contact::InputContactInfo(int index)
 {
 	std::string	user_input;
 
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	set_Index(index);
-	std::cout << YELLOW"Enter first name: " << OFF;
+	setIndex(index);
+	std::cout << YELLOW "Enter first name: " OFF;
 	std::getline(std::cin, user_input, '\n');
-	set_FirstName(user_input);
-	std::cout << YELLOW"Enter last name: " << OFF;
+	setFirstName(user_input);
+	std::cout << YELLOW "Enter last name: " OFF;
 	std::getline(std::cin, user_input, '\n');
-	set_LastName(user_input);
-	std::cout << YELLOW"Enter nickname: " << OFF;
+	setLastName(user_input);
+	std::cout << YELLOW "Enter nickname: " OFF;
 	std::getline(std::cin, user_input, '\n');
-	set_Nickname(user_input);
-	std::cout << YELLOW"Enter phone number: " << OFF;
+	setNickname(user_input);
+	std::cout << YELLOW "Enter phone number: " OFF;
 	std::getline(std::cin, user_input, '\n');
-	set_PhoneNumber(user_input);
-	std::cout << YELLOW"Enter darkest secret: " << OFF;
+	setPhoneNumber(user_input);
+	std::cout << YELLOW "Enter darkest secret: " OFF;
 	std::getline(std::cin, user_input, '\n');
-	set_DarkestSecret(user_input);
+	setDarkestSecret(user_input);
 }
