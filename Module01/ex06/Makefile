@@ -1,6 +1,6 @@
 NAME	= harlFilter
 COMP	= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++14
 RM		= rm -f
 INC		= Harl.hpp
 OBJ		= $(SRC:.cpp=.o)

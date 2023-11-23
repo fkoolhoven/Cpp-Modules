@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:01:01 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/26 18:37:48 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:19:25 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 
 #define RED		"\033[31m"
 #define GREEN 	"\033[32m"
@@ -25,6 +26,7 @@ class Harl
 		void	info(void);
 		void	warning(void);
 		void	error(void);
+
 	public:
 		Harl();
 		~Harl();

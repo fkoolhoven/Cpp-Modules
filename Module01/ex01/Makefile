@@ -1,12 +1,12 @@
 NAME	= zombieHorde	
-SRC		= main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp
 OBJ		= $(SRC:.cpp=.o)
 INC		= Zombie.hpp
 COMP	= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++14
 RM		= rm -f
+SRC		= main.cpp \
+			Zombie.cpp \
+			zombieHorde.cpp
 
 all: $(NAME)
 

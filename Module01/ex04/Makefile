@@ -1,9 +1,9 @@
-NAME		= sed
-COMP		= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
-RM			= rm -f
-OBJ			= $(SRC:.cpp=.o)
-SRC			= main.cpp
+NAME	= sed
+COMP	= c++
+FLAGS	= -Wall -Wextra -Werror -std=c++14
+RM		= rm -f
+OBJ		= $(SRC:.cpp=.o)
+SRC		= main.cpp
 
 all: $(NAME)
 

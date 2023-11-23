@@ -6,12 +6,13 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:01:01 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/27 14:46:50 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:07:45 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string.h>
+#include <cstdlib>
 
 #define RED		"\033[31m"
 #define GREEN 	"\033[32m"
@@ -26,6 +27,7 @@ class Harl
 		void	info(void);
 		void	warning(void);
 		void	error(void);
+
 	public:
 		Harl();
 		~Harl();

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:13:00 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/12 18:05:31 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:00:27 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Weapon.hpp"
-#include "../inc/HumanA.hpp"
-#include "../inc/HumanB.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main(void)
 {
@@ -31,5 +31,5 @@ int main(void)
 		club.setType("some other type of club");
 		jim.attack();
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }

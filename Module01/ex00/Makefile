@@ -1,13 +1,13 @@
 NAME	= zombie	
+OBJ		= $(SRC:.cpp=.o)
+INC		= Zombie.hpp
+COMP	= c++
+FLAGS	= -Wall -Wextra -Werror -std=c++14
+RM		= rm -f
 SRC		= main.cpp \
 			newZombie.cpp \
 			Zombie.cpp \
 			randomChump.cpp
-OBJ		= $(SRC:.cpp=.o)
-INC		= Zombie.hpp
-COMP	= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
-RM		= rm -f
 
 all: $(NAME)
 

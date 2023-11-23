@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:14:07 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/12 17:47:21 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/23 17:59:42 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
-# include <iostream>
 
-// Implement a Weapon class that has:
-// • A private attribute type, which is a string.
-// • A getType() member function that returns a const reference to type.
-// • A setType() member function that sets type using the new one passed as parameter.
+# include <iostream>
+# include <cstdlib>
 
 // =====MACROS==================================================================
 
@@ -31,13 +28,14 @@
 
 class Weapon
 {
-private:
-	std::string	weaponType;
-public:
-	Weapon(std::string newType);
-	~Weapon(void);
-	std::string	&getType(void);
-	void		setType(std::string newType);
+	private:
+		std::string	weapon_type;
+
+	public:
+		Weapon(std::string new_type);
+		~Weapon(void);
+		std::string	&getType(void);
+		void		setType(std::string new_type);
 };
 
 #endif

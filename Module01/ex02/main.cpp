@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:16:29 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/12 16:14:03 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/23 15:51:03 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 
 int	main(void)
 {
@@ -25,4 +26,5 @@ int	main(void)
 	std::cout << string << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
+	return (EXIT_SUCCESS);
 }

@@ -1,9 +1,9 @@
 NAME	= brain	
-SRC		= main.cpp
 OBJ		= $(SRC:.cpp=.o)
 COMP	= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++14
 RM		= rm -f
+SRC		= main.cpp
 
 all: $(NAME)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:11:24 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/11 18:46:06 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:00:11 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include <stdlib.h>
 # include <iostream>
+# include <cstdlib>
 
 // =====MACROS==================================================================
 
@@ -30,13 +31,14 @@
 
 class Zombie
 {
-private:
-	std::string	name;
-public:
-	Zombie();
-	~Zombie();
-	void	setName(std::string newName);
-	void	announce(void);
+	private:
+		std::string	name;
+
+	public:
+		Zombie();
+		~Zombie();
+		void	setName(std::string new_name);
+		void	announce(void);
 };
 
 // =====FUNCTIONS===============================================================

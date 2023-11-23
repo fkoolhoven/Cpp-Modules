@@ -1,6 +1,6 @@
 NAME		= violence
 COMP		= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+FLAGS		= -Wall -Wextra -Werror -std=c++14
 RM			= rm -f
 INC_DIR		= inc
 SRC_DIR		= src
@@ -18,7 +18,7 @@ $(NAME): $(OBJ) $(INCLUDES)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(OBJ_DIR)
-	$(COMP) $(FLAGS) -c $< -o $@
+	$(COMP) -I $(INC_DIR) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM)r $(OBJ_DIR)

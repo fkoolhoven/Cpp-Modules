@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:31:26 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/25 20:13:32 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:05:05 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
-void	replace_string(std::ifstream &input_file, std::ofstream &output_file, char **argv)
+void replace_string(std::ifstream &input_file, std::ofstream &output_file, char **argv)
 {
 	std::string	line;
 	std::string old_string = argv[2];
