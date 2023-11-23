@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:33 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/11/22 19:27:29 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:08:43 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void	PhoneBook::SearchContact(void)
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << YELLOW "Choose a valid contact ID from the ID column: " OFF;
 	}
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	DisplaySpecificContact(index);
 }
 

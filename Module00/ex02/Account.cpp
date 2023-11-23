@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:56:01 by felicia           #+#    #+#             */
-/*   Updated: 2023/08/10 19:34:45 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:35:30 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int	Account::getNbWithdrawals(void)
 void	Account::_displayTimestamp(void)
 {
 	std::time_t	current_time;
-	std::tm		*time_info;
+	std::tm		*local_time;
 
-	current_time = std::time(nullptr);
-	time_info = std::localtime(&current_time);
-	std::cout << std::put_time(time_info, "[%Y%m%d%_%H%M%S] ");
+	std::time(&current_time);
+	local_time = std::localtime(&current_time);
+	std::cout << std::put_time(local_time, "[%Y%m%d_%H%M%S] ");
 }
 
 Account::Account(int initial_deposit)
@@ -56,12 +56,12 @@ Account::Account(int initial_deposit)
 	static int	index = 0;
 
 	_accountIndex = index;
+	index++;
 	_nbAccounts++;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
 	_amount = initial_deposit;
 	_totalAmount += initial_deposit;
-	index++;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";amount:" << _amount;

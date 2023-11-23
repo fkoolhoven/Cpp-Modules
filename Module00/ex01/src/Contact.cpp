@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:50 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/11/22 19:26:45 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/23 12:47:45 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	Contact::InputContactInfo(int index)
 {
 	std::string	user_input;
 
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	setIndex(index);
 	std::cout << YELLOW "Enter first name: " OFF;
 	std::getline(std::cin, user_input, '\n');
