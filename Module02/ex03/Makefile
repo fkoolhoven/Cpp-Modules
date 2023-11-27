@@ -1,12 +1,11 @@
 NAME		= BSP
 COMP		= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++11
+FLAGS		= -Wall -Wextra -Werror -std=c++14
 RM			= rm -f
-INC_DIR		= inc
-INCLUDES	= inc/Point.hpp
-SRC_DIR		= src
+INC			= inc
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
+SRC_DIR		= src
 SRC			= main.cpp \
 				Fixed.cpp \
 				Point.cpp
@@ -14,11 +13,11 @@ SRC			= main.cpp \
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
-	$(COMP) -I $(INCLUDES) $(OBJ) -o $(NAME)
+	$(COMP) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(OBJ_DIR)
-	$(COMP) $(FLAGS) -c $< -o $@
+	$(COMP) -I $(INC) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM)r $(OBJ_DIR)

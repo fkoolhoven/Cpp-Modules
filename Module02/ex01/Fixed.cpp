@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:57:06 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/30 16:01:10 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/27 18:18:14 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,30 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called\n";
+	std::cout << GREEN "Default constructor called\n" OFF;
 	fixed_point_number = 0;
 }
 
 Fixed::Fixed(const int int_number)
 {
-	std::cout << "Int constructor called\n";
+	std::cout << GREEN "Int constructor called\n" OFF;
 	fixed_point_number = int_number << fractional_bits;
 }
 
 Fixed::Fixed(const float float_number)
 {
-	std::cout << "Float constructor called\n";
+	std::cout << GREEN "Float constructor called\n" OFF;
 	fixed_point_number = roundf(float_number * (1 << fractional_bits));
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called\n";
+	std::cout << RED "Destructor called\n" OFF;
 }
 
 Fixed::Fixed(const Fixed& original)
 {
-	std::cout << "Copy constructor called\n";
+	std::cout << YELLOW "Copy constructor called\n" OFF;
 	if (this == &original)
 		 return ;
 	*this = original;
@@ -45,7 +45,7 @@ Fixed::Fixed(const Fixed& original)
 
 Fixed& Fixed::operator=(const Fixed& original)
 {
-	std::cout << "Copy assignment operator called\n";
+	std::cout << BLUE "Copy assignment operator called\n" OFF;
 	if (this == &original)
 		 return *this;
 	fixed_point_number = original.getRawBits();
@@ -77,7 +77,7 @@ int	Fixed::toInt(void) const
 	return (fixed_point_number >> fractional_bits);
 }
 
-std::ostream& operator<<(std::ostream &output_stream, Fixed const &to_print)
+std::ostream& operator<<(std::ostream& output_stream, Fixed const& to_print)
 {
 	output_stream << to_print.toFloat();
 	return (output_stream);

@@ -1,15 +1,14 @@
 NAME	= fixed
 COMP	= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++14
 RM		= rm -f
-INC		= Fixed.hpp
 OBJ		= $(SRC:.cpp=.o)
 SRC		= main.cpp Fixed.cpp
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(COMP) -I $(INC) $(OBJ) -o $(NAME)
+	$(COMP) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
 	$(COMP) $(FLAGS) -c $< -o $@

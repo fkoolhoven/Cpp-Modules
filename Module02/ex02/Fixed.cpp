@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:57:06 by felicia           #+#    #+#             */
-/*   Updated: 2023/08/01 14:12:14 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/27 18:29:53 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,21 @@
 // CONSTRUCTORS
 Fixed::Fixed()
 {
-	// std::cout << "Default constructor called\n";
 	fixed_point_number = 0;
 }
 
 Fixed::Fixed(const int int_number)
 {
-	// std::cout << "Int constructor called\n";
 	fixed_point_number = int_number << fractional_bits;
 }
 
 Fixed::Fixed(const float float_number)
 {
-	// std::cout << "Float constructor called\n";
 	fixed_point_number = roundf(float_number * (1 << fractional_bits));
 }
 
 Fixed::Fixed(const Fixed& original)
 {
-	// std::cout << "Copy constructor called\n";
 	if (this == &original)
 		 return ;
 	*this = original;
@@ -42,7 +38,6 @@ Fixed::Fixed(const Fixed& original)
 // COPY ASSIGNMENT OPERATOR
 Fixed& Fixed::operator=(const Fixed& original)
 {
-	// std::cout << "Copy assignment operator called\n";
 	if (this == &original)
 		 return *this;
 	this->fixed_point_number = original.getRawBits();
@@ -50,21 +45,16 @@ Fixed& Fixed::operator=(const Fixed& original)
 }
 
 // DESTRUCTOR
-Fixed::~Fixed()
-{
-	// std::cout << "Destructor called\n";
-}
+Fixed::~Fixed() { }
 
 // REGULAR PUBLIC MEMBER FUNCTIONS
 int	Fixed::getRawBits(void) const
 {
-	// std::cout << "getRawBits member function called\n";
 	return (this->fixed_point_number);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	// std::cout << "setRawBits member function called\n";
 	fixed_point_number = raw;
 }
 
@@ -82,7 +72,7 @@ int	Fixed::toInt(void) const
 }
 
 // MIN MAX MEMBER FUNCTIONS
-Fixed&	Fixed::min(Fixed &number1, Fixed &number2)
+Fixed& Fixed::min(Fixed& number1, Fixed& number2)
 {
 	if (number1 < number2)
 		return (number1);
@@ -90,7 +80,7 @@ Fixed&	Fixed::min(Fixed &number1, Fixed &number2)
 		return (number2);
 }
 
-const Fixed&	Fixed::min(Fixed const &number1, Fixed const &number2)
+const Fixed& Fixed::min(Fixed const& number1, Fixed const& number2)
 {
 	if (number1.toFloat() < number2.toFloat())
 		return (number1);
@@ -98,7 +88,7 @@ const Fixed&	Fixed::min(Fixed const &number1, Fixed const &number2)
 		return (number2);
 }
 
-Fixed&	Fixed::max(Fixed &number1, Fixed &number2)
+Fixed& Fixed::max(Fixed& number1, Fixed& number2)
 {
 	if (number1 > number2)
 		return (number1);
@@ -106,7 +96,7 @@ Fixed&	Fixed::max(Fixed &number1, Fixed &number2)
 		return (number2);
 }
 
-const Fixed&	Fixed::max(Fixed const &number1, Fixed const &number2)
+const Fixed& Fixed::max(Fixed const& number1, Fixed const& number2)
 {
 	if (number1.toFloat() > number2.toFloat())
 		return (number1);
@@ -115,28 +105,28 @@ const Fixed&	Fixed::max(Fixed const &number1, Fixed const &number2)
 }
 
 // ARITHMETIC OPERATOR OVERLOADING
-float	Fixed::operator+(Fixed const &instance)
+float Fixed::operator+(Fixed const& instance)
 {
 	return (this->toFloat() + instance.toFloat());
 }
 
-float	Fixed::operator-(Fixed const &instance)
+float Fixed::operator-(Fixed const& instance)
 {
 	return (this->toFloat() - instance.toFloat());
 }
 
-float	Fixed::operator*(Fixed const &instance)
+float Fixed::operator*(Fixed const& instance)
 {
 	return (this->toFloat() * instance.toFloat());
 }
 
-float	Fixed::operator/(Fixed const &instance)
+float Fixed::operator/(Fixed const& instance)
 {
 	return (this->toFloat() / instance.toFloat());
 }
 
 // COMPARISON OPERATOR OVERLOADING
-int	Fixed::operator>(Fixed const &instance)
+int	Fixed::operator>(Fixed const& instance)
 {
 	if (this->toFloat() > instance.toFloat())
 		return (1);
@@ -144,7 +134,7 @@ int	Fixed::operator>(Fixed const &instance)
 		return (0);
 }
 
-int	Fixed::operator<(Fixed const &instance)
+int	Fixed::operator<(Fixed const& instance)
 {
 	if (this->toFloat() < instance.toFloat())
 		return (1);
@@ -152,7 +142,7 @@ int	Fixed::operator<(Fixed const &instance)
 		return (0);	
 }
 
-int	Fixed::operator>=(Fixed const &instance)
+int	Fixed::operator>=(Fixed const& instance)
 {
 	if (this->toFloat() >= instance.toFloat())
 		return (1);
@@ -160,7 +150,7 @@ int	Fixed::operator>=(Fixed const &instance)
 		return (0);	
 }
 
-int	Fixed::operator<=(Fixed const &instance)
+int	Fixed::operator<=(Fixed const& instance)
 {
 	if (this->toFloat() <= instance.toFloat())
 		return (1);
@@ -168,7 +158,7 @@ int	Fixed::operator<=(Fixed const &instance)
 		return (0);	
 }
 
-int	Fixed::operator==(Fixed const &instance)
+int	Fixed::operator==(Fixed const& instance)
 {
 	if (this->toFloat() == instance.toFloat())
 		return (1);
@@ -176,7 +166,7 @@ int	Fixed::operator==(Fixed const &instance)
 		return (0);	
 }
 
-int	Fixed::operator!=(Fixed const &instance)
+int	Fixed::operator!=(Fixed const& instance)
 {
 	if (this->toFloat() != instance.toFloat())
 		return (1);
@@ -185,36 +175,36 @@ int	Fixed::operator!=(Fixed const &instance)
 }
 
 // INCREMENT/DECREMENT OPERATOR OVERLOADING (PRE)
-Fixed&	Fixed::operator++(void)
+Fixed& Fixed::operator++(void)
 {
 	this->fixed_point_number++;
 	return (*this);
 }
 
-Fixed&	Fixed::operator--(void)
+Fixed& Fixed::operator--(void)
 {
 	this->fixed_point_number--;
 	return (*this);
 }
 
 // INCREMENT/DECREMENT OPERATOR OVERLOADING (POST)
-Fixed	Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
-	Fixed	old(*this);
+	Fixed old(*this);
 
 	this->fixed_point_number++;
     return (old);
 }
 
-Fixed	Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
-	Fixed	old(*this);
+	Fixed old(*this);
 
 	this->fixed_point_number--;
     return (old);
 }
 
-std::ostream& operator<<(std::ostream &output_stream, Fixed const &to_print)
+std::ostream&	operator<<(std::ostream& output_stream, Fixed const& to_print)
 {
 	output_stream << to_print.toFloat();
 	return (output_stream);

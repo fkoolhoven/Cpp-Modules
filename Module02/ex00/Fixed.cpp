@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:57:06 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/29 14:22:56 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/27 17:17:27 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called\n";
-	number_value = 0;
+	std::cout << GREEN "Default constructor called\n" OFF;
+	fixed_point_number = 0;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called\n";
+	std::cout << RED "Destructor called\n" OFF;
 }
 
 Fixed::Fixed(const Fixed& original)
 {
-	std::cout << "Copy constructor called\n";
+	std::cout << YELLOW "Copy constructor called\n" OFF;
 	if (this == &original)
 		 return ;
 	*this = original;
@@ -33,21 +33,21 @@ Fixed::Fixed(const Fixed& original)
 
 Fixed& Fixed::operator=(const Fixed& original)
 {
-	std::cout << "Copy assignment operator called\n";
+	std::cout << BLUE "Copy assignment operator called\n" OFF;
 	if (this == &original)
 		 return *this;
-	number_value = original.getRawBits();
+	fixed_point_number = original.getRawBits();
 	return (*this);
 }
 		
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called\n";
-	return (number_value);
+	return (fixed_point_number);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called\n";
-	number_value = raw;
+	fixed_point_number = raw;
 }
