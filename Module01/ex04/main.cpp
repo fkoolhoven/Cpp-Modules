@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:31:26 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/27 13:59:08 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:35:27 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void ReplaceString(std::ifstream &input_file, std::ofstream &output_file, char *
 		}
 		output_file << line;
 		if (!input_file.eof())
-            output_file << std::endl;
+			output_file << std::endl;
     }
 }
 
