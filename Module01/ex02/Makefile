@@ -1,13 +1,13 @@
 NAME	= brain	
-OBJ		= $(SRC:.cpp=.o)
 COMP	= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++14
 RM		= rm -f
+OBJ		= $(SRC:.cpp=.o)
 SRC		= main.cpp
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INC)
+$(NAME): $(OBJ)
 	$(COMP) $(OBJ) -o $(NAME)
 
 %.o: %.cpp

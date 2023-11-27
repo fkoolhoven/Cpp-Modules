@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:01:01 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/23 15:19:25 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:03:37 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ class Harl
 	public:
 		Harl();
 		~Harl();
+		
 		void	complain(std::string level);
 };
+
+typedef void (Harl::*harl_complaints)(void); 

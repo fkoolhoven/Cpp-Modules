@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:00:59 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/23 18:12:03 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:26:34 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 int	main(int argc, char **argv)
 {
-	Harl	harl;
-
 	if (argc != 2)
 	{
-		std::cout << "Error: expecting two arguments.\n";
+		std::cerr << "Error: expecting two arguments.\n";
 		return (EXIT_FAILURE);
 	}
-	if (strcmp(argv[1], "debug") != 0 && strcmp(argv[1], "info") != 0 // use compare instead of strcmp?
-		&& strcmp(argv[1], "warning") != 0 && strcmp(argv[1], "error") != 0)
+	
+	Harl	harl;
+	std::string level = argv[1];
+	if (level != "debug" && level != "info" && level != "warning" && level != "error")
 	{
-		std::cout << RED "Error: expecting 'debug', 'info', "
-			"'warning' or 'error' as argument\n" OFF;
+		std::cerr << "Error: expecting 'debug', 'info', "
+			"'warning' or 'error' as argument\n";
 		return (EXIT_FAILURE);
 	}
-	harl.complain(argv[1]);
+	harl.complain(level);
 	return (EXIT_SUCCESS);
 }

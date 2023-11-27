@@ -6,12 +6,11 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:01:01 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/23 18:07:45 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:16:14 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string.h>
 #include <cstdlib>
 
 #define RED		"\033[31m"
@@ -31,5 +30,8 @@ class Harl
 	public:
 		Harl();
 		~Harl();
+		
 		void	complain(std::string level);
 };
+
+typedef void (Harl::*harl_complaints)(void); 
