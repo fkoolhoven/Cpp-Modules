@@ -6,13 +6,13 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:31:55 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/23 18:05:20 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:30:40 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string new_name) : weapon(nullptr)
+HumanB::HumanB(std::string new_name)
 {
 	name = new_name;
 	weapon = nullptr;
@@ -31,5 +31,8 @@ void HumanB::setWeapon(Weapon &new_weapon)
 
 void HumanB::attack(void)
 {
-	std::cout << name << " attacks with " << weapon->getType() << std::endl;
+	if (weapon == nullptr)
+		std::cout << name << " attacks with his bare fists because he doesn't have a weapon yet" << std::endl;
+	else
+		std::cout << name << " attacks with " << weapon->getType() << std::endl;
 } 

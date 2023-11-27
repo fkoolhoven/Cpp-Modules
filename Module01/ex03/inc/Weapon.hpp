@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:14:07 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/23 17:59:42 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:31:38 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class Weapon
 	public:
 		Weapon(std::string new_type);
 		~Weapon(void);
-		std::string	&getType(void);
-		void		setType(std::string new_type);
+		const std::string	&getType(void);
+		void				setType(std::string new_type);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:47:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/11/22 19:13:18 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:34:56 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Contact
 		std::string	nickname;
 		std::string	phone_number;
 		std::string	darkest_secret;
+
 	public:
 		Contact(void);
 		~Contact(void);

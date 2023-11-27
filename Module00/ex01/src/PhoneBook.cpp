@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:44:33 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/11/23 13:08:43 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:36:48 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,10 @@ void	PhoneBook::DisplaySpecificContact(int index)
 
 void	PhoneBook::DisplayAllContacts(void)
 {
-	int i;
-
 	std::cout << "\nID        |FIRST NAME| LAST NAME|  NICKNAME|\n";
 	std::cout << std::string(44, '-') << std::endl;
-	for (i = 0; i < 8 && contacts[i].getIndex() >= 0; i++)
+
+	for (int i = 0; i < 8 && contacts[i].getIndex() >= 0; i++)
 	{
 		std::cout << std::setw(10) << std::left << contacts[i].getIndex() << '|';
 		PrintContactInfo(contacts[i].getFirstName());

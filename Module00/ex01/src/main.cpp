@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:05:04 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/23 13:10:24 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:36:10 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ int	main(void)
 {
 	PhoneBook	phone_book;
 	std::string	command;
-	int			index;
+	int			index = 0;
 	
-	index = 0;
 	while (true)
 	{
 		std::cout << YELLOW "Please choose a command: ADD, SEARCH or EXIT.\n" OFF;

@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:18:57 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/23 18:05:24 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:17:05 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Weapon::~Weapon(void)
 	std::cout << RED"DESTRUCTED WEAPON\n" << OFF;
 }
 
-std::string	&Weapon::getType(void)
+const std::string	&Weapon::getType(void)
 {
 	return (weapon_type);
 }

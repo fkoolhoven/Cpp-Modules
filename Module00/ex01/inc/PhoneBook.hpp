@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 17:47:38 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/11/22 19:04:41 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:35:28 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ class PhoneBook
 {
 	private:
 		Contact	contacts[8];
+
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
+
 		void	SetContacts(Contact new_Contact, int i);
 		void	DisplayAllContacts(void);
 		void	DisplaySpecificContact(int contact_id);
