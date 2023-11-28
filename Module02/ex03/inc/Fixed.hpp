@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/28 16:56:06 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 22:20:16 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,26 @@ class Fixed
 		~Fixed();
 
 		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		void	setRawBits(const int raw);
 		float	toFloat(void) const;
 		int		toInt(void) const;
 
 		static Fixed&		min(Fixed& number1, Fixed& number2);
-		static const Fixed&	min(Fixed const& number1, Fixed const& number2);
+		static const Fixed&	min(const Fixed& number1, const Fixed& number2);
 		static Fixed&		max(Fixed& number1, Fixed& number2);
-		static const Fixed&	max(Fixed const& number1, Fixed const& number2);
+		static const Fixed&	max(const Fixed& number1, const Fixed& number2);
 		
-		float	operator+(Fixed const& instance);
-		float	operator-(Fixed const& instance);
-		float	operator*(Fixed const& instance);
-		float	operator/(Fixed const& instance);
+		float	operator+(const Fixed& instance) const;
+		float	operator-(const Fixed& instance) const;
+		float	operator*(const Fixed& instance) const;
+		float	operator/(const Fixed& instance) const;
 	
-		bool	operator>(Fixed const& instance);
-		bool	operator<(Fixed const& instance);
-		bool	operator>=(Fixed const& instance);
-		bool	operator<=(Fixed const& instance);
-		bool	operator==(Fixed const& instance);
-		bool	operator!=(Fixed const& instance);
+		bool	operator>(const Fixed& instance) const; 
+		bool	operator<(const Fixed& instance) const;
+		bool	operator>=(const Fixed& instance) const;
+		bool	operator<=(const Fixed& instance) const;
+		bool	operator==(const Fixed& instance) const;
+		bool	operator!=(const Fixed& instance) const;
 
 		Fixed&	operator++();
 		Fixed&	operator--();
@@ -58,6 +58,6 @@ class Fixed
 		Fixed	operator--(int);
 };
 
-std::ostream&	operator<<(std::ostream& o, Fixed const& instance);
+std::ostream& operator<<(std::ostream& o, Fixed const& instance);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:57:06 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/28 16:26:23 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 21:52:36 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Fixed& Fixed::operator=(const Fixed& original)
 {
 	std::cout << BLUE "Copy assignment operator called\n" OFF;
 	if (this == &original)
-		 return *this;
+		 return (*this);
 	fixed_point_number = original.getRawBits();
 	return (*this);
 }
@@ -58,13 +58,13 @@ int	Fixed::getRawBits(void) const
 	return (fixed_point_number);
 }
 
-void	Fixed::setRawBits(int const raw)
+void Fixed::setRawBits(const int raw)
 {
 	std::cout << "setRawBits member function called\n";
 	fixed_point_number = raw;
 }
 
-float	Fixed::toFloat(void) const
+float Fixed::toFloat(void) const
 {
 	float float_representation = static_cast<float>(fixed_point_number);
 	return (float_representation / (1 << fractional_bits));

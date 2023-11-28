@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Claptrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:13:00 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/14 17:19:02 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/08/16 17:47:40 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 ClapTrap::ClapTrap()
 {
+	HitPoints = 10;
+	EnergyPoints = 10;
+	AttackDamage = 0;
 	std::cout << GREEN"Default constructor was called\n";
 }
 

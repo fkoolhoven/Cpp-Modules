@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 14:22:50 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/27 18:36:58 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 22:20:01 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@
 class Point
 {
 	private:
-		Fixed const	x;
-		Fixed const	y;
+		const Fixed x;
+		const Fixed y;
 		
 	public:	
 		Point();
-		Point(float const number1, float const number2);
+		Point(const float number1, const float number2);
 		Point(const Point& original);
 		Point& operator=(const Point& original);
 		~Point();
 
-		Fixed const&	getX() const;
-		Fixed const& 	getY() const;
-		void			setX(Fixed const &original);
-		void			setY(Fixed const &original);
+		const Fixed&	getX() const;
+		const Fixed& 	getY() const;
+		void			setX(const Fixed& original);
+		void			setY(const Fixed& original);
 };
 
 #endif

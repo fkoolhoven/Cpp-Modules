@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:51:46 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/28 17:05:48 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 22:06:39 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@ int main(void)
 	Fixed f(10.51f);
 
 	std::cout << BOLD GREEN "\nTESTING ARITHMETIC OPERATORS" OFF << std::endl;
-	std::cout << (f + f) << " should be around 21.02" << std::endl;
-	std::cout << (f - f) << " should be 0" << std::endl;
-	std::cout << (f * f) << " should be around 110.46" << std::endl;
-	std::cout << (f / f) << " should be 1" << std::endl << std::endl;
+	std::cout << f << " + " << f << " = " << (f + f) << std::endl;
+	std::cout << f << " - " << f << " = " << (f - f) << std::endl;
+	std::cout << f << " * " << f << " = " << (f * f) << std::endl;
+	std::cout << f << " / " << f << " = " << (f / f) << std::endl;
+	std::cout << c << " + " << c << " = " << (c + c) << std::endl;
+	std::cout << c << " - " << c << " = " << (c - c) << std::endl;
+	std::cout << c << " * " << c << " = " << (c * c) << std::endl;
+	std::cout << c << " / " << c << " = " << (c / c) << std::endl << std::endl;
+	
 
 	f = 10;
 
@@ -59,10 +64,10 @@ int main(void)
 	std::cout << --a << std::endl << std::endl;
 
 	std::cout << BOLD GREEN "TESTING MIN AND MAX\n" OFF ;
-	std::cout << Fixed::max(a, b) << " because it's bigger than " << a << std::endl;
-	std::cout << Fixed::max(c, e) << " because it's bigger than " << e << std::endl;
-	std::cout << Fixed::min(a, b) << " because it's smaller than " << b << std::endl;
-	std::cout << Fixed::min(c, e) << " because it's smaller than " << c << std::endl << std::endl;
+	std::cout << Fixed::max(a, b) << " is bigger than " << a << std::endl;
+	std::cout << Fixed::max(c, e) << " is bigger than " << e << std::endl;
+	std::cout << Fixed::min(a, b) << " is smaller than " << b << std::endl;
+	std::cout << Fixed::min(c, e) << " is smaller than " << c << std::endl << std::endl;
 
 	return (EXIT_SUCCESS);
 }
