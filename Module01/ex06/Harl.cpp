@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:01:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/27 16:30:01 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:18:00 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ void	Harl::complain(std::string level)
 			(this->*functions[2])();
 		case (3):
 			(this->*functions[3])();
+		default:
+			std::cout << "Probably complaining about insignificant problems\n";
 	}
 }
