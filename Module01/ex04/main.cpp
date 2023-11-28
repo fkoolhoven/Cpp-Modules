@@ -6,34 +6,33 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:31:26 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/27 16:35:27 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:33:20 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <sstream>
 
 void ReplaceString(std::ifstream &input_file, std::ofstream &output_file, char **argv)
 {
-	std::string	line;
-	std::string old_string = argv[2];
-	std::string new_string = argv[3];
-	std::size_t	position;
+    std::stringstream buffer;
+    buffer << input_file.rdbuf();
 
-	while (std::getline(input_file, line)) 
+    std::string content = buffer.str();
+    std::string old_string = argv[2];
+    std::string new_string = argv[3];
+
+    std::size_t position = content.find(old_string);
+
+    while (position != std::string::npos)
 	{
-		position = line.find(old_string);
-		while (position != std::string::npos)
-		{
-			line.erase(position, old_string.length());
-			line.insert(position, new_string);
-			position = line.find(old_string, position + new_string.length());
-		}
-		output_file << line;
-		if (!input_file.eof())
-			output_file << std::endl;
+        content.erase(position, old_string.length());
+        content.insert(position, new_string);
+        position = content.find(old_string, position + new_string.length());
     }
+    output_file << content;
 }
 
 int	main(int argc, char **argv)
