@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:31:26 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/28 12:33:20 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:17:59 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <sstream>
 
-void ReplaceString(std::ifstream &input_file, std::ofstream &output_file, char **argv)
+void ReplaceString(std::ifstream& input_file, std::ofstream& output_file, char **argv)
 {
     std::stringstream buffer;
     buffer << input_file.rdbuf();
