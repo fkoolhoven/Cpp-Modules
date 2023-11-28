@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:57:06 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/27 18:18:14 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:26:23 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Fixed::Fixed(const Fixed& original)
 {
 	std::cout << YELLOW "Copy constructor called\n" OFF;
 	if (this == &original)
-		 return ;
+		 return;
 	*this = original;
 }
 
@@ -66,9 +66,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	float	float_representation;
-
-	float_representation = float(fixed_point_number);
+	float float_representation = static_cast<float>(fixed_point_number);
 	return (float_representation / (1 << fractional_bits));
 }
 

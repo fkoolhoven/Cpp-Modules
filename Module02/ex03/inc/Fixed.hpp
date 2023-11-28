@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/27 18:37:05 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:56:06 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ class Fixed
 		float	operator*(Fixed const& instance);
 		float	operator/(Fixed const& instance);
 	
-		int		operator>(Fixed const& instance);
-		int		operator<(Fixed const& instance);
-		int		operator>=(Fixed const& instance);
-		int		operator<=(Fixed const& instance);
-		int		operator==(Fixed const& instance);
-		int		operator!=(Fixed const& instance);
+		bool	operator>(Fixed const& instance);
+		bool	operator<(Fixed const& instance);
+		bool	operator>=(Fixed const& instance);
+		bool	operator<=(Fixed const& instance);
+		bool	operator==(Fixed const& instance);
+		bool	operator!=(Fixed const& instance);
 
 		Fixed&	operator++();
 		Fixed&	operator--();

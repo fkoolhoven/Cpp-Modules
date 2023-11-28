@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:57:06 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/27 18:29:39 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:56:39 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,52 +126,52 @@ float Fixed::operator/(Fixed const& instance)
 }
 
 // COMPARISON OPERATOR OVERLOADING
-int	Fixed::operator>(Fixed const& instance)
+bool Fixed::operator>(Fixed const& instance)
 {
 	if (this->toFloat() > instance.toFloat())
-		return (1);
+		return (true);
 	else
-		return (0);
+		return (false);
 }
 
-int	Fixed::operator<(Fixed const& instance)
+bool Fixed::operator<(Fixed const& instance)
 {
 	if (this->toFloat() < instance.toFloat())
-		return (1);
+		return (true);
 	else
-		return (0);	
+		return (false);	
 }
 
-int	Fixed::operator>=(Fixed const& instance)
+bool Fixed::operator>=(Fixed const& instance)
 {
 	if (this->toFloat() >= instance.toFloat())
-		return (1);
+		return (true);
 	else
-		return (0);	
+		return (false);	
 }
 
-int	Fixed::operator<=(Fixed const& instance)
+bool Fixed::operator<=(Fixed const& instance)
 {
 	if (this->toFloat() <= instance.toFloat())
-		return (1);
+		return (true);
 	else
-		return (0);	
+		return (false);	
 }
 
-int	Fixed::operator==(Fixed const& instance)
+bool Fixed::operator==(Fixed const& instance)
 {
 	if (this->toFloat() == instance.toFloat())
-		return (1);
+		return (true);
 	else
-		return (0);	
+		return (false);	
 }
 
-int	Fixed::operator!=(Fixed const& instance)
+bool Fixed::operator!=(Fixed const& instance)
 {
 	if (this->toFloat() != instance.toFloat())
-		return (1);
+		return (true);
 	else
-		return (0);	
+		return (false);	
 }
 
 // INCREMENT/DECREMENT OPERATOR OVERLOADING (PRE)
@@ -204,7 +204,7 @@ Fixed Fixed::operator--(int)
     return (old);
 }
 
-std::ostream&	operator<<(std::ostream& output_stream, Fixed const& to_print)
+std::ostream& operator<<(std::ostream& output_stream, Fixed const& to_print)
 {
 	output_stream << to_print.toFloat();
 	return (output_stream);

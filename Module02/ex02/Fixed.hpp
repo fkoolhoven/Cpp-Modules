@@ -6,18 +6,23 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/27 18:37:12 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:55:57 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <math.h>
 
+# define BOLD	"\033[1m"
+# define GREEN 	"\033[32m"
+# define OFF	"\033[0m"
+
 class Fixed
 {
 	private:
 		int					fixed_point_number;
 		static const int	fractional_bits = 8;
+		
 	public:
 		Fixed();
 		Fixed(const int int_number);
@@ -41,16 +46,17 @@ class Fixed
 		float	operator*(Fixed const& instance);
 		float	operator/(Fixed const& instance);
 	
-		int		operator>(Fixed const& instance);
-		int		operator<(Fixed const& instance);
-		int		operator>=(Fixed const& instance);
-		int		operator<=(Fixed const& instance);
-		int		operator==(Fixed const& instance);
-		int		operator!=(Fixed const& instance);
+		bool	operator>(Fixed const& instance);
+		bool	operator<(Fixed const& instance);
+		bool	operator>=(Fixed const& instance);
+		bool	operator<=(Fixed const& instance);
+		bool	operator==(Fixed const& instance);
+		bool	operator!=(Fixed const& instance);
 
 		Fixed&	operator++();
 		Fixed&	operator--();
 		Fixed	operator++(int);
 		Fixed	operator--(int);
 };	
+
 std::ostream&	operator<<(std::ostream& o, Fixed const& instance);
