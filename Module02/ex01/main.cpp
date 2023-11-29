@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:51:46 by felicia           #+#    #+#             */
-/*   Updated: 2023/07/30 15:49:45 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/29 15:46:27 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(void)
 	Fixed const	d(b);
 
 	a = Fixed(1234.4321f);
+	// b = Fixed (1234.4321f); // This will give an error because b is const
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;

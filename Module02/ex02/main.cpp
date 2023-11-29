@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:51:46 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/28 22:06:39 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/29 15:57:31 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int main(void)
 {
-	Fixed c(10);
-	Fixed d(30);
-	Fixed e(5);
-	Fixed f(10.51f);
+	const Fixed c(10);
+	const Fixed d(30);
+	const Fixed e(5);
+	Fixed 		f(10.51f);
 
 	std::cout << BOLD GREEN "\nTESTING ARITHMETIC OPERATORS" OFF << std::endl;
 	std::cout << f << " + " << f << " = " << (f + f) << std::endl;
@@ -27,9 +27,9 @@ int main(void)
 	std::cout << c << " + " << c << " = " << (c + c) << std::endl;
 	std::cout << c << " - " << c << " = " << (c - c) << std::endl;
 	std::cout << c << " * " << c << " = " << (c * c) << std::endl;
-	std::cout << c << " / " << c << " = " << (c / c) << std::endl << std::endl;
+	std::cout << c << " / " << c << " = " << (c / c) << std::endl;
+	std::cout << c << " / 3 = " << (c / 3) << std::endl << std::endl;
 	
-
 	f = 10;
 
 	std::cout << BOLD GREEN "TESTING COMPARISON OPERATORS\n" OFF;
@@ -64,9 +64,11 @@ int main(void)
 	std::cout << --a << std::endl << std::endl;
 
 	std::cout << BOLD GREEN "TESTING MIN AND MAX\n" OFF ;
+	// These use the const version because b is const:
 	std::cout << Fixed::max(a, b) << " is bigger than " << a << std::endl;
-	std::cout << Fixed::max(c, e) << " is bigger than " << e << std::endl;
 	std::cout << Fixed::min(a, b) << " is smaller than " << b << std::endl;
+	// These use the non const version because c and e are not const:
+	std::cout << Fixed::max(c, e) << " is bigger than " << e << std::endl;
 	std::cout << Fixed::min(c, e) << " is smaller than " << c << std::endl << std::endl;
 
 	return (EXIT_SUCCESS);

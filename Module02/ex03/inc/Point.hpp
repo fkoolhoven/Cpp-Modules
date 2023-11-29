@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 14:22:50 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/28 22:20:01 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/29 15:13:01 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define RED	"\033[31m"
 # define GREEN 	"\033[32m"
+# define YELLOW "\033[33m"
 # define OFF	"\033[0m"
 
 class Point

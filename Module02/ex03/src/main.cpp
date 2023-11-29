@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 14:35:52 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/28 22:37:46 by felicia          ###   ########.fr       */
+/*   Updated: 2023/11/29 15:19:28 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
-
-void	PrintResultMessage(bool part_of_triangle)
-{
-	if (part_of_triangle)
-		std::cout << GREEN "YES! Point is part of tiangle.\n" OFF;
-	else
-		std::cout << RED "NO! Point is not part of triangle.\n" OFF;
-}
 
 float CalculateTriangleSurface(const Point& point1, const Point& point2, const Point& point3)
 {
@@ -46,14 +38,23 @@ bool BSP(const Point a, const Point b, const Point c, const Point point)
 	return (triangle1 + triangle2 + triangle3 == full_triangle);
 }
 
-void RunTest(int x, int y, const Point& a, const Point& b, const Point& c)
+void RunTest(float x, float y, const Point& a, const Point& b, const Point& c)
 {
 	Point check(x, y);
-	bool part_of_triangle;
 
 	std::cout << "\nChecking if x" << check.getX() << ", y" << check.getY() << " is part of the triangle.\n";
-	part_of_triangle = BSP(a, b, c, check);
-	PrintResultMessage(part_of_triangle);
+	if (BSP(a, b, c, check))
+		std::cout << GREEN "YES! Point is part of tiangle.\n" OFF;
+	else
+		std::cout << RED "NO! Point is not part of triangle.\n" OFF;
+}
+
+void PrintTriangleCorners(const Point& a, const Point& b, const Point& c)
+{
+	std::cout << std::endl << YELLOW;
+	std::cout << "Triangle corner 1: x" << a.getX() << ", y" << a.getY() << std::endl;
+	std::cout << "Triangle corner 2: x" << b.getX() << ", y" << b.getY() << std::endl;
+	std::cout << "Triangle corner 3: x" << c.getX() << ", y" << c.getY() << std::endl << OFF;
 }
 
 int	main(void)
@@ -62,17 +63,26 @@ int	main(void)
 	Point b(5, 0);
 	Point c(0, 5);
 
-	std::cout << std::endl;
-	std::cout << "Triangle corner 1: x" << a.getX() << ", y" << a.getY() << std::endl;
-	std::cout << "Triangle corner 2: x" << b.getX() << ", y" << b.getY() << std::endl;
-	std::cout << "Triangle corner 3: x" << c.getX() << ", y" << c.getY() << std::endl;
-	
+	PrintTriangleCorners(a, b, c);
 	RunTest(0, 0, a, b, c);
 	RunTest(0, 3, a, b, c);
 	RunTest(-1, 0, a, b, c);
 	RunTest(2, 2, a, b, c);
 	RunTest(1, 2, a, b, c);
 	RunTest(3, 1, a, b, c);
+
+	a.setX(Fixed(-10.23f)); a.setY(Fixed(-5.54f));
+	b.setX(Fixed(23.55f)); b.setY(Fixed(-7.72f));
+	c.setX(Fixed(-1.23f)); c.setY(Fixed(14.98f));
+	
+	PrintTriangleCorners(a, b, c);
+	RunTest(-10.23, -5.54, a, b, c);
+	RunTest(23.55, -7.72, a, b, c); 
+	RunTest(99, 200, a, b, c); 
+	RunTest(-5, -5, a, b, c); 
+	RunTest(0, 0, a, b, c); 
+	RunTest(10.5, 3.4, a, b, c); 
+
 	std::cout << std::endl;
 	return (EXIT_SUCCESS);
 }
