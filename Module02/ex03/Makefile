@@ -10,7 +10,7 @@ SRC			= main.cpp Fixed.cpp Point.cpp
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDES)
+$(NAME): $(OBJ)
 	$(COMP) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
