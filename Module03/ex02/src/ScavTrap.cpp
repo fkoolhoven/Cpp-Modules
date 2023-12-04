@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:19 by felicia           #+#    #+#             */
-/*   Updated: 2023/12/04 17:21:01 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:20:44 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ScavTrap::ScavTrap(std::string init_name) : ClapTrap::ClapTrap(init_name)
 
 ScavTrap::ScavTrap(const ScavTrap &original) : ClapTrap::ClapTrap(original)
 {
-	std::cout << GREEN "Copy of ScavTrap " << original.name << " was constructed\n" OFF;
+	std::cout << GREEN "ScavTrap copy constructor called for " << original.name << OFF << std::endl;
 	*this = original;
 }
 

@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:12:57 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/04 14:39:15 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:22:53 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,31 @@ int	main(void)
 {
 	std::cout << YELLOW BOLD "\nDefault constructor and destructor\n" OFF;
 	{
-		ClapTrap	NoName;
+		ClapTrap NoName;
 	}
 	
 	std::cout << YELLOW BOLD "\nName constructor and destructor\n" OFF;
 	{
-		ClapTrap	BoJack("BoJack");
+		ClapTrap BoJack("BoJack");
 	}
 
 	std::cout << YELLOW BOLD "\nCopy constructor and copy assignment operator\n" OFF;
 	{
-		ClapTrap	Todd1("Todd");
-		ClapTrap	Todd2(Todd1);
-		ClapTrap	Todd3 = Todd2;
+		ClapTrap Todd1("Todd");
+		Todd1.setAttackDamage(15);
+		ClapTrap Todd2(Todd1);
+		ClapTrap Todd3;
+		Todd3 = Todd2;
+
+		std::cout << "Todd1's attack damage is " << Todd1.getAttackDamage() << std::endl;
+		std::cout << "Todd2's attack damage is " << Todd2.getAttackDamage() << std::endl;
+		std::cout << "Todd3's attack damage is " << Todd3.getAttackDamage() << std::endl;
 	}
 
 	std::cout << YELLOW BOLD "\nFight between Claptraps where Margot dies\n" OFF;
 	{
-		ClapTrap	Beatrice("Beatrice");
-		ClapTrap	Margot("Margot");
+		ClapTrap Beatrice("Beatrice");
+		ClapTrap Margot("Margot");
 	
 		Beatrice.setAttackDamage(5);
 		Beatrice.Attack("Margot");
@@ -46,8 +52,8 @@ int	main(void)
 
 	std::cout << YELLOW BOLD "\nFight between Claptraps where Beatrice runs out of energy points\n" OFF;
 	{
-		ClapTrap	Beatrice("Beatrice");
-		ClapTrap	Margot("Margot");
+		ClapTrap Beatrice("Beatrice");
+		ClapTrap Margot("Margot");
 	
 		Margot.setAttackDamage(9);
 		Margot.Attack("Beatrice");

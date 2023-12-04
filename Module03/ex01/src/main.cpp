@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:12:57 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/04 16:54:34 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:34:53 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(void)
 		Lenny1.setAttackDamage(15);
 		Lenny1.GuardGate();
 		ScavTrap Lenny2(Lenny1);
+		
 		std::cout << "Lenny1's attack damage is " << Lenny1.getAttackDamage() << std::endl;
 		std::cout << "Lenny2's attack damage is " << Lenny2.getAttackDamage() << std::endl;
 		Lenny1.GuardGate();
@@ -46,7 +47,9 @@ int	main(void)
 		ScavTrap Barry1("Barry1");
 		Barry1.setAttackDamage(15);
 		Barry1.GuardGate();
-		ScavTrap Barry2 = Barry1;
+		ScavTrap Barry2;
+		Barry2 = Barry1;
+		
 		std::cout << "Barry1's attack damage is " << Barry1.getAttackDamage() << std::endl;
 		std::cout << "Barry2's attack damage is " << Barry2.getAttackDamage() << std::endl;
 		Barry1.GuardGate();
