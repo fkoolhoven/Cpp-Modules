@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/28 21:52:15 by felicia          ###   ########.fr       */
+/*   Updated: 2023/12/04 14:40:01 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 
 #define RED		"\033[31m"
 #define GREEN 	"\033[32m"

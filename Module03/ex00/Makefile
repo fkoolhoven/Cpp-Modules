@@ -1,6 +1,6 @@
 NAME	= claptrap
 COMP	= c++
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -std=c++14
 RM		= rm -f
 INC		= ClapTrap.hpp
 OBJ		= $(SRC:.cpp=.o)

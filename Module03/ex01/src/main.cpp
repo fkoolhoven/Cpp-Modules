@@ -3,115 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:12:57 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/16 17:49:56 by felicia          ###   ########.fr       */
+/*   Updated: 2023/12/04 16:54:34 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ClapTrap.hpp"
-#include "../inc/ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	std::cout << YELLOW"\nTEST default constructor and destructor\n" << OFF;
-	{
-		ClapTrap	NoName;
-	}
-	
-	std::cout << YELLOW"\nTEST name constructor and destructor\n" << OFF;
-	{
-		ClapTrap	BoJack("BoJack");
-	}
-
-	std::cout << YELLOW"\nTEST copy constructor and copy assignment operator\n" << OFF;
-	{
-		
-		ClapTrap	Todd1("Todd");
-		ClapTrap	Todd2(Todd1);
-		ClapTrap	Todd3 = Todd2;
-	}
-
-	std::cout << YELLOW"\nTEST fight between Claptraps where Beatrice runs out of hit points\n" << OFF;
-	{
-		ClapTrap	Beatrice("Beatrice");
-		ClapTrap	Margot("Margot");
-	
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(8);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Margot.beRepaired(1);
-		Margot.beRepaired(3);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(10);
-		Beatrice.attack("Margot");
-	}
-
-	std::cout << YELLOW"\nTEST fight between Claptraps where Beatrice runs out of energy points\n" << OFF;
-	{
-		ClapTrap	Beatrice("Beatrice");
-		ClapTrap	Margot("Margot");
-	
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(1);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(1);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(1);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(1);
-		Beatrice.beRepaired(1);
-		Beatrice.beRepaired(1);
-		Beatrice.beRepaired(1);
-		Beatrice.beRepaired(1);
-		Beatrice.beRepaired(1);
-		Beatrice.attack("Margot");
-	}
-
-	std::cout << YELLOW"\nTEST ScavTrap default constructor\n" << OFF;
+	std::cout << YELLOW BOLD "\nScavTrap default constructor + destructor\n" OFF;
 	{
 		ScavTrap	scav;
 	}
 	
-	std::cout << YELLOW"\nTEST ScavTrap name constructor + gate function\n" << OFF;
+	std::cout << YELLOW BOLD "\nScavTrap name constructor + gate function\n" OFF;
 	{
 		ScavTrap	Princess("Princess");
 
-		Princess.guardGate();
+		Princess.GuardGate();
+		Princess.GuardGate();
+		Princess.GuardGate();
 	}
 
-		std::cout << YELLOW"\nTEST ScavTrap copy constructor and copy assignment operator\n" << OFF;
+	std::cout << YELLOW BOLD "\nScavTrap copy constructor\n" OFF;
 	{
-		
-		ScavTrap	Lenny1("Lenny");
-		ScavTrap	Lenny2 = Lenny1;
-		// ScavTrap	Lenny2(Lenny1);
-		// ScavTrap	Lenny3 = Lenny2;
+		ScavTrap Lenny1("Lenny");
+		Lenny1.setAttackDamage(15);
+		Lenny1.GuardGate();
+		ScavTrap Lenny2(Lenny1);
+		std::cout << "Lenny1's attack damage is " << Lenny1.getAttackDamage() << std::endl;
+		std::cout << "Lenny2's attack damage is " << Lenny2.getAttackDamage() << std::endl;
+		Lenny1.GuardGate();
+		Lenny2.GuardGate();
 	}
 
-	std::cout << YELLOW"\nTEST fight between ScavTrap and ClapTrap\n" << OFF;
+	std::cout << YELLOW BOLD "\nScavTrap copy assignment operator\n" OFF;
+	{
+		ScavTrap Barry1("Barry1");
+		Barry1.setAttackDamage(15);
+		Barry1.GuardGate();
+		ScavTrap Barry2 = Barry1;
+		std::cout << "Barry1's attack damage is " << Barry1.getAttackDamage() << std::endl;
+		std::cout << "Barry2's attack damage is " << Barry2.getAttackDamage() << std::endl;
+		Barry1.GuardGate();
+		Barry2.GuardGate();
+	}
+
+	std::cout << YELLOW BOLD "\nFight between ScavTrap and ClapTrap\n" OFF;
 	{
 		ScavTrap	scavtrap("Scav");
 		ClapTrap	claptrap("Clap");
 
-		scavtrap.attack("Clap");
-		claptrap.takeDamage(scavtrap.getAttackDamage());
-		claptrap.attack("Scav");
-		scavtrap.takeDamage(claptrap.getAttackDamage());
-		scavtrap.beRepaired(10);
+		scavtrap.setAttackDamage(5);
+		claptrap.setAttackDamage(51);
+		scavtrap.Attack("Clap");
+		claptrap.TakeDamage(scavtrap.getAttackDamage());
+		claptrap.Attack("Scav");
+		scavtrap.TakeDamage(claptrap.getAttackDamage());
+		scavtrap.BeRepaired(1);
+		claptrap.Attack("Scav");
+		scavtrap.TakeDamage(claptrap.getAttackDamage());
+		scavtrap.BeRepaired(1);
 	}
 }

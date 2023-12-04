@@ -1,21 +1,21 @@
-NAME	= claptrap
-COMP	= c++
-FLAGS	= -Wall -Wextra -Werror
-RM		= rm -f
-INC		= inc/ScavTrap.hpp
-SRC_DIR	= src
-OBJ_DIR	= obj
-OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
-SRC		= main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME		= scavtrap
+COMP		= c++
+FLAGS		= -Wall -Wextra -Werror -std=c++14
+RM			= rm -f
+INC			= inc
+OBJ_DIR		= obj
+OBJ			= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
+SRC_DIR		= src
+SRC			= main.cpp ClapTrap.cpp ScavTrap.cpp
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INC)
-	$(COMP) -I $(INC) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ)
+	$(COMP) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(OBJ_DIR)
-	$(COMP) $(FLAGS) -c $< -o $@
+	$(COMP) -I $(INC) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM)r $(OBJ_DIR)

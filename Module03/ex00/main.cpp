@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:12:57 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/14 17:22:27 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:39:15 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,70 +14,55 @@
 
 int	main(void)
 {
-	std::cout << YELLOW"\nTEST default constructor and destructor\n" << OFF;
+	std::cout << YELLOW BOLD "\nDefault constructor and destructor\n" OFF;
 	{
 		ClapTrap	NoName;
 	}
 	
-	std::cout << YELLOW"\nTEST name constructor and destructor\n" << OFF;
+	std::cout << YELLOW BOLD "\nName constructor and destructor\n" OFF;
 	{
 		ClapTrap	BoJack("BoJack");
 	}
 
-	std::cout << YELLOW"\nTEST copy constructor and copy assignment operator\n" << OFF;
+	std::cout << YELLOW BOLD "\nCopy constructor and copy assignment operator\n" OFF;
 	{
-		
 		ClapTrap	Todd1("Todd");
 		ClapTrap	Todd2(Todd1);
 		ClapTrap	Todd3 = Todd2;
 	}
 
-	std::cout << YELLOW"\nTEST fight between Claptraps where Beatrice runs out of hit points\n" << OFF;
+	std::cout << YELLOW BOLD "\nFight between Claptraps where Margot dies\n" OFF;
 	{
 		ClapTrap	Beatrice("Beatrice");
 		ClapTrap	Margot("Margot");
 	
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(8);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Margot.beRepaired(1);
-		Margot.beRepaired(3);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(10);
-		Beatrice.attack("Margot");
+		Beatrice.setAttackDamage(5);
+		Beatrice.Attack("Margot");
+		Margot.TakeDamage(Beatrice.getAttackDamage());
+		Beatrice.Attack("Margot");
+		Margot.TakeDamage(Beatrice.getAttackDamage());
+		Margot.Attack("Beatrice");
 	}
 
-	std::cout << YELLOW"\nTEST fight between Claptraps where Beatrice runs out of energy points\n" << OFF;
+	std::cout << YELLOW BOLD "\nFight between Claptraps where Beatrice runs out of energy points\n" OFF;
 	{
 		ClapTrap	Beatrice("Beatrice");
 		ClapTrap	Margot("Margot");
 	
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Beatrice.attack("Margot");
-		Margot.takeDamage(1);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(1);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(1);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(1);
-		Margot.attack("Beatrice");
-		Beatrice.takeDamage(1);
-		Beatrice.beRepaired(1);
-		Beatrice.beRepaired(1);
-		Beatrice.beRepaired(1);
-		Beatrice.beRepaired(1);
-		Beatrice.beRepaired(1);
-		Beatrice.attack("Margot");
+		Margot.setAttackDamage(9);
+		Margot.Attack("Beatrice");
+		Beatrice.TakeDamage(Margot.getAttackDamage());
+		for (int i = 0; i <= Margot.getAttackDamage(); i++)
+			Beatrice.BeRepaired(1);
+		Beatrice.Attack("Margot");
+		Beatrice.BeRepaired(1);
+
+		std::cout << YELLOW BOLD "and Margot finishes the job...\n" OFF;
+		Margot.Attack("Beatrice");
+		Beatrice.TakeDamage(Margot.getAttackDamage());
+		Margot.Attack("Beatrice");
+		Beatrice.TakeDamage(Margot.getAttackDamage());
+		Beatrice.Attack("Margot");
 	}
+	return (EXIT_SUCCESS);
 }

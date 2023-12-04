@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:19 by felicia           #+#    #+#             */
-/*   Updated: 2023/08/16 17:54:38 by felicia          ###   ########.fr       */
+/*   Updated: 2023/12/04 16:54:10 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,56 +14,60 @@
 
 ScavTrap::ScavTrap() : ClapTrap::ClapTrap()
 {
-	HitPoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
-	std::cout << GREEN"Default ScavTrap constructor was called\n" << OFF;
+	hit_points = 100;
+	energy_points = 50;
+	attack_damage = 20;
+	guarding_gate = false;
+	std::cout << GREEN "Default ScavTrap constructor was called\n" OFF;
 }
 
 ScavTrap::ScavTrap(std::string init_name) : ClapTrap::ClapTrap(init_name)
 {
-	std::cout << GREEN"ScavTrap " << Name << " was constructed\n" << OFF;
+	hit_points = 100;
+	energy_points = 50;
+	attack_damage = 20;
+	guarding_gate = false;
+	std::cout << GREEN "ScavTrap " << name << " was constructed\n" OFF;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &original) : ClapTrap::ClapTrap(original)
 {
-	std::cout << GREEN"ScavTrap copy constructor called for " << original.Name << OFF << std::endl;
+	std::cout << GREEN "ScavTrap copy constructor called for " << original.name << OFF << std::endl;
 	*this = original;
 }
 
-ScavTrap&	ScavTrap::operator=(const ScavTrap &original)
+ScavTrap& ScavTrap::operator=(const ScavTrap &original)
 {
-	std::cout << GREEN"ScavTrap copy assignment operator called for " << this->Name << OFF << std::endl;
+	std::cout << GREEN "ScavTrap copy assignment operator called for " << this->name << OFF << std::endl;
 	ClapTrap::operator=(original);
+	guarding_gate = original.guarding_gate;
 	return (*this);
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << RED"ScavTrap " << Name << " was destructed\n" << OFF;
+	std::cout << RED "ScavTrap " << name << " was destructed\n" OFF;
 }
 
-void	ScavTrap::attack(const std::string& target)
+void ScavTrap::Attack(const std::string& target)
 {
-	std::string	p;
-
-	if (EnergyPoints == 0)
-	{
-		std::cout << "Claptrap " << Name << " is out of energy points and can't attack!\n";
-		return ;
-	}
-	else if (HitPoints < 1)
-	{
-		std::cout << "Claptrap " << Name << " is out of hit points and can't attack!\n";
-		return ;
-	}
-	EnergyPoints--;
-	std::cout << "Claptrap " << Name << " attacks " << target << "! GO SCAV!\n";
-	p = get_point_or_points(EnergyPoints);
-	std::cout << "Claptrap " << Name << " now has " << EnergyPoints << " energy " << p << " left\n";
+	if (!this->CheckIfResourcesAvailable("attack"))
+		return;
+	energy_points--;
+	std::cout << "ScavTrap " << name << " attacks " << target << " causing " << attack_damage << " points of damage!\n";
+	std::cout << "ScavTrap " << name << " now has " << energy_points << " energy " << GetPointOrPoints(energy_points) << " left\n";
 }
 
-void	ScavTrap::guardGate()
+void ScavTrap::GuardGate()
 {
-	std::cout << "ScavTrap is now in gate keeper mode\n";
+	if (guarding_gate)
+	{
+		std::cout << "ScavTrap " << name << " stops guarding the guarding_gate\n";
+		guarding_gate = false;
+	}
+	else
+	{
+		std::cout << "ScavTrap " << name << " starts to guard the guarding_gate\n";
+		guarding_gate = true;
+	}
 }

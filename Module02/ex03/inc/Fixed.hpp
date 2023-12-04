@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:52:03 by felicia           #+#    #+#             */
-/*   Updated: 2023/11/29 15:27:26 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:40:27 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <math.h>
+# include <cstdlib>
 
 class Fixed
 {

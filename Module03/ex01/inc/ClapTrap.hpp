@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:12:54 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/08/15 19:14:52 by felicia          ###   ########.fr       */
+/*   Updated: 2023/12/04 15:06:32 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
-# include <iostream>
 
+# include <iostream>
+# include <cstdlib>
+
+# define BOLD	"\033[1m"
 # define RED	"\033[31m"
 # define GREEN 	"\033[32m"
 # define YELLOW	"\033[33m"
@@ -23,25 +26,26 @@
 class ClapTrap
 {
 	protected:
-		std::string	Name;
-		int			HitPoints;
-		int			EnergyPoints;
-		int			AttackDamage;
-	
-	public:		
-		ClapTrap(); // default constructor
-		ClapTrap(std::string init_name); // name constructor
-		ClapTrap(const ClapTrap &original); // copy constructor
-		ClapTrap&	operator=(const ClapTrap &original); // copy assignment operator
-		~ClapTrap(); // default destructor
-
-		int		getAttackDamage(void) { return (AttackDamage); };
+		std::string	name;
+		int			hit_points;
+		int			energy_points;
+		int			attack_damage;
 		
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+	public:		
+		ClapTrap();
+		ClapTrap(std::string init_name);
+		ClapTrap(const ClapTrap &original);
+		ClapTrap&	operator=(const ClapTrap &original);
+		~ClapTrap();
+		
+		void		Attack(const std::string& target);
+		void		TakeDamage(unsigned int amount);
+		void		BeRepaired(unsigned int amount);
 
-		std::string	get_point_or_points(int amount);
+		int			getAttackDamage();
+		void		setAttackDamage(int amount);
+		bool		CheckIfResourcesAvailable(std::string message);
+		std::string GetPointOrPoints(int amount);
 };
 
 #endif
