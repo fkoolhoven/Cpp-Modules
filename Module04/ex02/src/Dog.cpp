@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:06:58 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:16:42 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:23:48 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void Dog::MakeSound(void) const
 
 void Dog::PureVirtualFunction(void) const
 {
-	std::cout << "This is a pure virtual function\n";
+	std::cout << "Overriden pure virtual function\n";
 }
