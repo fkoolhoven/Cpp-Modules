@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:12:57 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 10:50:25 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 11:02:10 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ int	main(void)
 		scavtrap.TakeDamage(claptrap.getAttackDamage());
 		scavtrap.BeRepaired(1);
 	}
+	return (EXIT_SUCCESS);
 }

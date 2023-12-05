@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:19 by felicia           #+#    #+#             */
-/*   Updated: 2023/12/05 10:40:16 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 11:06:03 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void ScavTrap::GuardGate()
 {
 	if (guarding_gate)
 	{
-		std::cout << "ScavTrap " << name << " stops guarding the guarding_gate\n";
+		std::cout << "ScavTrap " << name << " stops guarding the gate\n";
 		guarding_gate = false;
 	}
 	else
 	{
-		std::cout << "ScavTrap " << name << " starts to guard the guarding_gate\n";
+		std::cout << "ScavTrap " << name << " starts to guard the gate\n";
 		guarding_gate = true;
 	}
 }
