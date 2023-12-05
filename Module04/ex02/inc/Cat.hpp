@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:06:58 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:36 by fkoolhov         ###   ########.fr       */
+/*   Created: 2023/12/05 12:03:44 by fkoolhov          #+#    #+#             */
+/*   Updated: 2023/12/05 17:12:06 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-Dog::Dog(void)
-{
-	std::cout << GREEN "Dog constructed\n" OFF;
-	this->type = "dog";
-}
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-Dog::Dog(const Dog& src)
+class Cat : public AAnimal
 {
-	*this = src;
-	std::cout << GREEN "Dog copy-constructed\n" OFF;
-}
+	private:
+		Brain *brain;
+	public:
+		Cat(void);
+		Cat(const Cat& src);
+		~Cat(void);
 
-Dog::~Dog(void)
-{
-	std::cout << RED "Dog destructed\n" OFF;
-}
+		void MakeSound(void) const;
+		virtual void PureVirtualFunction(void) const;
+};
 
-void Dog::MakeSound(void) const
-{
-	std::cout << "Dog goes woof\n";
-}
+#endif

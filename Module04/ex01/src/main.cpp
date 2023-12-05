@@ -6,35 +6,30 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:59:21 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:40 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:08:21 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 int main(void)
 {
 	std::cout << YELLOW BOLD "\nConstructors\n" OFF;
-	const Animal* meta = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
+	Animal* animals[100];
+	for (int i = 0; i < 100; i++)
+		i % 2 == 0 ? animals[i] = new Dog() : animals[i] = new Cat();
 
-	Cat cat2;
-	Animal& stackCat = cat2;
+	std::cout << YELLOW BOLD "\nMake sounds\n" OFF;
+	for (int i = 0; i < 100; i++)
+		animals[i]->MakeSound();
 
-	std::cout << YELLOW BOLD "\nPolymorphism\n" OFF;
-	std::cout << "Type of dog should be " << dog->getType() << std::endl;
-	std::cout << "Type of cat should be " << cat->getType() << std::endl;
-	cat->MakeSound();
-	dog->MakeSound();
-	meta->MakeSound();
-	stackCat.MakeSound();
+	// think of brain test
 
 	std::cout << YELLOW BOLD "\nDestructors\n" OFF;
-	delete meta;
-	delete dog;
-	delete cat;
+	for (int i = 0; i < 100; i++)
+		delete animals[i];
 	return (EXIT_SUCCESS);
 }

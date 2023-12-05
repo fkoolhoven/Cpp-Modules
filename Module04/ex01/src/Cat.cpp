@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:06:58 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:36 by fkoolhov         ###   ########.fr       */
+/*   Created: 2023/12/05 12:06:33 by fkoolhov          #+#    #+#             */
+/*   Updated: 2023/12/05 17:07:51 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(void)
+Cat::Cat(void)
 {
-	std::cout << GREEN "Dog constructed\n" OFF;
-	this->type = "dog";
+	std::cout << GREEN "Cat constructed\n" OFF;
+	this->type = "cat";
+	this->brain = new Brain();
 }
 
-Dog::Dog(const Dog& src)
+Cat::Cat(const Cat& src)
 {
 	*this = src;
-	std::cout << GREEN "Dog copy-constructed\n" OFF;
+	std::cout << GREEN "Cat copy-constructed\n" OFF;
 }
 
-Dog::~Dog(void)
+Cat::~Cat(void)
 {
-	std::cout << RED "Dog destructed\n" OFF;
+	delete this->brain;
+	std::cout << RED "Cat destructed\n" OFF;
 }
 
-void Dog::MakeSound(void) const
+void Cat::MakeSound(void) const
 {
-	std::cout << "Dog goes woof\n";
+	std::cout << "Cat goes meow\n";
 }

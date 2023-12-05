@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:06:58 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:36 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:07:53 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Dog::Dog(void)
 {
 	std::cout << GREEN "Dog constructed\n" OFF;
 	this->type = "dog";
+	this->brain = new Brain();
 }
 
 Dog::Dog(const Dog& src)
@@ -26,6 +27,7 @@ Dog::Dog(const Dog& src)
 
 Dog::~Dog(void)
 {
+	delete this->brain;
 	std::cout << RED "Dog destructed\n" OFF;
 }
 

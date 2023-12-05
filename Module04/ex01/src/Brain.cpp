@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:04:32 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:32 by fkoolhov         ###   ########.fr       */
+/*   Created: 2023/12/05 16:21:43 by fkoolhov          #+#    #+#             */
+/*   Updated: 2023/12/05 16:47:43 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Brain::Brain(void)
 {
-	std::cout << GREEN "Animal constructed\n" OFF;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = "No idea yet!";
+	std::cout << GREEN "Brain constucted\n" OFF;
 }
 
-Animal::Animal(const Animal& src)
+Brain::Brain(const Brain& src)
 {
+	std::cout << GREEN "Brain copy-constructed\n" OFF;
 	*this = src;
-	std::cout << GREEN "Animal copy-constructed\n" OFF;
 }
 
-Animal::~Animal(void)
+Brain::~Brain(void)
 {
-	std::cout << RED "Animal destructed\n" OFF;
+	std::cout << RED "Brain destructed\n" OFF;
 }
 
-Animal& Animal::operator=(const Animal& original)
+Brain& Brain::operator=(const Brain& src)
 {
-	this->type = original.getType();
+	if (this != &src)
+	{
+		for (int i = 0; i < 100; i++)
+			this->ideas[i] = src.ideas[i];
+	}
 	return (*this);
-}
-
-void Animal::MakeSound(void) const
-{
-	std::cout << "Animal doesn't know which sound to make yet!\n";
-}
-
-std::string	Animal::getType(void) const
-{
-	return (this->type);
 }

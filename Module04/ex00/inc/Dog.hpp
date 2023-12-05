@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:04:05 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 12:25:41 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:07:23 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal
 		Dog(const Dog& src);
 		~Dog(void);
 
-		void makeSound(void) const;
+		void MakeSound(void) const;
 };
 
 #endif

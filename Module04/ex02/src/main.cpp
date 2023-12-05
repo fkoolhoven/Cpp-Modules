@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:06:58 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:36 by fkoolhov         ###   ########.fr       */
+/*   Created: 2023/12/05 11:59:21 by fkoolhov          #+#    #+#             */
+/*   Updated: 2023/12/05 17:18:36 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AAnimal.hpp"
 #include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-Dog::Dog(void)
+int main(void)
 {
-	std::cout << GREEN "Dog constructed\n" OFF;
-	this->type = "dog";
-}
+	std::cout << YELLOW BOLD "\nConstructors\n" OFF;
+	AAnimal* dog = new Dog();
+	// AAnimal example;
 
-Dog::Dog(const Dog& src)
-{
-	*this = src;
-	std::cout << GREEN "Dog copy-constructed\n" OFF;
-}
+	std::cout << YELLOW BOLD "\nMake sounds\n" OFF;
+	dog->MakeSound();
 
-Dog::~Dog(void)
-{
-	std::cout << RED "Dog destructed\n" OFF;
-}
-
-void Dog::MakeSound(void) const
-{
-	std::cout << "Dog goes woof\n";
+	std::cout << YELLOW BOLD "\nDestructors\n" OFF;
+	delete dog;
+	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:44 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 12:25:37 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:07:20 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cat : public Animal
 		Cat(const Cat& src);
 		~Cat(void);
 
-		void makeSound(void) const;
+		void MakeSound(void) const;
 };
 
 #endif
