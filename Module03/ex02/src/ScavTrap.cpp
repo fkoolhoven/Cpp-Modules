@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:15:19 by felicia           #+#    #+#             */
-/*   Updated: 2023/12/04 17:20:44 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:40:16 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ ScavTrap::ScavTrap(std::string init_name) : ClapTrap::ClapTrap(init_name)
 
 ScavTrap::ScavTrap(const ScavTrap &original) : ClapTrap::ClapTrap(original)
 {
-	std::cout << GREEN "ScavTrap copy constructor called for " << original.name << OFF << std::endl;
-	*this = original;
+	guarding_gate = original.guarding_gate;
+	std::cout << GREEN "Copy of ScavTrap " << original.name << " was constructed\n" OFF;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &original)
 {
-	std::cout << "ScavTrap copy assignment operator called for " << this->name << std::endl;
 	ClapTrap::operator=(original);
 	guarding_gate = original.guarding_gate;
+	std::cout << "ScavTrap copy assignment operator was called for " << this->name << std::endl;
 	return (*this);
 }
 

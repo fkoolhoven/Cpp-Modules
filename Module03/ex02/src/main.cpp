@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:12:57 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/04 17:28:17 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:58:25 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ int	main(void)
 		std::cout << "Kyle2's attack damage is " << Kyle2.getAttackDamage() << std::endl;
 	}
 
-	std::cout << YELLOW BOLD "\nFragTrap copy assignment operator\n" OFF;
+	std::cout << YELLOW BOLD "\nFragTrap copy assignment operator (same as ClapTrap)\n" OFF;
 	{
-		FragTrap Kenny1("Kenny1");
-		Kenny1.setAttackDamage(15);
-		FragTrap Kenny2;
-		Kenny2 = Kenny1;
+		FragTrap Ziggy1("Ziggy1");
+		Ziggy1.setAttackDamage(15);
+		FragTrap Ziggy2;
+		Ziggy2 = Ziggy1;
 		
-		std::cout << "Kenny1's attack damage is " << Kenny1.getAttackDamage() << std::endl;
-		std::cout << "Kenny2's attack damage is " << Kenny2.getAttackDamage() << std::endl;
+		std::cout << "Ziggy1's attack damage is " << Ziggy1.getAttackDamage() << std::endl;
+		std::cout << "Ziggy2's attack damage is " << Ziggy2.getAttackDamage() << std::endl;
 	}
 
 	std::cout << YELLOW BOLD "\nFight between ScavTrap and FragTrap\n" OFF;

@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:02:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/04 17:20:26 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:59:07 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,6 @@ FragTrap::FragTrap(std::string init_name) : ClapTrap::ClapTrap(init_name)
 FragTrap::FragTrap(const FragTrap &original) : ClapTrap::ClapTrap(original)
 {
 	std::cout << GREEN "Copy of FragTrap " << original.name << " was constructed\n" OFF;
-}
-
-FragTrap& FragTrap::operator=(const FragTrap &original)
-{
-	std::cout << "FragTrap copy assignment operator called for " << this->name << std::endl;
-	ClapTrap::operator=(original);
-	return (*this);
 }
 
 FragTrap::~FragTrap()
