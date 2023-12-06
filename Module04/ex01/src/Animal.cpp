@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:04:32 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:48 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:29:53 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Animal::Animal(void)
 
 Animal::Animal(const Animal& src)
 {
-	*this = src;
 	std::cout << GREEN "Animal copy-constructed\n" OFF;
+	*this = src;
 }
 
 Animal::~Animal(void)
@@ -28,9 +28,9 @@ Animal::~Animal(void)
 	std::cout << RED "Animal destructed\n" OFF;
 }
 
-Animal& Animal::operator=(const Animal& original)
+Animal& Animal::operator=(const Animal& src)
 {
-	this->type = original.getType();
+	this->type = src.getType();
 	return (*this);
 }
 

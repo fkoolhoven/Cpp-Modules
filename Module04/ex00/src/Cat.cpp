@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:06:33 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:34 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:34:57 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat& src)
 {
-	*this = src;
 	std::cout << GREEN "Cat copy-constructed\n" OFF;
+	*this = src;
 }
 
 Cat::~Cat(void)

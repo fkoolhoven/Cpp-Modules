@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:06:33 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:07:51 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:58:26 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,20 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat& src)
 {
-	*this = src;
 	std::cout << GREEN "Cat copy-constructed\n" OFF;
+	*this = src;
+	this->brain = new Brain(*src.getBrain());
 }
 
 Cat::~Cat(void)
 {
 	delete this->brain;
 	std::cout << RED "Cat destructed\n" OFF;
+}
+
+Brain* Cat::getBrain(void) const
+{
+	return (this->brain);
 }
 
 void Cat::MakeSound(void) const

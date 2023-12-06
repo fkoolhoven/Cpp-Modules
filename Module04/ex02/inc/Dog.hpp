@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:04:05 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:12:04 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:12:02 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ class Dog : public AAnimal
 {
 	private:
 		Brain *brain;
+		
 	public:
 		Dog(void);
 		Dog(const Dog& src);
 		~Dog(void);
 
+		Brain* getBrain(void) const;
 		void MakeSound(void) const;
 		virtual void PureVirtualFunction(void) const;
 };

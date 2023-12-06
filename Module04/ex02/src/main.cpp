@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:59:21 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:18:36 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:16:29 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@
 int main(void)
 {
 	std::cout << YELLOW BOLD "\nConstructors\n" OFF;
-	AAnimal* dog = new Dog();
-	// AAnimal example;
+	Dog dog;
+	Cat cat;
+	// AAnimal abstract_animal;
 
 	std::cout << YELLOW BOLD "\nMake sounds\n" OFF;
-	dog->MakeSound();
+	dog.PureVirtualFunction();
+	cat.PureVirtualFunction();
+	dog.MakeSound();
+	cat.MakeSound();
 
 	std::cout << YELLOW BOLD "\nDestructors\n" OFF;
-	delete dog;
 	return (EXIT_SUCCESS);
 }

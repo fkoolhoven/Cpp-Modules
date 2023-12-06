@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 16:20:32 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/06 15:31:19 by fkoolhov         ###   ########.fr       */
+/*   Created: 2023/12/06 14:01:31 by fkoolhov          #+#    #+#             */
+/*   Updated: 2023/12/06 14:19:54 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#include "WrongCat.hpp"
 
-# include <iostream>
-
-class Brain
+WrongCat::WrongCat(void)
 {
-	private:
-		std::string ideas[100];
+	std::cout << GREEN "WrongCat constructed\n" OFF;
+	this->type = "wrong cat";
+}
 
-	public:
-		Brain(void);
-		Brain(const Brain& src);
-		~Brain(void);
-		Brain& operator=(const Brain& src);
+WrongCat::WrongCat(const WrongCat& src)
+{
+	*this = src;
+	std::cout << GREEN "WrongCat copy-constructed\n" OFF;
+}
 
-		std::string getIdea(int i) const;
-		void setIdea(int i, std::string idea);
-};
+WrongCat::~WrongCat(void)
+{
+	std::cout << RED "WrongCat destructed\n" OFF;
+}
 
-#endif
+void WrongCat::MakeSound(void) const
+{
+	std::cout << "WrongCat goes meow\n";
+}

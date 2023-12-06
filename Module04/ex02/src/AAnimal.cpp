@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:04:32 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/05 17:13:31 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:35:19 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ AAnimal::AAnimal(void)
 
 AAnimal::AAnimal(const AAnimal& src)
 {
-	*this = src;
 	std::cout << GREEN "AAnimal copy-constructed\n" OFF;
+	*this = src;
 }
 
 AAnimal::~AAnimal(void)
