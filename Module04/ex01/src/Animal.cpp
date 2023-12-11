@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:04:32 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/06 15:29:53 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:54:47 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Animal::~Animal(void)
 
 Animal& Animal::operator=(const Animal& src)
 {
+	std::cout << "Animal copy assignment operator called\n";
 	this->type = src.getType();
 	return (*this);
 }

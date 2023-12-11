@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:44 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/06 15:05:12 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:42:48 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Cat : public Animal
 		Cat(void);
 		Cat(const Cat& src);
 		~Cat(void);
+		Cat& operator=(const Cat& src);
 
 		Brain* getBrain(void) const;
 		void MakeSound(void) const;

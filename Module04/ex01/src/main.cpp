@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:59:21 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/06 16:07:13 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:53:32 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,13 @@ void TestDeepCopy(void)
 	cat.getBrain()->setIdea(0, "I wish I shared a brain with someone else!");
 	Cat cat2(cat);
 	cat2.getBrain()->setIdea(0, "I'm so happy I have my own brain!");
+	Cat cat3;
+	cat3 = cat2;
+	cat3.getBrain()->setIdea(0, "Brain? What brain?");
 
 	std::cout << "Cat thinks: " << cat.getBrain()->getIdea(0) << std::endl;
 	std::cout << "Cat2 thinks: " << cat2.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Cat3 thinks: " << cat3.getBrain()->getIdea(0) << std::endl;
 }
 
 void TestCopyConstructor(void)

@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:06:58 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/06 15:58:16 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:56:57 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::Dog(void)
 Dog::Dog(const Dog& src)
 {
 	std::cout << GREEN "Dog copy-constructed\n" OFF;
-	*this = src;
+	this->type = src.getType();
 	this->brain = new Brain(*src.getBrain());
 }
 
@@ -30,6 +30,14 @@ Dog::~Dog(void)
 {
 	delete this->brain;
 	std::cout << RED "Dog destructed\n" OFF;
+}
+
+Dog& Dog::operator=(const Dog& src)
+{
+	std::cout << "Dog copy assignment operator called\n";
+	this->type = src.getType();
+	*(this->brain) = *(src.brain); 
+	return (*this);
 }
 
 Brain* Dog::getBrain(void) const

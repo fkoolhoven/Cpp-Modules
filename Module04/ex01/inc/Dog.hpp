@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:04:05 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/06 15:05:18 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:42:57 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Dog : public Animal
 		Dog(void);
 		Dog(const Dog& src);
 		~Dog(void);
+		Dog& operator=(const Dog& src);
 
 		Brain* getBrain(void) const;
 		void MakeSound(void) const;

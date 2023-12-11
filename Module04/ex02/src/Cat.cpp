@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:06:33 by fkoolhov          #+#    #+#             */
-/*   Updated: 2023/12/06 16:15:24 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:54:23 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ Cat::~Cat(void)
 {
 	delete this->brain;
 	std::cout << RED "Cat destructed\n" OFF;
+}
+
+Cat& Cat::operator=(const Cat& src)
+{
+	std::cout << "Cat copy assignment operator called\n";
+	this->type = src.getType();
+	*(this->brain) = *(src.brain); 
+	return (*this);
 }
 
 Brain* Cat::getBrain(void) const
