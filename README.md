@@ -4,14 +4,14 @@
 </div>
 
 # About the project
-CURRENTLY WORKING ON THIS. There will be 10 modules in total (00 - 09). This project is made in accordance with the CPP-Modules, which are part of the Codam Core Curriculum. Each module introduces new concepts and contains a couple of exercises that gradually increase in difficulty. I was already familair with C when I begin this project so that makes some things a bit easier to get. The aim is to get experience with object oriented programming and C++.<br>
+These modules are made in accordance with the CPP-Modules, which are part of the Codam Core Curriculum. Each module introduces new concepts and contains a couple of exercises that gradually increase in difficulty. I was already familiar with C when I begin this project so that made some things a bit easier. The aim is to get experience with object oriented programming and C++. You learn all the fundamentals of OOP in C++.<br>
 
 # Learnings per module <br>
 **Module00**: namespaces, classes, member functions, constructors, destructors, stdio streams, initialization lists <br>
 **Module01**: memory allocation, new keyword, pointers vs. references, file handling/manipulation, pointers to member functions, switch statements <br>
 **Module02**: ad-hoc polymorphism, operator overloading and orthodox canonical class form <br>
 **Module03**: inheritance <br>
-**Module04**: polymorphism, abstract base classes <br>
+**Module04**: polymorphism, deep copy vs. shallow copy, abstract base classes <br>
 **Module05**:
 **Module06**:
 **Module07**:
