@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:03:37 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/01/31 18:10:18 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:56:15 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define YELLOW	"\033[33m"
 # define BOLD	"\033[1m"
 # define OFF	"\033[0m"
+
+class Form;
 
 class Bureaucrat
 {
@@ -39,6 +41,7 @@ class Bureaucrat
 		
 		void IncrementGrade(void);
 		void DecrementGrade(void);
+		void SignForm(Form& form);
 	
 		class GradeTooHighException : public std::exception
 		{

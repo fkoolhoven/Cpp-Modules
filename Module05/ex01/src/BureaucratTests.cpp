@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   BureaucratTests.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/01/31 18:31:28 by fkoolhov         ###   ########.fr       */
+/*   Created: 2024/01/31 18:09:52 by fkoolhov          #+#    #+#             */
+/*   Updated: 2024/01/31 18:31:10 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void TestGradeTooLowAfterDecrementing(void)
 {
-	std::cout << YELLOW BOLD "Testing GradeTooLowException after decrementing" OFF << std::endl;
+	std::cout << YELLOW BOLD "BUREAUCRAT Testing GradeTooLowException after decrementing" OFF << std::endl;
 	try
 	{
 		Bureaucrat donna("Donna", 150);
@@ -31,7 +31,7 @@ void TestGradeTooLowAfterDecrementing(void)
 
 void TestGradeTooLowAtConstruction(void)
 {
-	std::cout << YELLOW BOLD "Testing GradeTooLowException at construction" OFF << std::endl;
+	std::cout << YELLOW BOLD "BUREAUCRAT Testing GradeTooLowException at construction" OFF << std::endl;
 	try
 	{
 		Bureaucrat lily("Lily", 151);
@@ -46,7 +46,7 @@ void TestGradeTooLowAtConstruction(void)
 
 void TestGradeTooHighAfterIncrementing(void)
 {
-	std::cout << YELLOW BOLD "Testing GradeTooHighException after incrementing" OFF << std::endl;
+	std::cout << YELLOW BOLD "BUREAUCRAT Testing GradeTooHighException after incrementing" OFF << std::endl;
 	try
 	{
 		Bureaucrat caroline("Caroline", 1);
@@ -63,7 +63,7 @@ void TestGradeTooHighAfterIncrementing(void)
 
 void TestGradeTooHighAtConstruction(void)
 {
-	std::cout << YELLOW BOLD "Testing GradeTooHighException at construction" OFF << std::endl;
+	std::cout << YELLOW BOLD "BUREAUCRAT Testing GradeTooHighException at construction" OFF << std::endl;
 	try
 	{
 		Bureaucrat bonnie("Bonnie", 0);
@@ -78,7 +78,7 @@ void TestGradeTooHighAtConstruction(void)
 
 void TestBasics(void)
 {
-	std::cout << YELLOW BOLD "Testing the basics" OFF << std::endl;
+	std::cout << YELLOW BOLD "BUREAUCRAT Testing the basics" OFF << std::endl;
 	Bureaucrat whitney("Whitney", 1);
 	Bureaucrat kate("Kate", 50);
 	Bureaucrat janet("Janet", 150);
@@ -87,7 +87,7 @@ void TestBasics(void)
 	std::cout << janet << std::endl;
 }
 
-int main(void)
+void TestsFromPreviousExercise()
 {
 	TestBasics();
 	std::cout << std::endl;
