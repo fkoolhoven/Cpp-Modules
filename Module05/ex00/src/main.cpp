@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/01/31 18:31:28 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:42:24 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,5 @@ int main(void)
 	TestGradeTooLowAtConstruction();
 	std::cout << std::endl;
 	TestGradeTooLowAfterDecrementing();
+	return (EXIT_SUCCESS);
 }

@@ -2,3 +2,4 @@ To do:
 
 Module05/ex01 copy assignment and copy constructor
 Module05/ex00 test copy assignment and copy constructor
+leakchecks aan voor eval

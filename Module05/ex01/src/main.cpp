@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 10:29:50 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:42:11 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void TestFormConstructionDestruction(void)
 	Form copy(exciting);
 	std::cout << copy << std::endl;
 }
+
 int main(void)
 {
 	// TestsFromPreviousExercise();
@@ -109,4 +110,5 @@ int main(void)
 	TestSuccesfulSign();
 	std::cout << std::endl;
 	TestUnableToSign();
+	return (EXIT_SUCCESS);
 }

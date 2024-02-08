@@ -7,7 +7,7 @@ INC			= inc
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
 SRC_DIR		= src
-SRC			= main.cpp Bureaucrat.cpp BureaucratTests.cpp Form.cpp
+SRC			= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 all: $(NAME)
 
@@ -20,6 +20,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 clean:
 	$(RM)r $(OBJ_DIR)
+	$(RM) Tree_shrubbery
 
 fclean: clean
 	$(RM) $(NAME)
