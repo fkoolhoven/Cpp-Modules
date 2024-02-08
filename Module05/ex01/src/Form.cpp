@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:04:41 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 10:31:36 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:40:47 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,12 @@ void Form::BeSigned(Bureaucrat& bureaucrat)
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high");
+	return ("Grade is too high\n");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low");
+	return ("Grade is too low\n");
 }
 
 std::ostream& operator<<(std::ostream& stream, const Form& instance)

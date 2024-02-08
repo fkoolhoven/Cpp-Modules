@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 15:42:11 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/08 17:40:27 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ void TestFormGradeTooLowAtConstruction(void)
 	}
 	catch (std::exception& exception)
 	{
-		std::cout << "An exception was caught! ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << "An exception was caught! " << exception.what();
 	}
 	try
 	{
@@ -55,8 +54,7 @@ void TestFormGradeTooLowAtConstruction(void)
 	}
 	catch (std::exception& exception)
 	{
-		std::cerr << "An exception was caught! ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << "An exception was caught! " << exception.what();
 	}
 }
 
@@ -70,8 +68,7 @@ void TestFormGradeTooHighAtConstruction(void)
 	}
 	catch (std::exception& exception)
 	{
-		std::cerr << "An exception was caught! ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << "An exception was caught! " << exception.what();
 	}
 	try
 	{
@@ -80,8 +77,7 @@ void TestFormGradeTooHighAtConstruction(void)
 	}
 	catch (std::exception& exception)
 	{
-		std::cerr << "An exception was caught! ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << "An exception was caught! " << exception.what();
 	}
 }
 

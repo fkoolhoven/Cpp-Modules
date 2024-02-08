@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 15:42:24 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/08 17:39:49 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,13 @@ void TestGradeTooLowAfterDecrementing(void)
 	try
 	{
 		Bureaucrat donna("Donna", 150);
-		std::cout << donna << std::endl;
+		std::cout << donna;
 		donna.DecrementGrade();
 		std::cout << "This code won't be executed\n";
 	}
 	catch (std::exception& exception)
 	{
-		std::cerr << "An exception was caught! ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << "An exception was caught! " << exception.what();
 	}
 }
 
@@ -39,8 +38,7 @@ void TestGradeTooLowAtConstruction(void)
 	}
 	catch (std::exception& exception)
 	{
-		std::cerr << "An exception was caught! ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << "An exception was caught! " << exception.what();
 	}
 }
 
@@ -50,14 +48,13 @@ void TestGradeTooHighAfterIncrementing(void)
 	try
 	{
 		Bureaucrat caroline("Caroline", 1);
-		std::cout << caroline << std::endl;
+		std::cout << caroline;
 		caroline.IncrementGrade();
 		std::cout << "This code won't be executed\n";
 	}
 	catch (std::exception& exception)
 	{
-		std::cerr << "An exception was caught! ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << "An exception was caught! " << exception.what();
 	}
 }
 
@@ -71,8 +68,7 @@ void TestGradeTooHighAtConstruction(void)
 	}
 	catch (std::exception& exception)
 	{
-		std::cerr << "An exception was caught! ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << "An exception was caught! " << exception.what();
 	}
 }
 
@@ -82,9 +78,9 @@ void TestBasics(void)
 	Bureaucrat whitney("Whitney", 1);
 	Bureaucrat kate("Kate", 50);
 	Bureaucrat janet("Janet", 150);
-	std::cout << whitney << std::endl;
-	std::cout << kate << std::endl;
-	std::cout << janet << std::endl;
+	std::cout << whitney;
+	std::cout << kate;
+	std::cout << janet;
 }
 
 int main(void)

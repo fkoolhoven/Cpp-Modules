@@ -1,7 +1,7 @@
 NAME		= bureaucrat
 COMP		= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++14
-LEAK_CHECK	= -fsanitize=address -g -fsanitize=leak
+# LEAK_CHECK	= -fsanitize=address -g -fsanitize=leak
 RM			= rm -f
 INC			= inc
 OBJ_DIR		= obj

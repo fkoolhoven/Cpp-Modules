@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:09:01 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 10:31:46 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:41:37 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ std::string Bureaucrat::GetName(void) const
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high");
+	return ("Grade is too high\n");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low");
+	return ("Grade is too low\n");
 }
 
 void Bureaucrat::IncrementGrade(void)
@@ -85,7 +85,7 @@ void Bureaucrat::SignForm(Form& form)
 	}
 	catch (const std::exception& exception)
 	{
-		std::cout << this->name << " could not sign " << form.GetName() << " because: " << exception.what() << std::endl;
+		std::cout << this->name << " could not sign " << form.GetName() << " because: " << exception.what();
 	}
 }
 
