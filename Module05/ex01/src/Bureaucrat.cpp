@@ -6,12 +6,12 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:09:01 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/01/31 18:54:05 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:31:46 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-# include "Form.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 {

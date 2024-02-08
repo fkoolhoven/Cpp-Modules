@@ -6,11 +6,11 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:04:41 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/01/31 18:50:18 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:31:36 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 Form::Form(const std::string name, int grade_to_sign, int grade_to_execute) : name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
@@ -24,12 +24,12 @@ Form::Form(const std::string name, int grade_to_sign, int grade_to_execute) : na
 	std::cout << GREEN "Form " << this->name << " created" OFF << std::endl;
 }
 
-Form::Form(const Form& src) : name(src.name), grade_to_sign(src.grade_to_sign), grade_to_execute(src.grade_to_execute)
+Form::Form(const Form& src) : name(src.name + "_copy"), is_signed(src.is_signed), grade_to_sign(src.grade_to_sign), grade_to_execute(src.grade_to_execute)
 {
 	*this = src;
 }
 
-Form& Form::operator=(const Form& src) // override const?
+Form& Form::operator=(const Form& src)
 {
 	this->is_signed = src.is_signed;
 	return (*this);

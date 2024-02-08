@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/01/31 18:57:07 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:29:50 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void TestFormGradeTooHighAtConstruction(void)
 	std::cout << YELLOW BOLD "FORM Testing GradeTooHighException at construction" OFF << std::endl;
 	try
 	{
-		Form form("Form", 0, 150);
+		Form form("Form", 0, 40);
 		std::cout << "This code won't be executed\n";
 	}
 	catch (std::exception& exception)
@@ -92,6 +92,9 @@ void TestFormConstructionDestruction(void)
 	Form exciting("Exciting form", 1, 1);
 	std::cout << boring << std::endl;
 	std::cout << exciting << std::endl;
+
+	Form copy(exciting);
+	std::cout << copy << std::endl;
 }
 int main(void)
 {
