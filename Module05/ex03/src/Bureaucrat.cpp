@@ -6,11 +6,12 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:09:01 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/09 13:26:37 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/09 13:25:45 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 {
@@ -51,12 +52,12 @@ std::string Bureaucrat::GetName(void) const
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high\n");
+	return ("Grade is too high");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low\n");
+	return ("Grade is too low");
 }
 
 void Bureaucrat::IncrementGrade(void)
@@ -73,6 +74,24 @@ void Bureaucrat::DecrementGrade(void)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->grade++;
+}
+
+void Bureaucrat::SignForm(AForm& form)
+{
+	try
+	{
+		form.BeSigned(*this);
+		std::cout << this->name << " signed " << form.GetName() << std::endl;
+	}
+	catch (const std::exception& exception)
+	{
+		std::cout << this->name << " could not sign " << form.GetName() << " because: " << exception.what() << std::endl;
+	}
+}
+
+void Bureaucrat::ExecuteForm(const AForm& form) const
+{
+	std::cout << this->name << " executed " << form.GetName() << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& instance)
