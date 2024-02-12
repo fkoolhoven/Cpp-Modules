@@ -12,11 +12,11 @@ These modules are made in accordance with the CPP-Modules, which are part of the
 **Module02**: ad-hoc polymorphism, operator overloading and orthodox canonical class form <br>
 **Module03**: inheritance <br>
 **Module04**: polymorphism, deep copy vs. shallow copy, abstract base classes <br>
-**Module05**:
-**Module06**:
-**Module07**:
-**Module08**:
-**Module09**:
+**Module05**: exceptions <br>
+**Module06**: c++ casts <br>
+**Module07**: <br>
+**Module08**: <br>
+**Module09**: <br>
 
 # Contact
 See my profile page for ways to contact me!
