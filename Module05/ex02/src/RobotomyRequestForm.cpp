@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:02:46 by felicia           #+#    #+#             */
-/*   Updated: 2024/02/08 17:07:52 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/12 14:12:56 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void RobotomyRequestForm::Execute(const Bureaucrat& executor) const
 		else
 			std::cout << "Too bad! " << this->target << " has not been robotomized\n";
 	}
-	catch(std::exception& exception)
+	catch (std::exception& exception)
 	{
 		std::cerr << "An exception was caught! " << exception.what();
 	}

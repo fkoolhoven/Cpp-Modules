@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:02:30 by felicia           #+#    #+#             */
-/*   Updated: 2024/02/08 16:58:22 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/12 14:12:53 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void PresidentialPardonForm::Execute(const Bureaucrat& executor) const
 		AForm::Execute(executor);
 		std::cout << this->target << " has been pardoned by Zafod Beeblebrox\n";
 	}
-	catch(std::exception& exception)
+	catch (std::exception& exception)
 	{
 		std::cerr << "An exception was caught! " << exception.what();
 	}

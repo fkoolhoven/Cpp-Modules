@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 17:34:07 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/12 14:15:19 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,12 @@ void TestFormConstructionDestruction(void)
 	std::cout << YELLOW BOLD "Testing construction/destruction" OFF << std::endl;
 	
 	// AForm abstract_form("Abstract form", 100, 100); // This line will not compile
-	ShrubberyCreationForm	shrubbery("Target");
-	RobotomyRequestForm		robotomy("Target");
+	ShrubberyCreationForm	shrubbery_creation("Target");
+	RobotomyRequestForm		robotomy_request("Target");
 	PresidentialPardonForm	presidential_pardon("Target");
 	
-	std::cout << shrubbery << std::endl;
-	std::cout << robotomy << std::endl;
+	std::cout << shrubbery_creation << std::endl;
+	std::cout << robotomy_request << std::endl;
 	std::cout << presidential_pardon << std::endl;
 }
 

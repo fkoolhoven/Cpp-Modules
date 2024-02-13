@@ -1,4 +1,4 @@
-NAME		= bureaucrat
+NAME		= converter
 COMP		= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++14
 # LEAK_CHECK	= -fsanitize=address -g -fsanitize=leak
@@ -7,7 +7,7 @@ INC			= inc
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
 SRC_DIR		= src
-SRC			= main.cpp
+SRC			= main.cpp ScalarConverter.cpp
 
 all: $(NAME)
 

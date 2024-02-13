@@ -6,7 +6,7 @@
 /*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:02:53 by felicia           #+#    #+#             */
-/*   Updated: 2024/02/08 17:33:55 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/12 13:55:07 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 #include <fstream>
 void ShrubberyCreationForm::Execute(const Bureaucrat& executor) const
 {
-	// Create a file <target>_shrubbery in the working directory, and writes ASCII trees inside it.
-
 	try
 	{
 		AForm::Execute(executor);
@@ -55,7 +53,7 @@ void ShrubberyCreationForm::Execute(const Bureaucrat& executor) const
 		file.close();
 		std::cout << "Shrubbery has been created in " << this->target << "_shrubbery\n";
 	}
-	catch(const std::exception& exception)
+	catch (std::exception& exception)
 	{
 		std::cerr << "An exception was caught! " << exception.what();
 	}
