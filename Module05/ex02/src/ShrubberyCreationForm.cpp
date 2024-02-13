@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:02:53 by felicia           #+#    #+#             */
-/*   Updated: 2024/02/12 14:13:03 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:41:44 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), target(target)
 {
@@ -33,28 +34,21 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	this->target = src.target;
 	return (*this);
 }
-#include <fstream>
+
 void ShrubberyCreationForm::Execute(const Bureaucrat& executor) const
 {
-	try
-	{
-		AForm::Execute(executor);
-		std::ofstream file(this->target + "_shrubbery");
-		file << "      /\\      \n";
-		file << "     /\\*\\     \n";
-		file << "    /\\O\\*\\    \n";
-		file << "   /*/\\/\\/\\   \n";
-		file << "  /\\O\\/\\*\\/\\  \n";
-		file << " /\\*\\/\\*\\/\\/\\ \n";
-		file << "/\\O\\/\\/*/\\/O/\\ \n";
-		file << "      ||      \n";
-		file << "      ||      \n";
-		file << "      ||      ";
-		file.close();
-		std::cout << "Shrubbery has been created in " << this->target << "_shrubbery\n";
-	}
-	catch (std::exception& exception)
-	{
-		std::cerr << "An exception was caught! " << exception.what();
-	}
+	AForm::Execute(executor);
+	std::ofstream file(this->target + "_shrubbery");
+	file << "      /\\      \n";
+	file << "     /\\*\\     \n";
+	file << "    /\\O\\*\\    \n";
+	file << "   /*/\\/\\/\\   \n";
+	file << "  /\\O\\/\\*\\/\\  \n";
+	file << " /\\*\\/\\*\\/\\/\\ \n";
+	file << "/\\O\\/\\/*/\\/O/\\ \n";
+	file << "      ||      \n";
+	file << "      ||      \n";
+	file << "      ||      ";
+	file.close();
+	std::cout << "Shrubbery has been created in " << this->target << "_shrubbery\n";
 }

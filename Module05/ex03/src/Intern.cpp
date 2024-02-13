@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:24:12 by felicia           #+#    #+#             */
-/*   Updated: 2024/02/09 14:07:52 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:40:08 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ AForm* Intern::MakeForm(std::string formName, std::string target)
 	{
 		if (formName == forms[type])
 		{
-			std::cout << GREEN "Intern creates " << formName << " form\n" OFF;
+			std::cout << "Sure, intern will create " << formName << " form!\n";
 			break ;
 		}
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:36:06 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 15:25:49 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:33:03 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class AForm
 		int GetGradeToExecute(void) const;
 
 		void BeSigned(Bureaucrat& bureacrat);
-		void Execute(const Bureaucrat& executor) const;
+		virtual void Execute(const Bureaucrat& executor) const;
 
 		class GradeTooHighException : public std::exception
 		{

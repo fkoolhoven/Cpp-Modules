@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:03:37 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/01/31 18:56:15 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:59:26 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,5 @@ class Bureaucrat
 };
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& instance);
-void TestsFromPreviousExercise(void);
 
 #endif

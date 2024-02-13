@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 18:04:41 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 16:38:24 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:33:50 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void AForm::Execute(const Bureaucrat& executor) const
 		throw AForm::FormNotSignedException();
 	else if (executor.GetGrade() > this->grade_to_execute)
 		throw AForm::GradeTooLowException();
-	executor.ExecuteForm(*this);
 }
 
 const char* AForm::GradeTooHighException::what() const throw()

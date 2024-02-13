@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/08 17:40:27 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:05:01 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void TestUnableToSign()
 {
-	std::cout << YELLOW BOLD "FORM Testing inability to sign" OFF << std::endl;
+	std::cout << YELLOW BOLD "Testing inability to sign" OFF << std::endl;
 	Form form("Form", 30, 150);
 	Bureaucrat signer("Signer", 31);
 	std::cout << form << std::endl;
@@ -26,7 +26,7 @@ void TestUnableToSign()
 
 void TestSuccesfulSign()
 {
-	std::cout << YELLOW BOLD "FORM Testing succesful sign" OFF << std::endl;
+	std::cout << YELLOW BOLD "Testing succesful sign" OFF << std::endl;
 	Form form("Form", 30, 150);
 	Bureaucrat signer("Signer", 30);
 	std::cout << form << std::endl;
@@ -37,7 +37,7 @@ void TestSuccesfulSign()
 
 void TestFormGradeTooLowAtConstruction(void)
 {
-	std::cout << YELLOW BOLD "FORM Testing GradeTooLowException at construction" OFF << std::endl;
+	std::cout << YELLOW BOLD "Testing sign grade GradeTooLowException at construction" OFF << std::endl;
 	try
 	{
 		Form form("Form", 151, 40);
@@ -47,6 +47,8 @@ void TestFormGradeTooLowAtConstruction(void)
 	{
 		std::cerr << "An exception was caught! " << exception.what();
 	}
+
+	std::cout << YELLOW BOLD "\nTesting exec grade GradeTooLowException at construction" OFF << std::endl;
 	try
 	{
 		Form form("Form", 20, 151);
@@ -60,7 +62,7 @@ void TestFormGradeTooLowAtConstruction(void)
 
 void TestFormGradeTooHighAtConstruction(void)
 {
-	std::cout << YELLOW BOLD "FORM Testing GradeTooHighException at construction" OFF << std::endl;
+	std::cout << YELLOW BOLD "Testing sign grade GradeTooHighException at construction" OFF << std::endl;
 	try
 	{
 		Form form("Form", 0, 40);
@@ -70,6 +72,8 @@ void TestFormGradeTooHighAtConstruction(void)
 	{
 		std::cerr << "An exception was caught! " << exception.what();
 	}
+	
+	std::cout << YELLOW BOLD "\nTesting exec grade GradeTooHighException at construction" OFF << std::endl;
 	try
 	{
 		Form form("Form", 20, 0);
@@ -83,7 +87,7 @@ void TestFormGradeTooHighAtConstruction(void)
 
 void TestFormConstructionDestruction(void)
 {
-	std::cout << YELLOW BOLD "FORM Testing construction/destruction" OFF << std::endl;
+	std::cout << YELLOW BOLD "Testing construction/destruction" OFF << std::endl;
 	Form boring("Boring form", 150, 150);
 	Form exciting("Exciting form", 1, 1);
 	std::cout << boring << std::endl;
@@ -91,12 +95,13 @@ void TestFormConstructionDestruction(void)
 
 	Form copy(exciting);
 	std::cout << copy << std::endl;
+
+	Form copy2 = exciting;
+	std::cout << copy2 << std::endl;
 }
 
 int main(void)
 {
-	// TestsFromPreviousExercise();
-	// std::cout << std::endl;
 	TestFormConstructionDestruction();
 	std::cout << std::endl;
 	TestFormGradeTooHighAtConstruction();

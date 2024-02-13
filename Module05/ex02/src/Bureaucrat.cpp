@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:09:01 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/09 13:26:12 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:33:43 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 	std::cout << GREEN "Bureaucrat " << this->name << " created\n" OFF;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& src) : name(src.name)
+Bureaucrat::Bureaucrat(const Bureaucrat& src) : name(src.name + "_copy")
 {
 	*this = src;
 }
@@ -91,7 +91,15 @@ void Bureaucrat::SignForm(AForm& form)
 
 void Bureaucrat::ExecuteForm(const AForm& form) const
 {
-	std::cout << this->name << " executed " << form.GetName() << std::endl;
+	try
+	{
+		form.Execute(*this);
+		std::cout << this->name << " executed " << form.GetName() << std::endl;
+	}
+	catch (std::exception& exception)
+	{
+		std::cerr << "An exception was caught! " << exception.what();
+	}
 }
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& instance)

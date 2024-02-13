@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/12 14:15:19 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:34:36 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,39 @@
 void TestPresidentialPardonForm()
 {
 	std::cout << YELLOW BOLD "Testing PresidentialPardonForm: grade too low\n" OFF;
-	PresidentialPardonForm shrubbery("Felicia");
+	PresidentialPardonForm presidential("Felicia");
 	Bureaucrat bureaucrat("Bureaucrat", 6);
-	shrubbery.BeSigned(bureaucrat);
-	shrubbery.Execute(bureaucrat);
+	bureaucrat.SignForm(presidential);
+	bureaucrat.ExecuteForm(presidential);
 
 	std::cout << YELLOW BOLD "\nTesting PresidentialPardonForm: form not signed\n" OFF;
 	{
 		PresidentialPardonForm unsigned_form("Target");
 		bureaucrat.IncrementGrade();
-		unsigned_form.Execute(bureaucrat);
+		bureaucrat.ExecuteForm(unsigned_form);
 	}
 	
 	std::cout << YELLOW BOLD "\nTesting PresidentialPardonForm: succesful execute\n" OFF;
-	shrubbery.BeSigned(bureaucrat);
-	shrubbery.Execute(bureaucrat);
+	bureaucrat.ExecuteForm(presidential);
 }
 
 void TestRobotomyRequestForm()
 {
 	std::cout << YELLOW BOLD "Testing RobotomyRequestForm: grade too low\n" OFF;
-	RobotomyRequestForm shrubbery("Yoda");
+	RobotomyRequestForm robotomy("Yoda");
 	Bureaucrat bureaucrat("Bureaucrat", 46);
-	shrubbery.BeSigned(bureaucrat);
-	shrubbery.Execute(bureaucrat);
+	bureaucrat.SignForm(robotomy);
+	bureaucrat.ExecuteForm(robotomy);
 
 	std::cout << YELLOW BOLD "\nTesting RobotomyRequestForm: form not signed\n" OFF;
 	{
 		RobotomyRequestForm unsigned_form("Target");
 		bureaucrat.IncrementGrade();
-		unsigned_form.Execute(bureaucrat);
+		bureaucrat.ExecuteForm(unsigned_form);
 	}
 	
 	std::cout << YELLOW BOLD "\nTesting RobotomyRequestForm: succesful execute\n" OFF;
-	shrubbery.BeSigned(bureaucrat);
-	shrubbery.Execute(bureaucrat);
+	bureaucrat.ExecuteForm(robotomy);
 }
 
 void TestShrubberyCreationForm()
@@ -60,19 +58,18 @@ void TestShrubberyCreationForm()
 	std::cout << YELLOW BOLD "Testing ShrubberyCreationForm: grade too low\n" OFF;
 	ShrubberyCreationForm shrubbery("Tree");
 	Bureaucrat bureaucrat("Bureaucrat", 138);
-	shrubbery.BeSigned(bureaucrat);
-	shrubbery.Execute(bureaucrat);
+	bureaucrat.SignForm(shrubbery);
+	bureaucrat.ExecuteForm(shrubbery);
 
 	std::cout << YELLOW BOLD "\nTesting ShrubberyCreationForm: form not signed\n" OFF;
 	{
 		ShrubberyCreationForm unsigned_form("Target");
 		bureaucrat.IncrementGrade();
-		unsigned_form.Execute(bureaucrat);
+		bureaucrat.ExecuteForm(unsigned_form);
 	}
 	
 	std::cout << YELLOW BOLD "\nTesting ShrubberyCreationForm: succesful execute\n" OFF;
-	shrubbery.BeSigned(bureaucrat);
-	shrubbery.Execute(bureaucrat);
+	bureaucrat.ExecuteForm(shrubbery);
 }
 
 void TestFormCopy()

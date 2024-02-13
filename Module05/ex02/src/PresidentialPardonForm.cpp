@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:02:30 by felicia           #+#    #+#             */
-/*   Updated: 2024/02/12 14:12:53 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 14:33:54 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,6 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::Execute(const Bureaucrat& executor) const
 {
-	try
-	{
-		AForm::Execute(executor);
-		std::cout << this->target << " has been pardoned by Zafod Beeblebrox\n";
-	}
-	catch (std::exception& exception)
-	{
-		std::cerr << "An exception was caught! " << exception.what();
-	}
+	AForm::Execute(executor);
+	std::cout << this->target << " has been pardoned by Zafod Beeblebrox\n";
 }
