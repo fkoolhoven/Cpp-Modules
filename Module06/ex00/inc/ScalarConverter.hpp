@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:03:37 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/12 14:56:52 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/13 18:30:48 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include <iostream>
 # include <string>
 # include <cctype>
+# include <limits>
+# include <stdexcept>
 
 class ScalarConverter
 {
