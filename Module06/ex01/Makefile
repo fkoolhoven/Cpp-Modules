@@ -1,4 +1,4 @@
-NAME		= bureaucrat
+NAME		= serialize
 COMP		= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++14
 RM			= rm -f
@@ -6,7 +6,7 @@ INC			= inc
 OBJ_DIR		= obj
 OBJ			= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
 SRC_DIR		= src
-SRC			= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+SRC			= main.cpp Serializer.cpp
 
 all: $(NAME)
 
@@ -19,7 +19,6 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 clean:
 	$(RM)r $(OBJ_DIR)
-	$(RM) Tree_shrubbery
 
 fclean: clean
 	$(RM) $(NAME)
