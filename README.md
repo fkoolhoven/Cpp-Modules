@@ -14,7 +14,7 @@ These modules are made in accordance with the CPP-Modules, which are part of the
 **Module04**: polymorphism, deep copy vs. shallow copy, abstract base classes <br>
 **Module05**: exceptions, try, throw, catch <br>
 **Module06**: casts (reinterpret_cast, static_cast, dynamic_cast), serialization <br>
-**Module07**: templates <br>
+**Module07**: templates (function templates, class templates) <br>
 **Module08**: <br>
 **Module09**: <br>
 
