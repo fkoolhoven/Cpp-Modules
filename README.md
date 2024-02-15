@@ -12,9 +12,9 @@ These modules are made in accordance with the CPP-Modules, which are part of the
 **Module02**: ad-hoc polymorphism, operator overloading and orthodox canonical class form <br>
 **Module03**: inheritance <br>
 **Module04**: polymorphism, deep copy vs. shallow copy, abstract base classes <br>
-**Module05**: exceptions <br>
-**Module06**: casting (reinterpret_cast, static_cast, dynamic_cast), serialization <br>
-**Module07**: <br>
+**Module05**: exceptions, try, throw, catch <br>
+**Module06**: casts (reinterpret_cast, static_cast, dynamic_cast), serialization <br>
+**Module07**: templates <br>
 **Module08**: <br>
 **Module09**: <br>
 
