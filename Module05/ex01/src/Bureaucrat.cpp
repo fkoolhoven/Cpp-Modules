@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:09:01 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/13 13:58:31 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/20 11:56:51 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 Bureaucrat::Bureaucrat(const Bureaucrat& src) : name(src.name + "_copy")
 {
 	*this = src;
+	std::cout << GREEN "Bureaucrat " << this->name << " created\n" OFF;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)

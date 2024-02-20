@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/13 13:58:05 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/20 11:55:33 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ void TestBasics(void)
 {
 	std::cout << YELLOW BOLD "Testing the basics" OFF << std::endl;
 	Bureaucrat whitney("Whitney", 1);
-	Bureaucrat whitney_copy = whitney;
+	Bureaucrat whitney_copy("whitney_copy", 5);
+	whitney_copy = whitney;
 	Bureaucrat janet("Janet", 150);
 	Bureaucrat janet_copy(janet);
 	std::cout << whitney;

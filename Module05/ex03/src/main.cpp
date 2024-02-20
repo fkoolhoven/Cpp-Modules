@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/13 14:48:00 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:15:36 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void TestIfFormStillWorks(void)
 		form = unpaid_intern.MakeForm("presidential pardon", "Felicia");
 		Bureaucrat.SignForm(*form);
 		std::cout << std::endl << *form << std::endl;
+		std::cout << Bureaucrat << std::endl;
 		Bureaucrat.ExecuteForm(*form);
 		delete form;
 	}

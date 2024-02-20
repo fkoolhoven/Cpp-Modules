@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:01:25 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/13 14:34:36 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:11:17 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@
 
 void TestPresidentialPardonForm()
 {
-	std::cout << YELLOW BOLD "Testing PresidentialPardonForm: grade too low\n" OFF;
+	std::cout << YELLOW BOLD "Testing PresidentialPardonForm: grade too low to execute\n" OFF;
 	PresidentialPardonForm presidential("Felicia");
 	Bureaucrat bureaucrat("Bureaucrat", 6);
 	bureaucrat.SignForm(presidential);
+	std::cout << std::endl << presidential << std::endl;
+	std::cout << bureaucrat << std::endl;
 	bureaucrat.ExecuteForm(presidential);
 
-	std::cout << YELLOW BOLD "\nTesting PresidentialPardonForm: form not signed\n" OFF;
+	std::cout << YELLOW BOLD "\nTesting PresidentialPardonForm: can't execute because form not signed\n" OFF;
 	{
 		PresidentialPardonForm unsigned_form("Target");
+		std::cout << std::endl << unsigned_form << std::endl;
 		bureaucrat.IncrementGrade();
 		bureaucrat.ExecuteForm(unsigned_form);
 	}
@@ -36,15 +39,18 @@ void TestPresidentialPardonForm()
 
 void TestRobotomyRequestForm()
 {
-	std::cout << YELLOW BOLD "Testing RobotomyRequestForm: grade too low\n" OFF;
+	std::cout << YELLOW BOLD "Testing RobotomyRequestForm: grade too low to execute\n" OFF;
 	RobotomyRequestForm robotomy("Yoda");
 	Bureaucrat bureaucrat("Bureaucrat", 46);
 	bureaucrat.SignForm(robotomy);
+	std::cout << std::endl << robotomy << std::endl;
+	std::cout << bureaucrat << std::endl;
 	bureaucrat.ExecuteForm(robotomy);
 
-	std::cout << YELLOW BOLD "\nTesting RobotomyRequestForm: form not signed\n" OFF;
+	std::cout << YELLOW BOLD "\nTesting RobotomyRequestForm: can't execute because form not signed\n" OFF;
 	{
 		RobotomyRequestForm unsigned_form("Target");
+		std::cout << std::endl << unsigned_form << std::endl;
 		bureaucrat.IncrementGrade();
 		bureaucrat.ExecuteForm(unsigned_form);
 	}
@@ -55,15 +61,18 @@ void TestRobotomyRequestForm()
 
 void TestShrubberyCreationForm()
 {
-	std::cout << YELLOW BOLD "Testing ShrubberyCreationForm: grade too low\n" OFF;
+	std::cout << YELLOW BOLD "Testing ShrubberyCreationForm: grade too low to execute\n" OFF;
 	ShrubberyCreationForm shrubbery("Tree");
 	Bureaucrat bureaucrat("Bureaucrat", 138);
 	bureaucrat.SignForm(shrubbery);
+	std::cout << std::endl << shrubbery << std::endl;
+	std::cout << bureaucrat << std::endl;
 	bureaucrat.ExecuteForm(shrubbery);
 
-	std::cout << YELLOW BOLD "\nTesting ShrubberyCreationForm: form not signed\n" OFF;
+	std::cout << YELLOW BOLD "\nTesting ShrubberyCreationForm: can't execute because form not signed\n" OFF;
 	{
 		ShrubberyCreationForm unsigned_form("Target");
+		std::cout << std::endl << unsigned_form << std::endl;
 		bureaucrat.IncrementGrade();
 		bureaucrat.ExecuteForm(unsigned_form);
 	}
@@ -74,15 +83,13 @@ void TestShrubberyCreationForm()
 
 void TestFormCopy()
 {
-	std::cout << YELLOW BOLD "Testing copy constructor and assignment operator" OFF << std::endl;
+	std::cout << YELLOW BOLD "Testing copy constructor" OFF << std::endl;
 	
 	ShrubberyCreationForm	shrubbery("Target");
-	ShrubberyCreationForm	shrubbery_copy1 = shrubbery;
-	ShrubberyCreationForm	shrubbery_copy2(shrubbery);
+	ShrubberyCreationForm	shrubbery_copy(shrubbery);
 	
 	std::cout << shrubbery << std::endl;
-	std::cout << shrubbery_copy1 << std::endl;
-	std::cout << shrubbery_copy2 << std::endl;
+	std::cout << shrubbery_copy << std::endl;
 }
 
 void TestFormConstructionDestruction(void)
