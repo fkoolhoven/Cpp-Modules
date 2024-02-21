@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:37:58 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/15 12:59:53 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:30:21 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define OFF	"\033[0m"
 
 # include <iostream>
+# include <random>
+# include <cstdlib>
 
 class Base
 {

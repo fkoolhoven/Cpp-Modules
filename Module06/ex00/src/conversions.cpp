@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversions.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:58:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/14 16:58:25 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:31:23 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int ToInt(std::string to_convert, bool& succesful_conversion)
 		int_representation = std::stoi(to_convert);
 		succesful_conversion = true;
 	}
-	catch (const std::invalid_argument& e)
+	catch (const std::invalid_argument& exception)
 	{
-		std::cout << "int: Invalid argument: " << e.what() << std::endl;
+		std::cout << "int: Invalid argument: " << exception.what() << std::endl;
 		succesful_conversion = false;
 	}
-	catch (const std::out_of_range& e)
+	catch (const std::out_of_range& exception)
 	{
-		std::cout << "int: Out of range: " << e.what() << std::endl;
+		std::cout << "int: Out of range: " << exception.what() << std::endl;
 		succesful_conversion = false;
 	}
 	return (int_representation);

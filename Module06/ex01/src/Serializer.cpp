@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:10:46 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/14 17:20:34 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:29:05 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ Serializer::~Serializer()
 	std::cout << RED << "Serializer destroyed" << OFF << std::endl;
 }
 
-Serializer::Serializer(const Serializer& src)
+Serializer::Serializer(const Serializer& instance)
 {
-	*this = src;	
+	*this = instance;	
 }	
 
-Serializer& Serializer::operator=(const Serializer& src)
+Serializer& Serializer::operator=(const Serializer& instance)
 {
-	(void)src;
+	(void)instance;
 	return (*this);	
 }	
 

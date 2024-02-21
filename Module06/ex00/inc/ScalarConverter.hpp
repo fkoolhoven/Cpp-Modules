@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:03:37 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/14 17:04:58 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:30:48 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define OFF	"\033[0m"
 
 # include <iostream>
+# include <cstdlib>
 # include <string>
 # include <cctype>
 # include <limits>
