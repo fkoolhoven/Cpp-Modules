@@ -14,10 +14,10 @@
 
 A::A()
 {
-	std::cout << GREEN "A created" OFF << std::endl;
+	std::cout << GREEN "A created\n" OFF;
 }
 
 A::~A() 
 {
-	std::cout << RED "A destroyed" OFF << std::endl;	
+	std::cout << RED "A destroyed\n" OFF;	
 }
