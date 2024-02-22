@@ -17,12 +17,12 @@
 
 Base::Base()
 {
-	std::cout << GREEN "Base created" OFF << std::endl;
+	std::cout << GREEN "Base created\n" OFF;
 }
 
 Base::~Base()
 {
-	std::cout << RED "Base destroyed" OFF << std::endl;
+	std::cout << RED "Base destroyed\n" OFF;
 }
 
 Base* Generate(void)
