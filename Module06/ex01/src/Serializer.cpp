@@ -14,12 +14,12 @@
 
 Serializer::Serializer()
 {
-	std::cout << GREEN << "Serializer created" << OFF << std::endl;
+	std::cout << GREEN "Serializer created\n" << OFF;
 }
 
 Serializer::~Serializer()
 {
-	std::cout << RED << "Serializer destroyed" << OFF << std::endl;
+	std::cout << RED "Serializer destroyed\n" << OFF;
 }
 
 Serializer::Serializer(const Serializer& instance)
