@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:10:54 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/21 18:28:37 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/22 18:39:24 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void TestUnintededUse(void)
 	std::cout << "last_name: " << data->last_name << std::endl;
 	std::cout << "age: " << data->age << std::endl << std::endl;
 
-	// int raw = reinterpret_cast<int>(data); // this won't compile because of potential data loss
-	int raw = reinterpret_cast<uintptr_t>(data);
+	// short raw = reinterpret_cast<short>(data); // this won't compile because of potential data loss
+	short raw = reinterpret_cast<uintptr_t>(data);
 	Data *data_ptr = Serializer::deserialize(raw);
 
 	std::cout << YELLOW BOLD "Data after serialization and deserialization\n" OFF;

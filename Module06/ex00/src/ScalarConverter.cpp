@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:09:01 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/14 17:05:50 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:39:02 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 ScalarConverter::ScalarConverter()
 {
-	std::cout << GREEN << "ScalarConverter created\n" OFF;
+	std::cout << GREEN "ScalarConverter created\n" OFF;
 }
 
 ScalarConverter::~ScalarConverter()
 {
-	std::cout << RED << "ScalarConverter destroyed\n" OFF;
+	std::cout << RED "ScalarConverter destroyed\n" OFF;
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter& src)

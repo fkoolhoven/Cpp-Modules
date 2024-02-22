@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 18:03:37 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/21 18:30:48 by felicia          ###   ########.fr       */
+/*   Updated: 2024/02/22 18:38:30 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <cstdlib>
 # include <string>
 # include <cctype>
-# include <limits>
 # include <stdexcept>
 # include <regex>
 
