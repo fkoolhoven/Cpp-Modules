@@ -14,10 +14,10 @@
 
 B::B()
 {
-	std::cout << GREEN "B created" OFF << std::endl;
+	std::cout << GREEN "B created\n" OFF;
 }
 
 B::~B() 
 {
-	std::cout << RED "B destroyed" OFF << std::endl;	
+	std::cout << RED "B destroyed\n" OFF;	
 }

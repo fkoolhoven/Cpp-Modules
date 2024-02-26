@@ -14,10 +14,10 @@
 
 C::C()
 {
-	std::cout << GREEN "C created" OFF << std::endl;
+	std::cout << GREEN "C created\n" OFF;
 }
 
 C::~C() 
 {
-	std::cout << RED "C destroyed" OFF << std::endl;	
+	std::cout << RED "C destroyed\n" OFF;	
 }
