@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:04:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/19 17:08:56 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:02:08 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void TestCopyAssignment(void)
 	std::cout << "char_array content: " << char_array << std::endl;
 	std::cout << "char_array_assigned content: " << char_array_assigned << std::endl;
 
-	std::cout << YELLOW BOLD "\nTesting deep copy\n" OFF;
+	std::cout << YELLOW BOLD "\nTesting deep copy (assignment)\n" OFF;
 	char_array_assigned[0] = 'C';
 	char_array_assigned[1] = 'D';
 	std::cout << "char_array content: " << char_array << std::endl;
@@ -103,6 +103,7 @@ void TestConstructionDestructionWithSize(void)
 
 	try
 	{
+		std::cout << "Trying to create an array of size 0\n";
 		Array<int> bad_size(0);
 	}
 	catch(const std::exception& exception)
@@ -122,6 +123,14 @@ void TestGetArraySize(void)
 	std::cout << "Size of char_array: " << char_array.getArraySize() << std::endl;
 }
 
+void TestInitializedByDefault(void)
+{
+	std::cout << YELLOW BOLD "Testing initialized by default\n" OFF;
+	
+	Array<int> int_array(15);
+	std::cout << "int_array content: " << int_array << std::endl;
+}
+
 void TestDefaultConstructionDestruction(void)
 {
 	std::cout << YELLOW BOLD "Testing default construction/destruction\n" OFF;
@@ -139,6 +148,8 @@ int main(void)
 {
 	std::cout << std::endl;
 	TestDefaultConstructionDestruction();
+	std::cout << std::endl;
+	TestInitializedByDefault();
 	std::cout << std::endl;
 	TestGetArraySize();
 	std::cout << std::endl;

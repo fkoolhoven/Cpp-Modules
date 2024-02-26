@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:57:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/15 14:22:07 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/26 15:36:00 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,6 @@ int main( void )
 	std::cout << "max(c1, c2) = " << ::max(c1, c2) << std::endl << std::endl;
 
 	// ::swap(a, c); // This won't compile because the types don't match
-	
-	// std::function<void()> f1 = [](){};
-    // std::function<void()> f2 = [](){};
-	// ::min(f1, f2); // This won't compile because std::function doesn't support the < operator
 	
 	return (EXIT_SUCCESS);
 }

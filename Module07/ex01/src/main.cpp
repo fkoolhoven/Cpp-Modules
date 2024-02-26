@@ -6,11 +6,23 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:27:10 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/15 16:52:59 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/26 15:43:26 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+
+typedef struct s_test_struct
+{
+	std::string first_name;
+	std::string last_name;
+} 	t_test_struct;
+
+std::ostream& operator<<(std::ostream& stream, const t_test_struct instance)
+{
+	std::cout << instance.first_name << " " << instance.last_name;
+	return (stream);
+}
 
 int main(void)
 {

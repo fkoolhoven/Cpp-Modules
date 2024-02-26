@@ -6,26 +6,26 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:23:02 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/19 17:08:41 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:18:03 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 template <typename T>
 Array<T>::Array(void) : array(nullptr), array_size(0) 
 {
-	std::cout << GREEN "Array created" OFF << std::endl;
+	std::cout << GREEN "Array created\n" OFF;
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
-	if (n == 0 || n > UINT_MAX)
+	if (n <= 0 || n > UINT_MAX)
 		throw std::invalid_argument("Invalid array size");
 	else
 	{
 		array = new T[n]; 
 		array_size = n; 
-		std::cout << GREEN "Array created" OFF << std::endl;
+		std::cout << GREEN "Array created\n" OFF;
 	}
 }
 
@@ -34,7 +34,7 @@ Array<T>::Array(const Array& instance) : array(new T[instance.array_size]), arra
 {
 	for (unsigned int i = 0; i < instance.array_size; i++)
 		array[i] = instance[i];
-	std::cout << GREEN "Array copy constructed" OFF << std::endl;
+	std::cout << GREEN "Array copy constructed\n" OFF;
 }
 
 template <typename T>
@@ -48,15 +48,15 @@ Array<T>& Array<T>::operator=(const Array& instance)
 		for (unsigned int i = 0; i < instance.array_size; i++)
 			array[i] = instance[i];
 	}
-	std::cout << "Array copied"	<< std::endl;
-	return *this;
+	std::cout << "Array copied\n";
+	return (*this);
 }
 
 template <typename T>
 Array<T>::~Array(void)
 {
 	delete[] array;
-	std::cout << RED "Array destroyed" OFF << std::endl;
+	std::cout << RED "Array destroyed\n" OFF;
 }
 
 template <typename T>

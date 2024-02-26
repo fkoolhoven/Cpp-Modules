@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:57:12 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/19 16:47:16 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:24:58 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 # define OFF	"\033[0m"
 
 # include <iostream>
-# include <climits> 
+# include <climits>
+# include <stdexcept>
 
 template <typename T>
 class Array
@@ -35,8 +36,8 @@ class Array
 		Array(const Array& instance);
 		Array& operator=(const Array& instance);
 		~Array(void);
+		
 		T& operator[](unsigned int index) const;
-
 		unsigned int getArraySize(void) const;
 };
 
