@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:23:02 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/27 13:13:40 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:30:44 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Array<T>::Array(unsigned int n)
 	{
 		array = new T[n]; 
 		array_size = n; 
-		std::fill(array, array + n, T()); // Initialize elements to default values
+		std::fill(array, array + n, T());
 		std::cout << GREEN "Array created\n" OFF;
 	}
 }
