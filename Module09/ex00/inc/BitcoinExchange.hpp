@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:21 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/27 17:34:46 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:01:23 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # define GREEN		"\033[32m"
 # define RED 		"\033[31m"
-# define YELLOW		"\033[33m"
-# define BOLD		"\033[1m"
-# define OFF		"\033[0m"
-# define NO_DATA	-1
 
 # include <iostream>
 # include <fstream>

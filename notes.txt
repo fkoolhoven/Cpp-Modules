@@ -1,6 +1,7 @@
 To do:
 - Leakchecks for evals
-- Get evaluated 05, 06, 07
 - 08 Try more containers
 - 08 Search for algorithms that do the job
 - 08 Watch some vids on iterators, algorithms, containers
+- 09 Test copies
+- 09 const getter ex01
