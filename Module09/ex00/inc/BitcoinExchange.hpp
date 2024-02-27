@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:21 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/22 18:35:57 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/27 12:14:15 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,21 @@
 # include <map>
 # include <ctime>
 # include <string>
+# include <sstream>
+# include <iomanip>
 
 class BitcoinExchange
 {
 	private:
-		std::map<int, float> database;
+		std::map<std::time_t, float> database;
 		
 	public:
 		BitcoinExchange(std::ifstream& database);
 		BitcoinExchange(const BitcoinExchange& src);
 		BitcoinExchange& operator=(const BitcoinExchange& src);
 		~BitcoinExchange();
+
+		std::map<std::time_t, float> getDatabase() const;
 };
 
 #endif

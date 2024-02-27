@@ -6,11 +6,20 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:04:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/26 16:02:08 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/27 13:17:18 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
+
+void TestConstArrayInstance(void)
+{
+	std::cout << YELLOW BOLD "Testing const array instance\n" OFF;
+
+	const Array<int> int_array(3);
+	std::cout << "int_array content: " << int_array << std::endl;
+	// int_array[0] = 1; // This won't compile because int_array is const
+}
 
 void TestAccessOutsideArray(void)
 {
@@ -160,6 +169,8 @@ int main(void)
 	TestCopyAssignment();
 	std::cout << std::endl;
 	TestAccessOutsideArray();
+	std::cout << std::endl;
+	TestConstArrayInstance();
 	std::cout << std::endl;
 	return (EXIT_SUCCESS);
 }

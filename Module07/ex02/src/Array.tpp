@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:23:02 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/26 16:18:03 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/27 13:13:40 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Array<T>::Array(unsigned int n)
 	{
 		array = new T[n]; 
 		array_size = n; 
+		std::fill(array, array + n, T()); // Initialize elements to default values
 		std::cout << GREEN "Array created\n" OFF;
 	}
 }
@@ -66,10 +67,18 @@ unsigned int Array<T>::getArraySize(void) const
 }
 
 template <typename T>
-T& Array<T>::operator[](unsigned int index) const
+T& Array<T>::operator[](unsigned int index)
 {
-    if (index < 0 || index >= array_size)
-		throw std::out_of_range("Index out of range");
+    if (index >= array_size)
+        throw std::out_of_range("Index out of range");
+    return array[index];
+}
+
+template <typename T>
+const T& Array<T>::operator[](unsigned int index) const
+{
+    if (index >= array_size)
+        throw std::out_of_range("Index out of range");
     return array[index];
 }
 

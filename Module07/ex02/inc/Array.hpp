@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:57:12 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/26 16:24:58 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/27 13:04:47 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ class Array
 		Array& operator=(const Array& instance);
 		~Array(void);
 		
-		T& operator[](unsigned int index) const;
+		T& operator[](unsigned int index);
+		const T& operator[](unsigned int index) const;
 		unsigned int getArraySize(void) const;
 };
 

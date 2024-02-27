@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:11:24 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/22 17:52:09 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/27 12:30:52 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,38 @@ int main (int argc, char **argv)
 	std::string line;
 	while (std::getline(input, line))
 	{
-		// Process line from input file
-	}
+		if (line.compare("date | value") != 0 && !line.empty())
+		{
+			size_t delimiter = line.find('|');
+			if (delimiter == std::string::npos || delimiter != 11 || line.length() < 14)
+			{
+				std::cerr << "Invalid input format\n";
+			}
+			else
+			{
+				std::string date_string = line.substr(0, delimiter - 1);
+				std::tm date_struct = {};
+				std::istringstream date_stream(date_string);
+				date_stream >> std::get_time(&date_struct, "%Y-%m-%d");
+			
+				std::string rate_string = line.substr(delimiter + 2);
+				float rate = std::stof(rate_string);
 
-	
-	
-	// read file
-	// check for errors
-	// create map
-	// calculate value
+				if (rate < 0)
+				{
+					std::cerr << "Error: not a positive number.\n";
+				}
+				else if (rate > 1000)
+				{
+					std::cerr << "Error: too large a number.\n";
+				}
+				else
+				{
+					// std::time_t date = std::mktime(&date_struct);
+					std::cout << std::put_time(&date_struct, "%Y-%d-%m") << " => " << rate_string << std::endl;
+				}
+			}
+		}
+	}
 	return (EXIT_SUCCESS);
 }

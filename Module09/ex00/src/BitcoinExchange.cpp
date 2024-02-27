@@ -6,34 +6,33 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:42 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/22 18:35:30 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/27 12:20:15 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-// class BitcoinExchange
-// {
-// 	private:
-// 		std::map<std::tm, float> database;
-		
-// 	public:
-// 		BitcoinExchange(std::ifstream& database);
-// 		BitcoinExchange(const BitcoinExchange& src);
-// 		BitcoinExchange& operator=(const BitcoinExchange& src);
-// 		~BitcoinExchange();
-// };
-
-
 BitcoinExchange::BitcoinExchange(std::ifstream& datafile)
 {
 	std::string line;
+	std::getline(datafile, line);
+	
 	while (std::getline(datafile, line))
 	{
-		database.insert(std::pair<int, float>(5, 0.0f));
-		// Process line from database file
+		size_t comma_position = line.find(',');
+		
+		std::string date_string = line.substr(0, comma_position);
+		std::tm date_struct = {};
+		std::istringstream date_stream(date_string);
+		date_stream >> std::get_time(&date_struct, "%Y-%m-%d");
+	
+		std::string rate_string = line.substr(comma_position + 1);
+		float rate = std::stof(rate_string);
+		
+		std::time_t date = std::mktime(&date_struct);
+		database.emplace(date, rate);
 	}
-
+	
 	std::cout << GREEN "BitcoinExchange created\n" OFF;
 }
 
@@ -54,3 +53,7 @@ BitcoinExchange::~BitcoinExchange()
 	std::cout << GREEN "BitcoinExchange destroyed\n" OFF;
 }
 
+std::map<std::time_t, float> BitcoinExchange::getDatabase() const
+{
+	return (database);
+}

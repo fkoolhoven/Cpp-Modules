@@ -16,7 +16,7 @@ These modules are made in accordance with the CPP-Modules, which are part of the
 **Module06**: casts (reinterpret_cast, static_cast, dynamic_cast), serialization <br>
 **Module07**: templates (function templates, class templates) <br>
 **Module08**: Standard Template Library (STL), containers, iterators, algorithms <br>
-**Module09**: <br>
+**Module09**: More practice with STL (map) <br>
 
 # Contact
 See my profile page for ways to contact me!
