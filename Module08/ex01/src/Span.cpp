@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:53:13 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 13:18:46 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/28 18:47:34 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,11 @@ int Span::ShortestSpan(void)
 	int shortest = vector_copy[1] - vector_copy[0];
 	for (std::vector<int>::iterator iterator = vector_copy.begin(); iterator != vector_copy.end(); iterator++)
 	{
-		if (iterator + 1 != vector_copy.end() && (*(iterator + 1) - *iterator) < shortest)
-			shortest = *(iterator + 1) - *iterator;
+		if (iterator + 1 != vector_copy.end())
+		{
+			if ((*(iterator + 1) - *iterator) < shortest)
+				shortest = *(iterator + 1) - *iterator;
+		}
 	}
 	return (shortest);
 }
