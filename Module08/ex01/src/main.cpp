@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:53:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/20 17:51:17 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:19:02 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ void TestContainerFullWithManyNumbers(void)
 	std::cout << YELLOW BOLD "Testing FullContainer exception with many numbers\n" OFF;
 	try
 	{
-		Span span(10000);
-		std::vector<int> numbers(10001);
+		int container_size = 10000;
+		Span span(container_size);
+		std::vector<int> numbers(container_size + 1);
 
-		for (int i = 0; i < 10001; i++)
+		for (int i = 0; i < container_size + 1; i++)
 			numbers[i] = i;
 		
 		span.AddMultipleNumbers(numbers.begin(), numbers.end());
@@ -28,7 +29,7 @@ void TestContainerFullWithManyNumbers(void)
 		std::cout << "Shortest span: " << span.ShortestSpan() << std::endl;
 		std::cout << "Longest span: " << span.LongestSpan() << std::endl;
 	}
-	catch(const std::exception& exception)
+	catch (const std::exception& exception)
 	{
 		std::cerr << "An exception was caught! " << exception.what() << '\n';
 	}
@@ -51,7 +52,7 @@ void TestWithManyNumbers(void)
 		std::cout << "Shortest span: " << span.ShortestSpan() << std::endl;
 		std::cout << "Longest span: " << span.LongestSpan() << std::endl;
 	}
-	catch(const std::exception& exception)
+	catch (const std::exception& exception)
 	{
 		std::cerr << "An exception was caught! " << exception.what() << '\n';
 	}
@@ -64,9 +65,11 @@ void TestNoSpanException(void)
 	{
 		Span span(5);
 		span.AddNumber(1);
+		std::cout << "This code will be executed\n";
 		span.ShortestSpan();
+		std::cout << "This code will not be executed\n";
 	}
-	catch(const std::exception& exception)
+	catch (const std::exception& exception)
 	{
 		std::cerr << "An exception was caught! " << exception.what() << '\n';
 	}
@@ -98,14 +101,18 @@ void TestDeepCopy(void)
 		span1.AddNumber(2);
 		
 		Span span2(span1);
+		Span span3(1);
+		span3 = span1;
+		
 		span1.AddNumber(3);
 		span2.AddNumber(10);
-
-		std::cout << "1 Longest span: " << span1.LongestSpan() << std::endl;
-		std::cout << "2 Longest span: " << span2.LongestSpan() << std::endl;
+		span3.AddNumber(100);
 		
+		std::cout << "1 Longest span: " << span1.LongestSpan() << " (1-3)\n";
+		std::cout << "2 Longest span: " << span2.LongestSpan() << " (1-10)\n";
+		std::cout << "3 Longest span: " << span3.LongestSpan() << " (1-100)\n";
 	}
-	catch(const std::exception& exception)
+	catch (const std::exception& exception)
 	{
 		std::cerr << "An exception was caught! " << exception.what() << '\n';
 	}
@@ -122,14 +129,19 @@ void TestMemberFunctions(void)
 		span.AddNumber(17);
 		span.AddNumber(9);
 		span.AddNumber(11);
-		std::cout << "Shortest span: " << span.ShortestSpan() << std::endl;
-		std::cout << "Longest span: " << span.LongestSpan() << std::endl;
+		std::cout << "Shortest span: " << span.ShortestSpan() << " (3-5)\n";
+		std::cout << "Longest span: " << span.LongestSpan() << " (3-17)\n";
 
-		Span copy = span;
-		std::cout << "Shortest span: " << copy.ShortestSpan() << std::endl;
-		std::cout << "Longest span: " << copy.LongestSpan() << std::endl;
+		Span copy(span);
+		std::cout << "Shortest span: " << copy.ShortestSpan() << " (3-5)\n";
+		std::cout << "Longest span: " << copy.LongestSpan() << " (3-17)\n";
+
+		Span copy2(10);
+		copy2 = span;
+		std::cout << "Shortest span: " << copy2.ShortestSpan() << " (3-5)\n";
+		std::cout << "Longest span: " << copy2.LongestSpan() << " (3-17)\n";
 	}
-	catch(const std::exception& exception)
+	catch (const std::exception& exception)
 	{
 		std::cerr << "An exception was caught! " << exception.what() << '\n';
 	}

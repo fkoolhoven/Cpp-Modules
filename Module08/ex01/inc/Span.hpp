@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:52:51 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/20 17:11:39 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:24:19 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <algorithm>
 # include <iostream>
 # include <vector>
-# include <list>
-# include <array>
 
 # define GREEN	"\033[32m"
 # define RED 	"\033[31m"
@@ -34,8 +32,8 @@ class Span
 	
 	public:
 		Span(unsigned int max_size);
-		Span(const Span& instance);
-		Span& operator=(const Span& instance);
+		Span(const Span& source);
+		Span& operator=(const Span& source);
 		~Span();
 
 		void AddNumber(int number);

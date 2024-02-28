@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:53:13 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/20 17:23:49 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:18:46 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ Span::Span(unsigned int max_size)
 	std::cout << GREEN "Span created" OFF << std::endl;
 }
 
-Span::Span(const Span& instance)
+Span::Span(const Span& source)
 {
-	*this = instance;
+	*this = source;
 	std::cout << GREEN "Span copy created" OFF << std::endl;
 }
 
-Span& Span::operator=(const Span& instance)
+Span& Span::operator=(const Span& source)
 {
-	this->max_size = instance.max_size;
-	this->vector_container = instance.vector_container;
-	return *this;
+	this->max_size = source.max_size;
+	this->vector_container = source.vector_container;
+	return (*this);
 }
 
 Span::~Span()
@@ -63,18 +63,15 @@ int Span::ShortestSpan(void)
 {
 	if (this->vector_container.size() < 2)
 		throw NoSpan();
-	std::vector<int> copy = this->vector_container;
-	std::sort(copy.begin(), copy.end());
-	int shortest = copy[1] - copy[0];
-	for (std::vector<int>::iterator it = copy.begin(); it != copy.end(); it++)
+	std::vector<int> vector_copy = this->vector_container;
+	std::sort(vector_copy.begin(), vector_copy.end());
+	int shortest = vector_copy[1] - vector_copy[0];
+	for (std::vector<int>::iterator iterator = vector_copy.begin(); iterator != vector_copy.end(); iterator++)
 	{
-		if (it + 1 != copy.end())
-		{
-			if (*(it + 1) - *it < shortest)
-				shortest = *(it + 1) - *it;
-		}
+		if (iterator + 1 != vector_copy.end() && (*(iterator + 1) - *iterator) < shortest)
+			shortest = *(iterator + 1) - *iterator;
 	}
-	return shortest;
+	return (shortest);
 }
 
 const char* Span::FullContainer::what() const throw()
