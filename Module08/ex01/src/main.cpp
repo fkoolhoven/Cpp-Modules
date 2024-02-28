@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:53:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 13:19:02 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/28 20:04:58 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,16 +129,16 @@ void TestMemberFunctions(void)
 		span.AddNumber(17);
 		span.AddNumber(9);
 		span.AddNumber(11);
-		std::cout << "Shortest span: " << span.ShortestSpan() << " (3-5)\n";
+		std::cout << "Shortest span: " << span.ShortestSpan() << " (9-11)\n";
 		std::cout << "Longest span: " << span.LongestSpan() << " (3-17)\n";
 
 		Span copy(span);
-		std::cout << "Shortest span: " << copy.ShortestSpan() << " (3-5)\n";
+		std::cout << "Shortest span: " << copy.ShortestSpan() << " (9-11)\n";
 		std::cout << "Longest span: " << copy.LongestSpan() << " (3-17)\n";
 
 		Span copy2(10);
 		copy2 = span;
-		std::cout << "Shortest span: " << copy2.ShortestSpan() << " (3-5)\n";
+		std::cout << "Shortest span: " << copy2.ShortestSpan() << " (9-11)\n";
 		std::cout << "Longest span: " << copy2.LongestSpan() << " (3-17)\n";
 	}
 	catch (const std::exception& exception)
