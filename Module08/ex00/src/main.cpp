@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:33:03 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 12:58:28 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/28 16:59:12 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void TestWithList(void)
 // Vectors are sequence containers representing arrays that can change in size.
 void TestWithVector(void)
 {
-	std::cout << YELLOW BOLD "\nTesting succesful find with vector\n" OFF;
+	std::cout << YELLOW BOLD "Testing succesful find with vector\n" OFF;
 	try
 	{
 		std::vector<int> vector_test = {3, 4, 5};
@@ -158,6 +158,7 @@ void TestWithArray(void)
 
 int main(void)
 {
+	std::cout << std::endl;
 	TestWithArray();
 	std::cout << std::endl;
 	TestWithVector();
