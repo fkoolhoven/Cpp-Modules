@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:53:13 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 18:47:34 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:21:44 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void Span::AddMultipleNumbers(std::vector<int>::iterator begin, std::vector<int>
 	this->vector_container.insert(this->vector_container.end(), begin, end);
 }
 
-int Span::LongestSpan(void)
+int Span::LongestSpan(void) const
 {
 	if (this->vector_container.size() < 2)
 		throw NoSpan();
@@ -59,7 +59,7 @@ int Span::LongestSpan(void)
 	return (max - min);
 }
 
-int Span::ShortestSpan(void)
+int Span::ShortestSpan(void) const
 {
 	if (this->vector_container.size() < 2)
 		throw NoSpan();

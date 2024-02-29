@@ -6,11 +6,30 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:46:07 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 16:28:26 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:28:51 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+
+void TestWithConstMutantStack(void)
+{
+	std::cout << BOLD YELLOW "Testing with const mutant stack\n" OFF;
+
+	MutantStack<int> mutant_stack;
+	mutant_stack.push(11);
+	mutant_stack.push(12);
+	mutant_stack.push(13);
+
+	const MutantStack<int> const_mutant(mutant_stack);
+	MutantStack<int>::const_iterator begin = const_mutant.begin();
+	MutantStack<int>::const_iterator end = const_mutant.end();
+	while (begin != end)
+	{
+		std::cout << "Iterator: " << *begin << std::endl;
+		++begin;
+	}	
+}
 
 void TestFromSubjectWithMutantChar(void)
 {
@@ -194,5 +213,8 @@ int main(void)
 	TestFromSubjectWithListChar();
 	std::cout << std::endl;
 	TestFromSubjectWithMutantChar();
+	std::cout << std::endl;
+	TestWithConstMutantStack();
+	std::cout << std::endl;
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:33:16 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 12:37:26 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:18:40 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,17 @@ template <typename T>
 typename T::iterator easyfind(T& container, int to_find)
 {
 	typename T::iterator iterator = std::find(container.begin(), container.end(), to_find);
+	
+	if (iterator != container.end())
+		return iterator;
+	else
+		throw NotFound();
+}
+
+template <typename T>
+typename T::const_iterator easyfind(const T& container, int to_find)
+{
+	typename T::const_iterator iterator = std::find(container.begin(), container.end(), to_find);
 	
 	if (iterator != container.end())
 		return iterator;

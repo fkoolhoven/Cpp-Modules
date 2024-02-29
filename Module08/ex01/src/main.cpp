@@ -6,11 +6,31 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:53:19 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 20:04:58 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:30:39 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+void TestWithConstContainer(void)
+{
+	std::cout << YELLOW BOLD "Testing with const container\n" OFF;
+	try
+	{
+		Span span(3);
+		span.AddNumber(1);
+		span.AddNumber(2);
+		span.AddNumber(3);
+
+		const Span const_span(span);
+		std::cout << "Shortest span: " << const_span.ShortestSpan() << " (1-2)\n";
+		std::cout << "Longest span: " << const_span.LongestSpan() << " (1-3)\n";
+	}
+	catch (const std::exception& exception)
+	{
+		std::cerr << "An exception was caught! " << exception.what() << '\n';
+	}
+}
 
 void TestContainerFullWithManyNumbers(void)
 {
@@ -161,6 +181,8 @@ int main(void)
 	TestWithManyNumbers();
 	std::cout << std::endl;
 	TestContainerFullWithManyNumbers();
+	std::cout << std::endl;
+	TestWithConstContainer();
 	std::cout << std::endl;
 	return (EXIT_SUCCESS);
 }

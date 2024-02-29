@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:46:17 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 16:46:44 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:25:50 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class MutantStack : public std::stack<T, deque>
 	
 	public:
 		typedef typename deque::iterator iterator;
+		typedef typename deque::const_iterator const_iterator;
 		
 		MutantStack() : stack() 
 		{ 
@@ -58,6 +59,14 @@ class MutantStack : public std::stack<T, deque>
 			return (this->c.begin()); 
 		}
 		iterator end() 
+		{ 
+			return (this->c.end()); 
+		}
+		const_iterator begin() const
+		{ 
+			return (this->c.begin()); 
+		}
+		const_iterator end() const
 		{ 
 			return (this->c.end()); 
 		}

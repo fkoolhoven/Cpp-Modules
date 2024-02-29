@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:52:51 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 13:24:19 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:21:29 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class Span
 
 		void AddNumber(int number);
 		void AddMultipleNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-		int ShortestSpan(void);
-		int LongestSpan(void);
+		int ShortestSpan(void) const;
+		int LongestSpan(void) const;
 
 		class FullContainer : public std::exception
 		{

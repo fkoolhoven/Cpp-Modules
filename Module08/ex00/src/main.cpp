@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:33:03 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/28 16:59:12 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:18:47 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,33 @@ void TestWithVector(void)
 	}
 }
 
+void TestWithConstArray(void)
+{
+	std::cout << YELLOW BOLD "Testing succesful find with const array\n" OFF;
+	try
+	{
+		const std::array<int, 3> array_test = {3, 4, 5};
+		std::array<int, 3>::const_iterator found = easyfind(array_test, 4);
+		std::cout << "Found: " << *found << std::endl;
+	}
+	catch (const std::exception& exception)
+	{
+		std::cerr << "An exception was caught! " << exception.what() << '\n';
+	}
+
+	std::cout << YELLOW BOLD "\nTesting not found with const array\n" OFF;
+	try
+	{
+		const std::array<int, 3> array_test = {1, 2, 3};
+		std::array<int, 3>::const_iterator found = easyfind(array_test, 4);
+		std::cout << "Found: " << *found << std::endl;
+	}
+	catch (const std::exception& exception)
+	{
+		std::cerr << "An exception was caught! " << exception.what() << '\n';
+	}
+}
+
 // Arrays are fixed-size sequence containers: they hold a specific number of
 // elements ordered in a strict linear sequence.
 void TestWithArray(void)
@@ -160,6 +187,8 @@ int main(void)
 {
 	std::cout << std::endl;
 	TestWithArray();
+	std::cout << std::endl;
+	TestWithConstArray();
 	std::cout << std::endl;
 	TestWithVector();
 	std::cout << std::endl;
