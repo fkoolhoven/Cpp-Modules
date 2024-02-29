@@ -1,5 +1,0 @@
-To do:
-- Leakchecks for evals
-- Const correctness Module08
-- 09 Test copies
-- 09 const getter ex01
