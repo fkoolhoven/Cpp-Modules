@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:42 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/04 15:06:51 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/04 15:18:54 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange& src)
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& src)
 {
 	this->database = src.database;
+	this->date_as_int = src.date_as_int;
+	this->amount = src.amount;
+	this->date_string = src.date_string;
+	this->amount_string = src.amount_string;
+	this->delimiter_position = src.delimiter_position;
 	return (*this);
 }
 

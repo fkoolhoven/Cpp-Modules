@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:11:24 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/27 16:42:30 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/04 15:19:11 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main (int argc, char **argv)
 		std::cerr << "Failed to open database file\n";
 		return (EXIT_FAILURE);
 	}
+	
 	BitcoinExchange exchange(datafile);
 
 	std::string line;
