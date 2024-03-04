@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:03:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/27 18:47:13 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:45:37 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,11 @@ RPN::RPN(std::string input)
 
 	if (!error)
 		std::cout << "Result: " << stack.top() << std::endl;
-	
-	std::cout << GREEN "RPN created\n" OFF;
 }
 
 RPN::RPN(const RPN& src)
 {
 	*this = src;
-	std::cout << GREEN "RPN copy created\n" OFF;
 }
 
 RPN& RPN::operator=(const RPN& src)
@@ -78,10 +75,7 @@ RPN& RPN::operator=(const RPN& src)
 	return (*this);
 }
 
-RPN::~RPN()
-{
-	std::cout << GREEN "RPN destroyed\n" OFF;
-}
+RPN::~RPN() { }
 
 std::stack<int>& RPN::getStack(void)
 {

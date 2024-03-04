@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 17:50:50 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/29 18:26:36 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:34:49 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,26 +71,16 @@ static void FinalMergeSortVector(std::vector<int>& vector, int left_bound, int m
 
 static void InsertionSortVector(std::vector<int>& vector, int left, int right) 
 {
-	for (int i = left + 1; i <= right; i++) 
+	for (int i = left; i < right; i++) 
 	{
-		int to_insert = vector[i];
-		int low = left;
-		int high = i - 1;
-
-		while (low <= high) 
+		int to_insert = vector[i + 1];
+		int j = i + 1;
+		while (j > left && vector[j - 1] > to_insert) 
 		{
-			int mid = low + (high - low) / 2;
-
-			if (vector[mid] > to_insert) 
-				high = mid - 1;
-			else 
-				low = mid + 1;
+			vector[j] = vector[j - 1];
+			j--;
 		}
-
-		for (int j = i - 1; j >= low; j--) 
-			vector[j + 1] = vector[j];
-
-		vector[low] = to_insert;
+		vector[j] = to_insert;
 	}
 }
 
@@ -120,7 +110,7 @@ void PmergeMe::SortVector(std::vector<int>& vector)
 	
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 	std::cout << "After sorting: " << vector << std::endl;
-	std::cout << "Time to process a range of 5 elements with vector: " << duration << " microseconds\n";
+	std::cout << "Time to sort a range of 5 elements with vector: " << duration << " microseconds\n";
 }
 
 static void FinalMergeSortDeque(std::deque<int>& deque, int left_bound, int middle, int right_bound) 
@@ -159,26 +149,16 @@ static void FinalMergeSortDeque(std::deque<int>& deque, int left_bound, int midd
 
 static void InsertionSortDeque(std::deque<int>& deque, int left, int right) 
 {
-	for (int i = left + 1; i <= right; i++) 
+	for (int i = left; i < right; i++) 
 	{
-		int to_insert = deque[i];
-		int low = left;
-		int high = i - 1;
-
-		while (low <= high) 
+		int to_insert = deque[i + 1];
+		int j = i + 1;
+		while (j > left && deque[j - 1] > to_insert) 
 		{
-			int mid = low + (high - low) / 2;
-
-			if (deque[mid] > to_insert) 
-				high = mid - 1;
-			else 
-				low = mid + 1;
+			deque[j] = deque[j - 1];
+			j--;
 		}
-
-		for (int j = i - 1; j >= low; j--) 
-			deque[j + 1] = deque[j];
-
-		deque[low] = to_insert;
+		deque[j] = to_insert;
 	}
 }
 
@@ -208,7 +188,7 @@ void PmergeMe::SortDeque(std::deque<int>& deque)
 	
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 	std::cout << "After sorting: " << deque << std::endl;
-	std::cout << "Time to process a range of 5 elements with deque: " << duration << " microseconds\n";	
+	std::cout << "Time to sort a range of 5 elements with deque: " << duration << " microseconds\n";	
 }
 
 std::ostream& operator<<(std::ostream& stream, const std::vector<int>& vector)

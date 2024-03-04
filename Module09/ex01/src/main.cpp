@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:59:48 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/27 18:45:43 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:40:54 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,6 @@ void TestRPN(char **argv)
 	RPN rpn(input);
 }
 
-void TestCopyConstructor()
-{
-	std::cout << YELLOW BOLD "\nTestCopyConstructor\n" OFF;
-	RPN rpn("3 2 +");
-	RPN rpn_copy(rpn);
-
-	std::cout << "stack1 top: " << rpn.getStack().top() << std::endl;
-	std::cout << "stack2 top: " << rpn_copy.getStack().top() << std::endl;
-
-	rpn_copy.getStack().pop();
-
-	std::cout << "stack1 top: " << rpn.getStack().top() << std::endl;
-	std::cout << "stack2 top: " << rpn_copy.getStack().top() << std::endl;
-}
-
 int main(int argc, char **argv)
 {
 	if (argc != 2)
@@ -42,7 +27,6 @@ int main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 
-	TestCopyConstructor();
 	std::cout << std::endl;
 	TestRPN(argv);
 	std::cout << std::endl;

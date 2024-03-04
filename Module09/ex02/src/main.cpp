@@ -6,22 +6,9 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 17:50:15 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/29 18:18:04 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:35:33 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Here are some additional guidelines on the information you should display line by line
-// on the standard output:
-// • On the first line you must display an explicit text followed by the unsorted positive
-// integer sequence.
-// • On the second line you must display an explicit text followed by the sorted positive
-// integer sequence.
-// • On the third line you must display an explicit text indicating the time used by
-// your algorithm by specifying the first container used to sort the positive integer
-// sequence.
-// • On the last line you must display an explicit text indicating the time used by
-// your algorithm by specifying the second container used to sort the positive integer
-// sequence.
 
 #include "PmergeMe.hpp"
 
@@ -31,14 +18,15 @@ int UseUserInput(int argc, char **argv)
 	std::deque<int> deque;
 	int elements;
 	int number;
-	
+
+	auto start = std::chrono::high_resolution_clock::now();
 	for (elements = 1; elements < argc; elements++)
 	{
 		try
 		{
 			number = std::stoi(argv[elements]);
 			if (number < 1)
-				throw std::invalid_argument(std::to_string(number) + " is not a positive number");
+				throw std::invalid_argument("not a positive number");
 			deque.push_back(number);
 			vector.push_back(number);
 		}
@@ -53,9 +41,12 @@ int UseUserInput(int argc, char **argv)
 			return (EXIT_FAILURE);
 		}
 	}
+	auto end = std::chrono::high_resolution_clock::now();
 
 	PmergeMe sorter;
-	std::cout << "\nBefore sorting: " << vector << std::endl;
+	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+	std::cout << "\nTime to process data: " << duration << " microseconds\n";
+	std::cout << "Before sorting: " << vector << std::endl;
 
 	std::cout << YELLOW BOLD "\nSorting vector...\n" OFF;
 	sorter.SortVector(vector);
@@ -142,8 +133,6 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		int error = EXIT_SUCCESS;
-		error = UseUserInput(argc, argv);
-		return (error);
+		return (UseUserInput(argc, argv));
 	}
 }

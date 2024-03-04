@@ -6,21 +6,11 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:42 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/27 17:38:14 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/04 15:06:51 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-
-static int GetDateAsInt(const std::string &line, int delimit)
-{
-	std::string date_string = line.substr(0, delimit);
-	std::tm date_struct = {};
-	std::istringstream date_stream(date_string);
-	date_stream >> std::get_time(&date_struct, "%Y-%m-%d");
-	int date_as_int = (date_struct.tm_year + 1900) * 10000 + (date_struct.tm_mon + 1) * 100 + date_struct.tm_mday;
-	return (date_as_int);
-}
 
 BitcoinExchange::BitcoinExchange(std::ifstream& datafile)
 {
@@ -30,7 +20,11 @@ BitcoinExchange::BitcoinExchange(std::ifstream& datafile)
 	while (std::getline(datafile, line))
 	{
 		size_t comma_position = line.find(',');
-		int date_as_int = GetDateAsInt(line, comma_position);
+		std::string date_string = line.substr(0, comma_position);
+		std::tm date_struct = {};
+		std::istringstream date_stream(date_string);
+		date_stream >> std::get_time(&date_struct, "%Y-%m-%d");
+		int date_as_int = (date_struct.tm_year + 1900) * 10000 + (date_struct.tm_mon + 1) * 100 + date_struct.tm_mday;
 		std::string rate_string = line.substr(comma_position + 1);
 		float rate = std::stof(rate_string);
 		database.emplace(date_as_int, rate);
@@ -79,19 +73,49 @@ bool BitcoinExchange::FormattingIsCorrect(const std::string& line)
 	return (false);
 }
 
+int GetDaysInMonth(int month)
+{
+	static const int days_in_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	return (days_in_month[month - 1]);
+}
+
+bool VerifyDate(const std::tm& date_struct, const std::string& line)
+{
+	if (date_struct.tm_mon < 0 || date_struct.tm_mon > 11)
+	{
+		std::cerr << "Error: bad input => " << line << "\n";
+		return (false);
+	}
+	int days_in_month = GetDaysInMonth(date_struct.tm_mon + 1);
+	if (date_struct.tm_mday < 1 || date_struct.tm_mday > days_in_month)
+	{
+		std::cerr << "Error: bad input => " << line << "\n";
+		return (false);
+	}
+	return (true);
+}
+
 bool BitcoinExchange::InputIsValid(const std::string& line)
 {
 	if (this->FormattingIsCorrect(line))
 	{
-		this->date_as_int = GetDateAsInt(line, this->delimiter_position - 1);
-		this->amount = std::stof(amount_string);
+		std::string date_string = line.substr(0, this->delimiter_position - 1);
+		std::tm date_struct = {};
+		std::istringstream date_stream(date_string);
+		date_stream >> std::get_time(&date_struct, "%Y-%m-%d");
 		
-		if (this->amount < 0)
-			std::cerr << "Error: not a positive number.\n";
-		else if (this->amount > 1000)
-			std::cerr << "Error: too large a number.\n";
-		else
-			return (true);
+		if (VerifyDate(date_struct, line))
+		{
+			this->date_as_int = (date_struct.tm_year + 1900) * 10000 + (date_struct.tm_mon + 1) * 100 + date_struct.tm_mday;
+			this->amount = std::stof(amount_string);
+			
+			if (this->amount < 0)
+				std::cerr << "Error: not a positive number.\n";
+			else if (this->amount > 1000)
+				std::cerr << "Error: too large a number.\n";
+			else
+				return (true);
+		}
 	}
 	return (false);
 }
