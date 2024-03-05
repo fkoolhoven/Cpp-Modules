@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 17:50:50 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/04 14:34:49 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:49:09 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void PmergeMe::SortVector(std::vector<int>& vector)
 	
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 	std::cout << "After sorting: " << vector << std::endl;
-	std::cout << "Time to sort a range of 5 elements with vector: " << duration << " microseconds\n";
+	std::cout << "Time to sort a range of " << vector.size() << " elements with vector: " << duration << " microseconds\n";
 }
 
 static void FinalMergeSortDeque(std::deque<int>& deque, int left_bound, int middle, int right_bound) 
@@ -188,7 +188,7 @@ void PmergeMe::SortDeque(std::deque<int>& deque)
 	
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 	std::cout << "After sorting: " << deque << std::endl;
-	std::cout << "Time to sort a range of 5 elements with deque: " << duration << " microseconds\n";	
+	std::cout << "Time to sort a range of " << deque.size() << " elements with deque: " << duration << " microseconds\n";	
 }
 
 std::ostream& operator<<(std::ostream& stream, const std::vector<int>& vector)
