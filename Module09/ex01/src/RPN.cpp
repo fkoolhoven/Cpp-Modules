@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:03:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/04 15:28:00 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:37:43 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 RPN::RPN(std::string input)
 {
-	bool straggler = false;
 	bool error = false;
 	std::istringstream input_stream(input);
 	std::string line;
@@ -24,23 +23,13 @@ RPN::RPN(std::string input)
 		try
 		{
 			stack.push(std::stoi(line));
-			if (stack.size() > 2)
-			{
-				std::cerr << RED "Invalid input\n" OFF;
-				error = true;
-			}
-			straggler = true;
 		}
 		catch (const std::exception& exception)
 		{
 			if (line.length() != 1 || stack.size() < 2)
-			{
-				std::cerr << RED "Invalid input\n" OFF;
 				error = true;
-			}
 			else
 			{
-				straggler = false;
 				int second = stack.top();
 				stack.pop();
 				int first = stack.top();
@@ -61,16 +50,15 @@ RPN::RPN(std::string input)
 						stack.push(first / second);
 						break;
 					default:
-						std::cerr << RED "Invalid input\n" OFF;
 						error = true;
 				}
 			}
 		}
 	}
 	
-	if (straggler)
-		std::cerr << RED "Invalid input\n" OFF;
-	else if (!error)
+	if (error || stack.size() != 1)
+		std::cerr << RED "Error! Invalid input\n" OFF;
+	else
 		std::cout << "Result: " << stack.top() << std::endl;
 }
 
