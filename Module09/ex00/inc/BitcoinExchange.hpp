@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:21 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/04 14:46:06 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:01:00 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@
 class BitcoinExchange
 {
 	private:
-		std::map<int, float> database;
+		std::map<int, double> database;
 		int date_as_int;
-		float amount;
+		double amount;
 		std::string date_string;
 		std::string amount_string;
 		size_t delimiter_position;

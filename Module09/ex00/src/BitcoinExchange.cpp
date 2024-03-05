@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:42 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/04 15:18:54 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:03:05 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ BitcoinExchange::BitcoinExchange(std::ifstream& datafile)
 		date_stream >> std::get_time(&date_struct, "%Y-%m-%d");
 		int date_as_int = (date_struct.tm_year + 1900) * 10000 + (date_struct.tm_mon + 1) * 100 + date_struct.tm_mday;
 		std::string rate_string = line.substr(comma_position + 1);
-		float rate = std::stof(rate_string);
+		double rate = std::stof(rate_string);
 		database.emplace(date_as_int, rate);
 	}
 
@@ -129,7 +129,7 @@ void BitcoinExchange::CalculatePrice(const std::string& line)
 {
 	if (this->InputIsValid(line))
 	{
-		std::map<int, float>::const_iterator lower_bound = database.lower_bound(date_as_int);
+		std::map<int, double>::const_iterator lower_bound = database.lower_bound(date_as_int);
 		
 		if (lower_bound == database.begin() && lower_bound->first != date_as_int)
 			std::cerr << "Error: no data available for date " << this->date_string << "\n";
@@ -138,8 +138,8 @@ void BitcoinExchange::CalculatePrice(const std::string& line)
 			if (lower_bound->first != date_as_int)
 				lower_bound--;
 
-			float rate = lower_bound->second;
-			float result = rate * this->amount;
+			double rate = lower_bound->second;
+			double result = rate * this->amount;
 			std::cout << this->date_string << " => " << this->amount_string << " = " << result << std::endl;
 		}
 	}
