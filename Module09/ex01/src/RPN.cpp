@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:03:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/05 14:37:43 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/06 18:53:21 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,13 @@ RPN::RPN(std::string input)
 						stack.push(first * second);
 						break;
 					case '/':
-						stack.push(first / second);
-						break;
+						if (second == 0)
+							error = true;
+						else
+						{
+							stack.push(first / second);
+							break;
+						}
 					default:
 						error = true;
 				}
