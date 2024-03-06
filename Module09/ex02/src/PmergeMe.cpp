@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 17:50:50 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/05 14:49:09 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:04:33 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,9 @@ void PmergeMe::SortVector(std::vector<int>& vector)
 	MergeInsertionSortVector(vector, 0, vector.size() - 1);
 	auto end = std::chrono::high_resolution_clock::now();
 	
-	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+	auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
 	std::cout << "After sorting: " << vector << std::endl;
-	std::cout << "Time to sort a range of " << vector.size() << " elements with vector: " << duration << " microseconds\n";
+	std::cout << "Time to sort a range of " << vector.size() << " elements with vector: " << duration << " nanoseconds\n";
 }
 
 static void FinalMergeSortDeque(std::deque<int>& deque, int left_bound, int middle, int right_bound) 
@@ -186,9 +186,9 @@ void PmergeMe::SortDeque(std::deque<int>& deque)
 	MergeInsertionSortDeque(deque, 0, deque.size() - 1);
 	auto end = std::chrono::high_resolution_clock::now();
 	
-	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+	auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
 	std::cout << "After sorting: " << deque << std::endl;
-	std::cout << "Time to sort a range of " << deque.size() << " elements with deque: " << duration << " microseconds\n";	
+	std::cout << "Time to sort a range of " << deque.size() << " elements with deque: " << duration << " nanoseconds\n";
 }
 
 std::ostream& operator<<(std::ostream& stream, const std::vector<int>& vector)

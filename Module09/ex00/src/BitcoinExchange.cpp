@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:42 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/05 15:03:05 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:01:20 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ bool BitcoinExchange::FormattingIsCorrect(const std::string& line)
 
 int GetDaysInMonth(int month)
 {
-	static const int days_in_month[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	static const int days_in_month[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	return (days_in_month[month - 1]);
 }
 
