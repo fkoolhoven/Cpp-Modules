@@ -3,16 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:03:14 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/05 14:37:43 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/17 10:54:03 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-RPN::RPN(std::string input)
+RPN::RPN(void)
+{
+	std::cout << GREEN "RPN created\n" OFF;
+}
+
+RPN::RPN(const RPN& src)
+{
+	*this = src;
+}
+
+RPN& RPN::operator=(const RPN& src)
+{
+	this->stack = src.stack;
+	return (*this);
+}
+
+RPN::~RPN(void) 
+{ 
+	std::cout << RED "RPN destroyed\n" OFF;
+}
+
+void RPN::CalculateRPN(std::string input)
 {
 	bool error = false;
 	std::istringstream input_stream(input);
@@ -22,7 +43,7 @@ RPN::RPN(std::string input)
 	{
 		try
 		{
-			stack.push(std::stoi(line));
+			stack.push(std::stof(line));
 		}
 		catch (const std::exception& exception)
 		{
@@ -30,9 +51,9 @@ RPN::RPN(std::string input)
 				error = true;
 			else
 			{
-				int second = stack.top();
+				float second = stack.top();
 				stack.pop();
-				int first = stack.top();
+				float first = stack.top();
 				stack.pop();
 				
 				switch (line[0])
@@ -47,7 +68,10 @@ RPN::RPN(std::string input)
 						stack.push(first * second);
 						break;
 					case '/':
-						stack.push(first / second);
+						if (second == 0)
+							error = true;
+						else
+							stack.push(first / second);
 						break;
 					default:
 						error = true;
@@ -57,25 +81,12 @@ RPN::RPN(std::string input)
 	}
 	
 	if (error || stack.size() != 1)
-		std::cerr << RED "Error! Invalid input\n" OFF;
+		std::cerr << "Error! Invalid input\n";
 	else
 		std::cout << "Result: " << stack.top() << std::endl;
 }
 
-RPN::RPN(const RPN& src)
-{
-	*this = src;
-}
-
-RPN& RPN::operator=(const RPN& src)
-{
-	this->stack = src.stack;
-	return (*this);
-}
-
-RPN::~RPN() { }
-
-std::stack<int>& RPN::getStack(void)
+std::stack<float>& RPN::getStack(void)
 {
 	return (this->stack);
 }

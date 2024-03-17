@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:53:13 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/29 12:21:44 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/17 10:49:06 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Span& Span::operator=(const Span& source)
 	return (*this);
 }
 
-Span::~Span()
+Span::~Span(void)
 {
 	std::cout << RED "Span destroyed" OFF << std::endl;
 }

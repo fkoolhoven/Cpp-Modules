@@ -3,23 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:59:48 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/04 14:40:54 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/17 10:47:51 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-void TestRPN(char **argv)
+void TestRPN(char** argv)
 {
 	std::cout << YELLOW BOLD "TestRPN\n" OFF;
+	
 	std::string input = argv[1];
-	RPN rpn(input);
+	RPN rpn;
+	rpn.CalculateRPN(input);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
 	if (argc != 2)
 	{

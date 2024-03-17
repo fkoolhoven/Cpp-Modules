@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:42 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/06 14:01:20 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/17 10:48:12 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ BitcoinExchange::BitcoinExchange(std::ifstream& datafile)
 		date_stream >> std::get_time(&date_struct, "%Y-%m-%d");
 		int date_as_int = (date_struct.tm_year + 1900) * 10000 + (date_struct.tm_mon + 1) * 100 + date_struct.tm_mday;
 		std::string rate_string = line.substr(comma_position + 1);
-		double rate = std::stof(rate_string);
+		double rate = std::stod(rate_string);
 		database.emplace(date_as_int, rate);
 	}
 
@@ -50,7 +50,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& src)
 	return (*this);
 }
 
-BitcoinExchange::~BitcoinExchange()
+BitcoinExchange::~BitcoinExchange(void)
 {
 	std::cout << GREEN "BitcoinExchange destroyed\n" OFF;
 }
@@ -112,7 +112,7 @@ bool BitcoinExchange::InputIsValid(const std::string& line)
 		if (VerifyDate(date_struct, line))
 		{
 			this->date_as_int = (date_struct.tm_year + 1900) * 10000 + (date_struct.tm_mon + 1) * 100 + date_struct.tm_mday;
-			this->amount = std::stof(amount_string);
+			this->amount = std::stod(amount_string);
 			
 			if (this->amount < 0)
 				std::cerr << "Error: not a positive number.\n";

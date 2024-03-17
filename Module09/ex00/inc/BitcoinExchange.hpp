@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:21 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/05 15:01:00 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/17 10:48:41 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class BitcoinExchange
 		BitcoinExchange(std::ifstream& database);
 		BitcoinExchange(const BitcoinExchange& src);
 		BitcoinExchange& operator=(const BitcoinExchange& src);
-		~BitcoinExchange();
+		~BitcoinExchange(void);
 
 		void CalculatePrice(const std::string& line);
 		bool InputIsValid(const std::string& line);

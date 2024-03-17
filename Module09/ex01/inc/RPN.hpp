@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:59:38 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/05 14:37:36 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/17 10:51:34 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,16 @@
 class RPN
 {
 	private:
-		std::stack<int> stack;
+		std::stack<float> stack;
 		
 	public:
-		RPN(std::string input);
+		RPN(void);
 		RPN(const RPN& src);
 		RPN& operator=(const RPN& src);
-		~RPN();
+		~RPN(void);
 
-		std::stack<int>& getStack(void);
+		void CalculateRPN(std::string input);
+		std::stack<float>& getStack(void);
 };
 
 #endif
