@@ -6,7 +6,7 @@
 /*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:25:42 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/06 18:49:00 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/19 13:16:14 by fkoolhov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& src)
 	return (*this);
 }
 
-BitcoinExchange::~BitcoinExchange()
+BitcoinExchange::~BitcoinExchange(void)
 {
 	std::cout << GREEN "BitcoinExchange destroyed\n" OFF;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:52:51 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/02/29 12:21:29 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/17 10:48:59 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Span
 		Span(unsigned int max_size);
 		Span(const Span& source);
 		Span& operator=(const Span& source);
-		~Span();
+		~Span(void);
 
 		void AddNumber(int number);
 		void AddMultipleNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);

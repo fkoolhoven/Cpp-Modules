@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkoolhov <fkoolhov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: felicia <felicia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:11:24 by fkoolhov          #+#    #+#             */
-/*   Updated: 2024/03/04 15:19:11 by fkoolhov         ###   ########.fr       */
+/*   Updated: 2024/03/17 10:49:39 by felicia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int main (int argc, char **argv)
+int main (int argc, char** argv)
 {
 	if (argc != 2)
 	{
